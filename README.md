@@ -21,6 +21,7 @@ More details about the game will be added as development progresses.
 | Clay | Manager / Composer |
 | DerynSharp | Lead Sound Designer / Composer |
 | MommyDearest | Lead Artist |
+| Grim | Artist |
 | EngulfedLeader2 | Developer |
 | Leigon | Developer |
 
