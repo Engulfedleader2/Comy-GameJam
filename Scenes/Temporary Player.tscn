@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c2u0rtikhgo76"]
+
+[ext_resource type="Script" uid="uid://0dixbg6js1gr" path="res://Scripts/animatable_body_2d.gd" id="1_br3s7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p4i03"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxy6e"]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" unique_id=13642647]
+script = ExtResource("1_br3s7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=917948562]
+sprite_frames = SubResource("SpriteFrames_p4i03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1752147615]
+shape = SubResource("RectangleShape2D_mxy6e")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1314053835]

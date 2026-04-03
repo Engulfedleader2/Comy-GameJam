@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://vh5y52vsrpnc"]
+
+[ext_resource type="PackedScene" uid="uid://c2u0rtikhgo76" path="res://Scenes/Temporary Player.tscn" id="1_lc1oi"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mf4mk"]
+
+[node name="Test" type="Node2D" unique_id=199639464]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=241786786]
+offset_left = 307.0
+offset_top = 220.0
+offset_right = 565.0
+offset_bottom = 864.0
+texture = SubResource("PlaceholderTexture2D_mf4mk")
+
+[node name="AnimatableBody2D" parent="." unique_id=13642647 instance=ExtResource("1_lc1oi")]
+position = Vector2(678, 286)
