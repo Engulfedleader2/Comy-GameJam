@@ -35,7 +35,7 @@ theme_override_constants/separation = 30
 
 [node name="TitleLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1838450599]
 layout_mode = 2
-text = "Comy Jam - (Spring Loop Syndrome)"
+text = "Comfy Jam - (Spring Loop Syndrome)"
 
 [node name="StartButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1835967740]
 layout_mode = 2
