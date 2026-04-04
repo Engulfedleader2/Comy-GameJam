@@ -11,8 +11,16 @@ config_version=5
 [application]
 
 config/name="ComfyJam"
-config/features=PackedStringArray("4.6", "Mobile")
+run/main_scene="uid://ba7j3hed07vg8"
+config/features=PackedStringArray("4.6", "C#", "Mobile")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1600
+window/size/viewport_height=900
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [dotnet]
 
