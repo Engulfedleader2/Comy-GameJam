@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://ba7j3hed07vg8"]
+
+[ext_resource type="Script" uid="uid://b7vhvolhaawpf" path="res://Scripts/MainMenu.cs" id="1_tt5f1"]
+
+[node name="MainMenu" type="Control" unique_id=658321721]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tt5f1")
+
+[node name="Background" type="ColorRect" parent="." unique_id=2011850925]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.27569968, 0.27569968, 0.27569965, 1)
+metadata/_edit_group_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1804669752]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1871381256]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1838450599]
+layout_mode = 2
+text = "Comfy Jam - (Spring Loop Syndrome)"
+
+[node name="StartButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1835967740]
+layout_mode = 2
+text = "Start Game"
+
+[node name="OptionsButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1604320907]
+layout_mode = 2
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1205680672]
+layout_mode = 2
+text = "Quit Game"
