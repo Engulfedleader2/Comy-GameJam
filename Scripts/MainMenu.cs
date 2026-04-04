@@ -17,17 +17,34 @@ public partial class MainMenu : Control
 		_startButton = GetNodeOrNull<Button>(MenuPath + "StartButton");
 		_optionsButton = GetNodeOrNull<Button>(MenuPath + "OptionsButton");
 		_quitButton = GetNodeOrNull<Button>(MenuPath + "QuitButton");
-		
-		if (_startButton == null || _optionsButton == null || _quitButton == null)
-		{
-			GD.PushError("MainMenu: missing one or more required button nodes.");
-			return;
-		}
-		
+
 		// Connect button press events to handlers
-		_startButton.Pressed += OnStartPressed;
-		_optionsButton.Pressed += OnOptionsPressed;
-		_quitButton.Pressed += OnQuitPressed;
+		if (_startButton != null)
+		{
+			_startButton.Pressed += OnStartPressed;
+		}
+		else
+		{
+			GD.PushWarning("MainMenu: StartButton node not found at path: " + MenuPath + "StartButton");
+		}
+
+		if (_optionsButton != null)
+		{
+			_optionsButton.Pressed += OnOptionsPressed;
+		}
+		else
+		{
+			GD.PushWarning("MainMenu: OptionsButton node not found at path: " + MenuPath + "OptionsButton");
+		}
+
+		if (_quitButton != null)
+		{
+			_quitButton.Pressed += OnQuitPressed;
+		}
+		else
+		{
+			GD.PushWarning("MainMenu: QuitButton node not found at path: " + MenuPath + "QuitButton");
+		}
 	}
 	
 	/// <summary>
