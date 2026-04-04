@@ -3,10 +3,11 @@ extends AnimatableBody2D
 #And I want to make it a quick edit from editor using @export
 @export var speed = 180
 var Direction: Vector2
-var Priority1 = "Down"
-var Priority2 = "Up"
-var Priority3 = "Left"
-var Priority4 = "Right"
+#These values are just the default and do change when movement input is given
+var MoveInputPriority1 = "Down"
+var MoveInputPriority2 = "Up"
+var MoveInputPriority3 = "Left"
+var MoveInputPriority4 = "Right"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -16,40 +17,40 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func prioritychecker(Priority):
-	if Priority1 == "Left":
+func prioritychecker():
+	if MoveInputPriority1 == "Left":
 		Direction.x = -1
-	if Priority1 == "Right":
+	if MoveInputPriority1 == "Right":
 		Direction.x = 1
-	if Priority1 == "Down":
+	if MoveInputPriority1 == "Down":
 		Direction.y = 1
-	if Priority1 == "Up":
+	if MoveInputPriority1 == "Up":
 		Direction.y = -1
 
 func _physics_process(delta: float) -> void:
 	Direction.x = 0
 	Direction.y = 0
-	if Input.is_action_pressed(Priority1):
-		prioritychecker(Priority1)
-	elif Input.is_action_pressed(Priority2):
-		var holdingvariable = Priority1
-		Priority1 = Priority2
-		Priority2 = Priority3
-		Priority3 = Priority4
-		Priority4 = holdingvariable
+	if Input.is_action_pressed(MoveInputPriority1):
+		prioritychecker()
+	elif Input.is_action_pressed(MoveInputPriority2):
+		var holdingvariable = MoveInputPriority1
+		MoveInputPriority1 = MoveInputPriority2
+		MoveInputPriority2 = MoveInputPriority3
+		MoveInputPriority3 = MoveInputPriority4
+		MoveInputPriority4 = holdingvariable
 		
-		prioritychecker(Priority1)
-	elif Input.is_action_pressed(Priority3):
-		var holdingvariable = Priority1
-		Priority1 = Priority3
-		Priority3 = Priority4
-		Priority4 = holdingvariable
+		prioritychecker()
+	elif Input.is_action_pressed(MoveInputPriority3):
+		var holdingvariable = MoveInputPriority1
+		MoveInputPriority1 = MoveInputPriority3
+		MoveInputPriority3 = MoveInputPriority4
+		MoveInputPriority4 = holdingvariable
 		
-		prioritychecker(Priority1)
-	elif Input.is_action_pressed(Priority4):	
-		var holdingvariable = Priority1
-		Priority1 = Priority4
-		Priority4 = holdingvariable
+		prioritychecker()
+	elif Input.is_action_pressed(MoveInputPriority4):	
+		var holdingvariable = MoveInputPriority1
+		MoveInputPriority1 = MoveInputPriority4
+		MoveInputPriority4 = holdingvariable
 		
-		prioritychecker(Priority1)
+		prioritychecker()
 	$".".position += speed * delta * Direction

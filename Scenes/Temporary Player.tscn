@@ -3,6 +3,17 @@
 [ext_resource type="Script" uid="uid://0dixbg6js1gr" path="res://Scripts/animatable_body_2d.gd" id="1_br3s7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p4i03"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxy6e"]
 
@@ -11,6 +22,7 @@ script = ExtResource("1_br3s7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=917948562]
 sprite_frames = SubResource("SpriteFrames_p4i03")
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1752147615]
 shape = SubResource("RectangleShape2D_mxy6e")
