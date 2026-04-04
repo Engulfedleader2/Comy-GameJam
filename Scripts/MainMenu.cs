@@ -14,12 +14,18 @@ public partial class MainMenu : Control
 	public override void _Ready()
 	{
 		// Get button nodes from MainMenu nodes (UI hierachy)
-		_startButton = GetNode<Button>(MenuPath + "StartButton");
-		_optionsButton = GetNode<Button>(MenuPath + "OptionsButton");
-		_quitButton = GetNode<Button>(MenuPath + "QuitButton");;
+		_startButton = GetNodeOrNull<Button>(MenuPath + "StartButton");
+		_optionsButton = GetNodeOrNull<Button>(MenuPath + "OptionsButton");
+		_quitButton = GetNodeOrNull<Button>(MenuPath + "QuitButton");
+		
+		if (_startButton == null || _optionsButton == null || _quitButton == null)
+		{
+			GD.PushError("MainMenu: missing one or more required button nodes.");
+			return;
+		}
 		
 		// Connect button press events to handlers
-		 _startButton.Pressed += OnStartPressed;
+		_startButton.Pressed += OnStartPressed;
 		_optionsButton.Pressed += OnOptionsPressed;
 		_quitButton.Pressed += OnQuitPressed;
 	}
