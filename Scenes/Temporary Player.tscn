@@ -6,7 +6,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxy6e"]
 
-[node name="AnimatableBody2D" type="AnimatableBody2D" unique_id=13642647]
+[node name="AnimatableBody2D" type="AnimatableBody2D" unique_id=1794080327]
 script = ExtResource("1_br3s7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=917948562]
