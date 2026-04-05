@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://e0gv7f1h1iji"]
+
+[ext_resource type="PackedScene" uid="uid://crxdt53071npt" path="res://Scenes/Player.tscn" id="1_kln2b"]
+[ext_resource type="Script" uid="uid://crvwaebdtm3v2" path="res://Scripts/NPCcoordinator.gd" id="2_rgh2o"]
+[ext_resource type="PackedScene" uid="uid://daq58fasdetf3" path="res://Scenes/NPCbase.tscn" id="3_pbw6q"]
+[ext_resource type="SpriteFrames" uid="uid://cy75klxwtntxv" path="res://Assets/Images/Sprites/new_sprite_frames.tres" id="4_rgh2o"]
+
+[node name="Main" type="Node2D" unique_id=902797140]
+
+[node name="Player" parent="." unique_id=998885337 instance=ExtResource("1_kln2b")]
+
+[node name="NPCs" type="Node2D" parent="." unique_id=578326689]
+script = ExtResource("2_rgh2o")
+
+[node name="Area2D" parent="NPCs" unique_id=743262665 instance=ExtResource("3_pbw6q")]
+position = Vector2(95, 0)
+Fulltext = "aasasasasasasasaasasasasasasasaasasasasasasasaasasasasasasasaasasasasasasasaasasasasasasasaasasasasasasasaasasasasasasasaasasasasasasasaasasasasasasasaasasasasasasasaasasasasasasasaasasasasasasasaasasasasasasasaasasasasasasasaasasasasasasasaasasasasasasasaasasasasasasasaasasasasasasasaasasasasasasasaasasasasasasasaasasasasasasas"
+Spriteresource = ExtResource("4_rgh2o")
+
+[connection signal="PlayerInfoSendSignal" from="NPCs" to="NPCs/Area2D" method="_on_np_cs_player_info_send_signal"]
+[connection signal="body_exited" from="NPCs/Area2D" to="NPCs/Area2D" method="_on_body_exited"]

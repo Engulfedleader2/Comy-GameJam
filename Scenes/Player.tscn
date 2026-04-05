@@ -116,6 +116,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
+size = Vector2(23, 42)
 
 [node name="Player" type="CharacterBody2D" unique_id=998885337]
 script = ExtResource("1_rpqav")
@@ -125,4 +126,7 @@ sprite_frames = SubResource("SpriteFrames_rpqav")
 animation = &"jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=616857834]
+position = Vector2(0.5, 11)
 shape = SubResource("RectangleShape2D_kyqiw")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1067568529]
