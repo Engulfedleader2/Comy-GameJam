@@ -5,24 +5,23 @@ extends Area2D
 @export var MaximumTextHeight: int
 var inrange:= false
 # Called when the node enters the scene tree for the first time.
-func MediumLabelResizeCheck():
-	if $Control/Label.size.y > MaximumTextHeight:
-		$Control/Label.size.x = 1596
-		$Control/Label.position.y = 2
-	else:
-		pass
+
 func _ready() -> void:
 	$AnimatedSprite2D.sprite_frames = Spriteresource
 	$AnimatedSprite2D.play("idle")
-	$Control/Label.text = Fulltext
+	$Control/Label.text_overrun_behavior = 0
 	$Control/Label.size.x = 1008
-	$Control/Label.size.y = MaximumTextHeight
-	$Control/Label.position.y = 858 - MaximumTextHeight
+	$Control/Label.size.y = 42
+	$Control/Label.text = Fulltext
+	if $Control/Label.size.y >= MaximumTextHeight:
+		$Control/Label.text_overrun_behavior = 5
+		$Control/Label.size.y = MaximumTextHeight
+	$Control/Label.position.y = 858 - $Control/Label.size.y
 	$Control/Label.position.x = 296
+	
 	$Control/Panel.position = $Control/Label.position
 	$Control/Panel.size = $Control/Label.size
 	$Control.hide()
-	
 		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
