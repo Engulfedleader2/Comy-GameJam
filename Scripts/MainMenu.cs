@@ -54,7 +54,7 @@ public partial class MainMenu : Control
 	private void OnStartPressed()
 	{
 		GD.Print("Play pressed"); 
-		//TODO: setup goTO new Scene
+		GetTree().ChangeSceneToFile("res://Scenes/Player.tscn");
 	}
 
    	/// <summary>
