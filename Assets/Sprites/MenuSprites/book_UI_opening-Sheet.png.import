@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://minnbre5cdxn"
-path="res://.godot/imported/Sprite-0001-Sheet.png-82fe0281b75299bab70db64815d5e52c.ctex"
+uid="uid://cdln4kekm2y7l"
+path="res://.godot/imported/book_UI_opening-Sheet.png-9a1e699f490a8d7b84a298bbcd3a803d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Sprite-0001-Sheet.png"
-dest_files=["res://.godot/imported/Sprite-0001-Sheet.png-82fe0281b75299bab70db64815d5e52c.ctex"]
+source_file="res://Assets/Sprites/MenuSprites/book_UI_opening-Sheet.png"
+dest_files=["res://.godot/imported/book_UI_opening-Sheet.png-9a1e699f490a8d7b84a298bbcd3a803d.ctex"]
 
 [params]
 
