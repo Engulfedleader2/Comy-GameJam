@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdln4kekm2y7l"
-path="res://.godot/imported/book_UI_opening-Sheet.png-9a1e699f490a8d7b84a298bbcd3a803d.ctex"
+uid="uid://btktllrudck7s"
+path="res://.godot/imported/right to left animation.png-0042b0ec1e4ef8919b8f4991e9863136.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/MenuSprites/book_UI_opening-Sheet.png"
-dest_files=["res://.godot/imported/book_UI_opening-Sheet.png-9a1e699f490a8d7b84a298bbcd3a803d.ctex"]
+source_file="res://Assets/Sprites/MenuSprites/right to left animation.png"
+dest_files=["res://.godot/imported/right to left animation.png-0042b0ec1e4ef8919b8f4991e9863136.ctex"]
 
 [params]
 
