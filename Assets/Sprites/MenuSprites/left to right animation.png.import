@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c47bytyqsv2jc"
-path="res://.godot/imported/jump sprite.png-6934ae01cffa0f09aee78a0c02831c55.ctex"
+uid="uid://6x250wp1vciu"
+path="res://.godot/imported/left to right animation.png-c20bccaf053b15e5a1aff1315307ee16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/jump sprite.png"
-dest_files=["res://.godot/imported/jump sprite.png-6934ae01cffa0f09aee78a0c02831c55.ctex"]
+source_file="res://Assets/Sprites/MenuSprites/left to right animation.png"
+dest_files=["res://.godot/imported/left to right animation.png-c20bccaf053b15e5a1aff1315307ee16.ctex"]
 
 [params]
 
