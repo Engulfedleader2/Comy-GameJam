@@ -1,6 +1,52 @@
 [gd_scene format=3 uid="uid://ba7j3hed07vg8"]
 
 [ext_resource type="Script" uid="uid://b7vhvolhaawpf" path="res://Scripts/MainMenu.cs" id="1_tt5f1"]
+[ext_resource type="Texture2D" uid="uid://c45i85oo8xn58" path="res://Assets/Sprites/MenuSprites/Main-Menu.png" id="2_853f1"]
+[ext_resource type="Texture2D" uid="uid://4fm3dgvqguj" path="res://Assets/Sprites/MenuSprites/book UI 2.png" id="3_8saeu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_loo7a"]
+atlas = ExtResource("3_8saeu")
+region = Rect2(428, 152, 80, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_if7li"]
+atlas = ExtResource("3_8saeu")
+region = Rect2(516, 152, 120, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrcx7"]
+atlas = ExtResource("3_8saeu")
+region = Rect2(644, 152, 80, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fh7cp"]
+atlas = ExtResource("3_8saeu")
+region = Rect2(48, 428, 36, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghw46"]
+atlas = ExtResource("3_8saeu")
+region = Rect2(64, 300, 60, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_df05h"]
+atlas = ExtResource("3_8saeu")
+region = Rect2(133, 300, 119, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8saeu"]
+atlas = ExtResource("3_8saeu")
+region = Rect2(133, 300, 119, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8um5k"]
+atlas = ExtResource("3_8saeu")
+region = Rect2(260, 300, 60, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xim88"]
+atlas = ExtResource("3_8saeu")
+region = Rect2(320, 432, 60, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_koqhg"]
+atlas = ExtResource("3_8saeu")
+region = Rect2(388, 432, 120, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmrfp"]
+atlas = ExtResource("3_8saeu")
+region = Rect2(517, 432, 59, 50)
 
 [node name="MainMenu" type="Control" unique_id=658321721]
 layout_mode = 3
@@ -11,40 +57,369 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tt5f1")
 
-[node name="Background" type="ColorRect" parent="." unique_id=2011850925]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.27569968, 0.27569968, 0.27569965, 1)
-metadata/_edit_group_ = true
+[node name="BookLayer" type="Node2D" parent="." unique_id=670814687]
+position = Vector2(960, 540)
+scale = Vector2(2, 2)
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1804669752]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Sprite2D" type="Sprite2D" parent="BookLayer" unique_id=1790851154]
+texture = ExtResource("2_853f1")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1871381256]
+[node name="UI" type="Control" parent="." unique_id=1063276531]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleContainer" type="HBoxContainer" parent="UI" unique_id=1358227563]
+layout_mode = 0
+offset_left = 230.0
+offset_top = 186.0
+offset_right = 944.0
+offset_bottom = 259.0
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/TitleContainer" unique_id=1717661877]
 layout_mode = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 0
 
-[node name="TitleLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1838450599]
+[node name="TitleLeft" type="TextureRect" parent="UI/TitleContainer/HBoxContainer" unique_id=434329401]
 layout_mode = 2
-text = "Comfy Jam - (Spring Loop Syndrome)"
+texture = SubResource("AtlasTexture_loo7a")
 
-[node name="StartButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1835967740]
+[node name="TitleMiddle" type="TextureRect" parent="UI/TitleContainer/HBoxContainer" unique_id=720191859]
 layout_mode = 2
-text = "Start Game"
+texture = SubResource("AtlasTexture_if7li")
 
-[node name="OptionsButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1604320907]
+[node name="TitleMiddle2" type="TextureRect" parent="UI/TitleContainer/HBoxContainer" unique_id=1007080017]
 layout_mode = 2
+texture = SubResource("AtlasTexture_if7li")
+
+[node name="TitleMiddle3" type="TextureRect" parent="UI/TitleContainer/HBoxContainer" unique_id=134111216]
+layout_mode = 2
+texture = SubResource("AtlasTexture_if7li")
+
+[node name="TitleRight" type="TextureRect" parent="UI/TitleContainer/HBoxContainer" unique_id=1642723562]
+layout_mode = 2
+texture = SubResource("AtlasTexture_rrcx7")
+
+[node name="Label" type="Label" parent="UI" unique_id=2089960341]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 212.0
+offset_right = 554.0
+offset_bottom = 235.0
+text = "Welcome To the Game!"
+horizontal_alignment = 1
+
+[node name="MainButtons" type="VBoxContainer" parent="UI" unique_id=673587491]
+custom_minimum_size = Vector2(600, 500)
+layout_direction = 1
+layout_mode = 0
+offset_left = 170.0
+offset_top = 385.0
+offset_right = 770.0
+offset_bottom = 885.0
+theme_override_constants/separation = 50
+
+[node name="StartButton" type="Button" parent="UI/MainButtons" unique_id=1431577764]
+custom_minimum_size = Vector2(50, 40)
+layout_mode = 2
+
+[node name="DiamondLeft" type="TextureRect" parent="UI/MainButtons/StartButton" unique_id=297054534]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -5.0
+offset_right = 61.0
+offset_bottom = 45.0
+texture = SubResource("AtlasTexture_fh7cp")
+
+[node name="DiamondRight" type="TextureRect" parent="UI/MainButtons/StartButton" unique_id=1178184651]
+layout_mode = 0
+offset_left = 565.0
+offset_top = -4.0
+offset_right = 625.0
+offset_bottom = 46.0
+texture = SubResource("AtlasTexture_fh7cp")
+
+[node name="NormalRow" type="HBoxContainer" parent="UI/MainButtons/StartButton" unique_id=168086513]
+layout_mode = 0
+offset_left = 60.0
+offset_top = -3.0
+offset_right = 559.0
+offset_bottom = 47.0
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Left_Normal" type="TextureRect" parent="UI/MainButtons/StartButton/NormalRow" unique_id=264346051]
+layout_mode = 2
+texture = SubResource("AtlasTexture_ghw46")
+
+[node name="Middle_Normal" type="TextureRect" parent="UI/MainButtons/StartButton/NormalRow" unique_id=548239095]
+layout_mode = 2
+texture = SubResource("AtlasTexture_df05h")
+
+[node name="Middle_Normal2" type="TextureRect" parent="UI/MainButtons/StartButton/NormalRow" unique_id=1456835577]
+layout_mode = 2
+texture = SubResource("AtlasTexture_8saeu")
+
+[node name="Middle_Normal3" type="TextureRect" parent="UI/MainButtons/StartButton/NormalRow" unique_id=1859951035]
+layout_mode = 2
+texture = SubResource("AtlasTexture_df05h")
+
+[node name="Right_Normal" type="TextureRect" parent="UI/MainButtons/StartButton/NormalRow" unique_id=1146664010]
+layout_mode = 2
+texture = SubResource("AtlasTexture_8um5k")
+
+[node name="HoverRow" type="HBoxContainer" parent="UI/MainButtons/StartButton" unique_id=2119369385]
+visible = false
+layout_mode = 0
+offset_left = 73.0
+offset_top = -1.0
+offset_right = 569.0
+offset_bottom = 49.0
+theme_override_constants/separation = 0
+
+[node name="Left_Hover" type="TextureRect" parent="UI/MainButtons/StartButton/HoverRow" unique_id=1051189551]
+layout_mode = 2
+texture = SubResource("AtlasTexture_xim88")
+
+[node name="Middle_Hover" type="TextureRect" parent="UI/MainButtons/StartButton/HoverRow" unique_id=1335064966]
+layout_mode = 2
+texture = SubResource("AtlasTexture_koqhg")
+
+[node name="Middle_Hover2" type="TextureRect" parent="UI/MainButtons/StartButton/HoverRow" unique_id=1777231353]
+layout_mode = 2
+texture = SubResource("AtlasTexture_koqhg")
+
+[node name="Middle_Hover3" type="TextureRect" parent="UI/MainButtons/StartButton/HoverRow" unique_id=1892481394]
+layout_mode = 2
+texture = SubResource("AtlasTexture_koqhg")
+
+[node name="Right_Hover" type="TextureRect" parent="UI/MainButtons/StartButton/HoverRow" unique_id=916471845]
+layout_mode = 2
+texture = SubResource("AtlasTexture_cmrfp")
+
+[node name="Label" type="Label" parent="UI/MainButtons/StartButton" unique_id=1418801279]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 5.0
+offset_right = 335.0
+offset_bottom = 28.0
+text = "Start"
+
+[node name="OptionsButton" type="Button" parent="UI/MainButtons" unique_id=607222960]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="NormalRow" type="HBoxContainer" parent="UI/MainButtons/OptionsButton" unique_id=1893712961]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 3.0
+offset_right = 557.0
+offset_bottom = 53.0
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Left_Normal" type="TextureRect" parent="UI/MainButtons/OptionsButton/NormalRow" unique_id=424698387]
+layout_mode = 2
+texture = SubResource("AtlasTexture_ghw46")
+
+[node name="Middle_Normal" type="TextureRect" parent="UI/MainButtons/OptionsButton/NormalRow" unique_id=1706995341]
+layout_mode = 2
+texture = SubResource("AtlasTexture_df05h")
+
+[node name="Middle_Normal2" type="TextureRect" parent="UI/MainButtons/OptionsButton/NormalRow" unique_id=1272928473]
+layout_mode = 2
+texture = SubResource("AtlasTexture_8saeu")
+
+[node name="Middle_Normal3" type="TextureRect" parent="UI/MainButtons/OptionsButton/NormalRow" unique_id=719542651]
+layout_mode = 2
+texture = SubResource("AtlasTexture_df05h")
+
+[node name="Right_Normal" type="TextureRect" parent="UI/MainButtons/OptionsButton/NormalRow" unique_id=1086480568]
+layout_mode = 2
+texture = SubResource("AtlasTexture_8um5k")
+
+[node name="HoverRow" type="HBoxContainer" parent="UI/MainButtons/OptionsButton" unique_id=328116776]
+visible = false
+layout_mode = 0
+offset_left = 71.0
+offset_top = 5.0
+offset_right = 567.0
+offset_bottom = 55.0
+theme_override_constants/separation = 0
+
+[node name="Left_Hover" type="TextureRect" parent="UI/MainButtons/OptionsButton/HoverRow" unique_id=1614336696]
+layout_mode = 2
+texture = SubResource("AtlasTexture_xim88")
+
+[node name="Middle_Hover" type="TextureRect" parent="UI/MainButtons/OptionsButton/HoverRow" unique_id=1612468641]
+layout_mode = 2
+texture = SubResource("AtlasTexture_koqhg")
+
+[node name="Middle_Hover2" type="TextureRect" parent="UI/MainButtons/OptionsButton/HoverRow" unique_id=1587768464]
+layout_mode = 2
+texture = SubResource("AtlasTexture_koqhg")
+
+[node name="Middle_Hover3" type="TextureRect" parent="UI/MainButtons/OptionsButton/HoverRow" unique_id=1194545130]
+layout_mode = 2
+texture = SubResource("AtlasTexture_koqhg")
+
+[node name="Right_Hover" type="TextureRect" parent="UI/MainButtons/OptionsButton/HoverRow" unique_id=1254587235]
+layout_mode = 2
+texture = SubResource("AtlasTexture_cmrfp")
+
+[node name="Label" type="Label" parent="UI/MainButtons/OptionsButton" unique_id=556762910]
+layout_mode = 0
+offset_left = 283.0
+offset_top = 13.0
+offset_right = 345.0
+offset_bottom = 36.0
 text = "Options"
 
-[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1205680672]
+[node name="DiamondLeft" type="TextureRect" parent="UI/MainButtons/OptionsButton" unique_id=191811077]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -5.0
+offset_right = 61.0
+offset_bottom = 45.0
+texture = SubResource("AtlasTexture_fh7cp")
+
+[node name="DiamondRight" type="TextureRect" parent="UI/MainButtons/OptionsButton" unique_id=2043142810]
+layout_mode = 0
+offset_left = 565.0
+offset_top = -4.0
+offset_right = 625.0
+offset_bottom = 46.0
+texture = SubResource("AtlasTexture_fh7cp")
+
+[node name="QuitButton" type="Button" parent="UI/MainButtons" unique_id=2123967492]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-text = "Quit Game"
+
+[node name="NormalRow" type="HBoxContainer" parent="UI/MainButtons/QuitButton" unique_id=1090097070]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 4.0
+offset_right = 563.0
+offset_bottom = 54.0
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Left_Normal" type="TextureRect" parent="UI/MainButtons/QuitButton/NormalRow" unique_id=1363973500]
+layout_mode = 2
+texture = SubResource("AtlasTexture_ghw46")
+
+[node name="Middle_Normal" type="TextureRect" parent="UI/MainButtons/QuitButton/NormalRow" unique_id=881200147]
+layout_mode = 2
+texture = SubResource("AtlasTexture_df05h")
+
+[node name="Middle_Normal2" type="TextureRect" parent="UI/MainButtons/QuitButton/NormalRow" unique_id=1066374940]
+layout_mode = 2
+texture = SubResource("AtlasTexture_8saeu")
+
+[node name="Middle_Normal3" type="TextureRect" parent="UI/MainButtons/QuitButton/NormalRow" unique_id=1716987286]
+layout_mode = 2
+texture = SubResource("AtlasTexture_df05h")
+
+[node name="Right_Normal" type="TextureRect" parent="UI/MainButtons/QuitButton/NormalRow" unique_id=1641716375]
+layout_mode = 2
+texture = SubResource("AtlasTexture_8um5k")
+
+[node name="HoverRow" type="HBoxContainer" parent="UI/MainButtons/QuitButton" unique_id=1326472072]
+visible = false
+layout_mode = 0
+offset_left = 71.0
+offset_top = 5.0
+offset_right = 567.0
+offset_bottom = 55.0
+theme_override_constants/separation = 0
+
+[node name="Left_Hover" type="TextureRect" parent="UI/MainButtons/QuitButton/HoverRow" unique_id=215278139]
+layout_mode = 2
+texture = SubResource("AtlasTexture_xim88")
+
+[node name="Middle_Hover" type="TextureRect" parent="UI/MainButtons/QuitButton/HoverRow" unique_id=1130948792]
+layout_mode = 2
+texture = SubResource("AtlasTexture_koqhg")
+
+[node name="Middle_Hover2" type="TextureRect" parent="UI/MainButtons/QuitButton/HoverRow" unique_id=285526625]
+layout_mode = 2
+texture = SubResource("AtlasTexture_koqhg")
+
+[node name="Middle_Hover3" type="TextureRect" parent="UI/MainButtons/QuitButton/HoverRow" unique_id=1589110793]
+layout_mode = 2
+texture = SubResource("AtlasTexture_koqhg")
+
+[node name="Right_Hover" type="TextureRect" parent="UI/MainButtons/QuitButton/HoverRow" unique_id=229816428]
+layout_mode = 2
+texture = SubResource("AtlasTexture_cmrfp")
+
+[node name="Label" type="Label" parent="UI/MainButtons/QuitButton" unique_id=533528947]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 14.0
+offset_right = 334.0
+offset_bottom = 37.0
+text = "Quit"
+
+[node name="DiamondLeft" type="TextureRect" parent="UI/MainButtons/QuitButton" unique_id=639169518]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -5.0
+offset_right = 61.0
+offset_bottom = 45.0
+texture = SubResource("AtlasTexture_fh7cp")
+
+[node name="DiamondRight" type="TextureRect" parent="UI/MainButtons/QuitButton" unique_id=2002754923]
+layout_mode = 0
+offset_left = 565.0
+offset_top = -4.0
+offset_right = 625.0
+offset_bottom = 46.0
+texture = SubResource("AtlasTexture_fh7cp")
+
+[node name="OptionsButtons" type="VBoxContainer" parent="UI" unique_id=1122689902]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MusicRow" type="HBoxContainer" parent="UI/OptionsButtons" unique_id=1379693024]
+layout_mode = 2
+
+[node name="MusicLabel" type="Label" parent="UI/OptionsButtons/MusicRow" unique_id=2121003298]
+layout_mode = 2
+
+[node name="MusicSlider" type="HSlider" parent="UI/OptionsButtons/MusicRow" unique_id=2144945195]
+layout_mode = 2
+
+[node name="SfxRow" type="HBoxContainer" parent="UI/OptionsButtons" unique_id=1625716815]
+layout_mode = 2
+
+[node name="SfxLabel" type="Label" parent="UI/OptionsButtons/SfxRow" unique_id=733361022]
+layout_mode = 2
+
+[node name="SfxSlider" type="HSlider" parent="UI/OptionsButtons/SfxRow" unique_id=1672711498]
+layout_mode = 2
+
+[node name="DisplayButton" type="Button" parent="UI/OptionsButtons" unique_id=558703200]
+layout_mode = 2
+
+[node name="CreditButton" type="Button" parent="UI/OptionsButtons" unique_id=1661105414]
+layout_mode = 2
+
+[node name="CreditButtons" type="VBoxContainer" parent="UI" unique_id=135135511]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BackButton" type="Button" parent="UI" unique_id=560608458]
+visible = false
+layout_mode = 0
+offset_left = 374.0
+offset_top = 795.0
+offset_right = 446.0
+offset_bottom = 826.0
+text = "Back
+"
