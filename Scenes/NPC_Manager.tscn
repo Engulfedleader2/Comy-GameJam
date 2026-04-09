@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dmuyq3eb1qjpt"]
+
+[ext_resource type="Script" uid="uid://crvwaebdtm3v2" path="res://Scripts/NPCcoordinator.gd" id="1_nagxr"]
+[ext_resource type="PackedScene" uid="uid://daq58fasdetf3" path="res://Scenes/NPCbase.tscn" id="2_ewobp"]
+[ext_resource type="SpriteFrames" uid="uid://cy75klxwtntxv" path="res://Assets/Images/Sprites/new_sprite_frames.tres" id="3_lpl1m"]
+
+[node name="NPCs" type="Node2D" unique_id=593384269]
+script = ExtResource("1_nagxr")
+
+[node name="Luna" parent="." unique_id=743262665 instance=ExtResource("2_ewobp")]
+Spriteresource = ExtResource("3_lpl1m")
+MaximumTextHeight = 100.0
+Margins = 15.0
+DefaultConversation = "Intro"
+Conversations = ["Intro"]
+Requirements_Completion = Array[bool]([true, true, false])
+
+[connection signal="Dialogue_request" from="Luna" to="." method="_on_area_2d_dialogue_request"]
+[connection signal="body_exited" from="Luna" to="Luna" method="_on_body_exited"]

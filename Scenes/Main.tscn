@@ -2,9 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://crxdt53071npt" path="res://Scenes/Player.tscn" id="1_kln2b"]
 [ext_resource type="PackedScene" uid="uid://bpeqfg8w5lh2s" path="res://Scenes/camera_2d.tscn" id="2_pbw6q"]
-[ext_resource type="Script" uid="uid://crvwaebdtm3v2" path="res://Scripts/NPCcoordinator.gd" id="2_rgh2o"]
-[ext_resource type="PackedScene" uid="uid://daq58fasdetf3" path="res://Scenes/NPCbase.tscn" id="3_pbw6q"]
-[ext_resource type="SpriteFrames" uid="uid://cy75klxwtntxv" path="res://Assets/Images/Sprites/new_sprite_frames.tres" id="4_rgh2o"]
+[ext_resource type="PackedScene" uid="uid://dmuyq3eb1qjpt" path="res://Scenes/NPC_Manager.tscn" id="3_kln2b"]
+[ext_resource type="PackedScene" uid="uid://car3taykifkmu" path="res://Scenes/Dialoguetest.tscn" id="4_rgh2o"]
 
 [node name="Main" type="Node2D" unique_id=902797140]
 
@@ -12,13 +11,9 @@
 
 [node name="Camera2D" parent="Player" unique_id=2030290041 instance=ExtResource("2_pbw6q")]
 
-[node name="NPCs" type="Node2D" parent="." unique_id=578326689]
-script = ExtResource("2_rgh2o")
+[node name="NPCs" parent="." unique_id=593384269 instance=ExtResource("3_kln2b")]
+position = Vector2(296, 1)
 
-[node name="Area2D" parent="NPCs" unique_id=743262665 instance=ExtResource("3_pbw6q")]
-position = Vector2(95, 0)
-Fulltext = "Abcdefghijklmnop"
-Spriteresource = ExtResource("4_rgh2o")
+[node name="Dialoguetest" parent="." unique_id=1428042601 instance=ExtResource("4_rgh2o")]
 
-[connection signal="PlayerInfoSendSignal" from="NPCs" to="NPCs/Area2D" method="_on_np_cs_player_info_send_signal"]
-[connection signal="body_exited" from="NPCs/Area2D" to="NPCs/Area2D" method="_on_body_exited"]
+[connection signal="Textaccess" from="NPCs" to="Dialoguetest" method="_on_np_cs_textaccess"]

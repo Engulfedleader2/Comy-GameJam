@@ -4,11 +4,10 @@
 
 [node name="Control" type="Control" unique_id=905565297]
 layout_mode = 3
-anchors_preset = 0
-offset_left = -800.0
-offset_top = -450.0
-offset_right = 800.0
-offset_bottom = 450.0
+anchor_left = -0.5
+anchor_top = -0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 
 [node name="Panel" type="Panel" parent="." unique_id=1491263167]
 layout_mode = 0
@@ -19,15 +18,15 @@ theme = ExtResource("1_36ln2")
 [node name="Label" type="Label" parent="." unique_id=517927471]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.185
-anchor_top = 0.72300005
+anchor_left = 0.46300003
+anchor_top = 0.96900004
 anchor_right = 0.81500006
 anchor_bottom = 1.0
-offset_top = 221.29993
-offset_right = -0.00012207031
+offset_left = 58.19995
+offset_top = -0.10003662
+offset_right = -503.00012
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("1_36ln2")
 horizontal_alignment = 1
 vertical_alignment = 2
-autowrap_mode = 2
-text_overrun_behavior = 5

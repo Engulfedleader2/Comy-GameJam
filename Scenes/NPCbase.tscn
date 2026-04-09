@@ -9,8 +9,7 @@ height = 146.0
 
 [node name="Area2D" type="Area2D" unique_id=743262665]
 script = ExtResource("1_y13o6")
-Fulltext = "aasasasasasasas"
-MaximumTextHeight = 285
+Margins = 5.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=714191096]
 
