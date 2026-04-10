@@ -13,7 +13,7 @@ MaximumTextHeight = 100.0
 Margins = 15.0
 DefaultConversation = "Intro"
 Conversations = ["Intro"]
-Requirements_Completion = Array[bool]([true, true, false])
+Requirements_Completion = Array[bool]([true, false, true])
 
 [connection signal="Dialogue_request" from="Luna" to="." method="_on_area_2d_dialogue_request"]
 [connection signal="body_exited" from="Luna" to="Luna" method="_on_body_exited"]

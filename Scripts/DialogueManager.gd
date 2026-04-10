@@ -1,5 +1,14 @@
 extends Node
 
+##Notes:
+##The format for line info (the dictionaries iside the dialogue arrays) is as follows:
+##{
+##"Speaker":"(The name of the NPC as it is with their object! this is case sensitive)",
+##"Text": "(Anything)",
+##"Text_incomplete": null (Replace with anything if there is a milestone requirement)
+##},
+##Use the above format to avoid Errors from case sensitivity
+
 var isactive = false
 #list of where each npc is in progress of a given dialogue
 var conversation_current_progress_list := []
@@ -24,10 +33,19 @@ var conversations = {
 		},
 		{
 		"Speaker":"Luna",
-		"Text":"Nice! You're ready to explore now, good luck!",
+		"Text":"Nice! You're really showing your value around here!",
 		"Text_incomplete":"You have to chop some wood."
-			
-		}
+		},
+		#{
+		#"Speaker":"Luna",
+		#"Text":"Why not go find a blossom to get yourself accustomed to the environment?",
+		#"Text_incomplete": null
+		#},
+		#{
+		#"Speaker":"Luna",
+		#"Text":"Perfect! You're ready to help those in need.",
+		#"Text_incomplete":"Go find a blossom!"
+		#},
 	],
 	"Forest Meeting":[
 		{"Speaker":"John",
@@ -68,33 +86,71 @@ func _on_np_cs_textaccess(Charactername: String, Conversation_List: Array, Conve
 		Character_index = activenpcs.find(Charactername)
 		Dialogue_Starting_Point = conversation_current_progress_list[Character_index]
 	Character_index = activenpcs.find(Charactername)
-	startconversation(Character_index, Conversation_Milestones, Dialogue_Starting_Point)
+	var Milestone_Progress = Dialogue_Progress(Conversation_Milestones)
+	startconversation(Character_index, Milestone_Progress, Dialogue_Starting_Point)
 
-func startconversation(Character_Index:int, Milestone_Completion:Array, Current_Progress: Dictionary):
+func startconversation(Character_Index:int, Milestone_Progress:int, Current_Progress: Dictionary):
 	var Dialoguekey = currentconversation[Character_Index]
-	var Milestone_Progress = Dialogue_Progress(Milestone_Completion)
 	var is_at_current_point = false
+	var is_waiting_for_milestone = false
 	#Couldn't make a descriptive name, Line data is each dictionary for a line in a dialogue array
 	for line_data in conversations[Dialoguekey]:
-		if line_data == conversation_current_progress_list[Character_Index]:
-			is_at_current_point = true
-		if line_data["Text_incomplete"] == null:
-			if is_at_current_point:
-				print(line_data["Text"])
-		
-		if line_data["Text_incomplete"] != null:
-			if Milestone_Progress > 0:
-				Milestone_Progress -= 1
-				if conversation_current_progress_list[Character_Index] == line_data:
-					if is_at_current_point:
-						print(line_data["Text"])
-				else:
-					endconversation(Character_Index,line_data)
-			else:
+		var line_data_index = conversations[Dialoguekey].find(line_data)
+		var most_recent_milestone_index = conversations[Dialoguekey].find(conversation_current_progress_list[Character_Index])
+		if line_data_index > most_recent_milestone_index and is_waiting_for_milestone:
+			pass
+		else:
+			if line_data_index >= most_recent_milestone_index:
+				is_at_current_point = true
+				print(line_data_index, "D1")
+			if line_data["Text_incomplete"] == null:
 				if is_at_current_point:
-					print(line_data["Text_incomplete"])
-				endconversation(Character_Index, line_data)
+					print(line_data["Text"])
+					print(line_data_index, "D2")
+				else:
+					print(line_data_index, "D3")
+			
+			if line_data["Text_incomplete"] != null:
+				#the issue is that milestone progress resets when you re-enter
+				#and then it displays from the previous line.
+				if line_data == conversation_current_progress_list[Character_Index]:
+					is_at_current_point = true
+					print("Debug Line current point")
+					print(line_data_index, "D4")
+					print(most_recent_milestone_index,"D5")
 				
+				else:
+					if line_data_index >= most_recent_milestone_index:
+						print("Debug Current Point reset")
+						is_waiting_for_milestone = true
+						print(line_data_index, "D6")
+						print(most_recent_milestone_index,"D7")
+						endconversation(Character_Index,line_data)
+				
+				if Milestone_Progress > 0:
+					print("Debug2")
+					Milestone_Progress -= 1
+					
+					if is_at_current_point:
+						print("Debug3")
+						print(line_data["Text"])
+						print(line_data_index, "D8")
+						is_waiting_for_milestone = false
+					
+					else:
+						print(line_data_index, "D9")
+						if line_data_index >= most_recent_milestone_index:
+							is_waiting_for_milestone = true
+							endconversation(Character_Index,line_data)
+				
+				else:
+					print(line_data_index, "D10")
+					if is_at_current_point:
+						print(line_data["Text_incomplete"])
+					if line_data_index >= most_recent_milestone_index:
+						endconversation(Character_Index,line_data)
+						is_waiting_for_milestone = true
+						
 	
 func Dialogue_Progress(Completion_List: Array):
 	#Once we finish the tasks system this will be updated so you can move a conversation only when a task is complete
@@ -138,5 +194,3 @@ func getcharactercount(Conversation:String):
 		return 0
 	else:
 		return line["Text".length()]
-
-	
