@@ -36,16 +36,36 @@ var conversations = {
 		"Text":"Nice! You're really showing your value around here!",
 		"Text_incomplete":"You have to chop some wood."
 		},
-		#{
-		#"Speaker":"Luna",
-		#"Text":"Why not go find a blossom to get yourself accustomed to the environment?",
-		#"Text_incomplete": null
-		#},
-		#{
-		#"Speaker":"Luna",
-		#"Text":"Perfect! You're ready to help those in need.",
-		#"Text_incomplete":"Go find a blossom!"
-		#},
+		{
+		"Speaker":"Luna",
+		"Text":"Why not go find a blossom to get yourself accustomed to the environment?",
+		"Text_incomplete": null
+		},
+		{
+		"Speaker":"Luna",
+		"Text":"Perfect! You're ready to help those in need.",
+		"Text_incomplete":"Go find a blossom!"
+		},
+		{
+		"Speaker":"Luna",
+		"Text":"Still, you could use some more help",
+		"Text_incomplete": null
+		},
+		{
+		"Speaker":"Luna",
+		"Text":"Try using your blossoms to do a specific task!",
+		"Text_incomplete": null
+		},
+		{
+		"Speaker":"Luna",
+		"Text":"Amazing! You now can explore much farther and have many more oppurtunities unlocked!",
+		"Text_incomplete": "You should go use one of your blossom's specialties and see what they do."
+		},
+		{
+		"Speaker":"Luna",
+		"Text":"See you later!",
+		"Text_incomplete": null
+		},
 	],
 	"Forest Meeting":[
 		{"Speaker":"John",
