@@ -15,5 +15,16 @@ DefaultConversation = "Intro"
 Conversations = ["Intro"]
 Requirements_Completion = Array[bool]([true, false, true])
 
+[node name="John" parent="." unique_id=1834348666 instance=ExtResource("2_ewobp")]
+position = Vector2(220, -1)
+Spriteresource = ExtResource("3_lpl1m")
+MaximumTextHeight = 100.0
+Margins = 15.0
+DefaultConversation = "Forest Meeting"
+Conversations = ["Forest Meeting"]
+Requirements_Completion = Array[bool]([true])
+
 [connection signal="Dialogue_request" from="Luna" to="." method="_on_area_2d_dialogue_request"]
 [connection signal="body_exited" from="Luna" to="Luna" method="_on_body_exited"]
+[connection signal="Dialogue_request" from="John" to="." method="_on_area_2d_dialogue_request"]
+[connection signal="body_exited" from="John" to="John" method="_on_body_exited"]

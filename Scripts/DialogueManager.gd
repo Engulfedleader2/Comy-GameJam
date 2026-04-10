@@ -68,17 +68,26 @@ var conversations = {
 		},
 	],
 	"Forest Meeting":[
-		{"Speaker":"John",
-		"Text":"Hello, haven't seen you before!",
+		{
+		"Speaker":"John",
+		"Text":"Hey, are you new here?",
+		"Text_incomplete": null
 		},
-		{"Speaker":"John",
-		"Text":"Hello",
-		#Milestone:True does not mean the milestone is completed, rather there is a milestone required there
-		"Milestone":"True"
+		{
+		"Speaker":"John",
+		"Text":"Cool! You should see the amazing things this area has to offer! Go explore the forest",
+		"Text_incomplete": "Hey! Go back and explore some more."
 		},
-		{"Speaker":"James",
-		"Text":"How Are you?"
-		}
+		{
+		"Speaker":"John",
+		"Text":"You like it? Either way, it's good to know this place well if you're gonna stay here.",
+		"Text_incomplete": null
+		},
+		{
+		"Speaker":"John",
+		"Text":"Anyways, see you soon!",
+		"Text_incomplete": null
+		},
 	]
 }
 
