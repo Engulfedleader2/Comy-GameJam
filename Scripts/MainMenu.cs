@@ -140,7 +140,7 @@ public partial class MainMenu : Control
 	private void StartGame()
 	{
 		GD.Print("Starting Game");
-		GetTree().ChangeSceneToFile("res://Scenes/Player.tscn");
+		GetTree().ChangeSceneToFile("res://Scenes/World.tscn");
 	}
 
 	private void ShowOptionsMenu()
