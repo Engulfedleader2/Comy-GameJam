@@ -101,11 +101,14 @@ public partial class Player : CharacterBody2D
 		_animatedSprite.Play(animationName);
 	}
 
-	if (_animatedSprite.Animation == "jump_left" || _animatedSprite.Animation == "jump_right")
+	private void OnAnimationFinished()
 	{
-		_isJumping = false;
-		Vector2 direction = GetMovementInput();
-		bool isSprinting = Input.IsActionPressed("sprint");
-		UpdateAnimation(direction, isSprinting);
+		if (_animatedSprite.Animation == "jump_left" || _animatedSprite.Animation == "jump_right")
+		{
+			_isJumping = false;
+			Vector2 direction = GetMovementInput();
+			bool isSprinting = Input.IsActionPressed("sprint");
+			UpdateAnimation(direction, isSprinting);
+		}
 	}
 }
