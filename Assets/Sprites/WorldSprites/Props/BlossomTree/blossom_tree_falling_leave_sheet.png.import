@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0mxd4llt3p78"
-path="res://.godot/imported/Spirit_Tree_Sheet.png-d79ce8f0c396cad67266f251449acb2f.ctex"
+uid="uid://b1jeiqr3ej3iu"
+path="res://.godot/imported/blossom_tree_falling_leave_sheet.png-0e9c55c709613053feb0cadb2e1a03a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/WorldSprites/Props/Spirit_Tree_Sheet.png"
-dest_files=["res://.godot/imported/Spirit_Tree_Sheet.png-d79ce8f0c396cad67266f251449acb2f.ctex"]
+source_file="res://Assets/Sprites/WorldSprites/Props/BlossomTree/blossom_tree_falling_leave_sheet.png"
+dest_files=["res://.godot/imported/blossom_tree_falling_leave_sheet.png-0e9c55c709613053feb0cadb2e1a03a9.ctex"]
 
 [params]
 
