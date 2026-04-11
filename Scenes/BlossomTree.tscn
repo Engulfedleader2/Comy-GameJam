@@ -277,23 +277,25 @@ animations = [{
 position = Vector2(1024, 512)
 
 [node name="FallingLeavesLeft" type="AnimatedSprite2D" parent="." unique_id=757482857]
-position = Vector2(-100, 0)
+position = Vector2(-100, -50)
 sprite_frames = SubResource("SpriteFrames_vu36s")
 animation = &"fall"
 frame_progress = 0.8003614
 
 [node name="FallingLeavesCenter" type="AnimatedSprite2D" parent="." unique_id=2038238835]
+position = Vector2(0, -50)
 sprite_frames = SubResource("SpriteFrames_vu36s")
 animation = &"fall"
 frame_progress = 0.1150343
 
 [node name="FallingLeavesRight" type="AnimatedSprite2D" parent="." unique_id=89445838]
-position = Vector2(100, 0)
+position = Vector2(100, -50)
 sprite_frames = SubResource("SpriteFrames_vu36s")
 animation = &"fall"
 frame_progress = 0.1150343
 
 [node name="TreeSprite" type="AnimatedSprite2D" parent="." unique_id=919228539]
+position = Vector2(10, -109)
 sprite_frames = SubResource("SpriteFrames_ojly7")
 animation = &"idle"
 frame_progress = 0.12705858
