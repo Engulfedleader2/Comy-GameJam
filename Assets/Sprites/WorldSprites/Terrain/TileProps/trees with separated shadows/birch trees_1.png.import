@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://i3o8lsx5dk5a"
-path="res://.godot/imported/birch trees_1.png-b93aaba1667b7ef522582c7c83490689.ctex"
+path="res://.godot/imported/birch trees_1.png-d45d3ebc6fef80377ccb032b40d122da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/WorldSprites/Terrain/TileProps/trees with separated shadows/birch trees_1.png"
-dest_files=["res://.godot/imported/birch trees_1.png-b93aaba1667b7ef522582c7c83490689.ctex"]
+source_file="res://Assets/Sprites/WorldSprites/Terrain/TileProps/birch trees_1.png"
+dest_files=["res://.godot/imported/birch trees_1.png-d45d3ebc6fef80377ccb032b40d122da.ctex"]
 
 [params]
 
