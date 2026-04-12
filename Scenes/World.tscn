@@ -28961,6 +28961,10 @@ tile_set = SubResource("TileSet_uo7di")
 
 [node name="Props" type="Node2D" parent="." unique_id=1532182836]
 
+[node name="Shrine" type="Sprite2D" parent="Props" unique_id=1277230400]
+position = Vector2(2215, 1697)
+texture = ExtResource("9_ti1bm")
+
 [node name="House02" type="Sprite2D" parent="Props" unique_id=18197877]
 position = Vector2(3802, 881)
 texture = ExtResource("4_kn06e")
@@ -28982,7 +28986,3 @@ position = Vector2(1025, 550)
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=1741530494]
 position = Vector2(2000, 2000)
-
-[node name="Shrine" type="Sprite2D" parent="." unique_id=1277230400]
-position = Vector2(2215, 1697)
-texture = ExtResource("9_ti1bm")
