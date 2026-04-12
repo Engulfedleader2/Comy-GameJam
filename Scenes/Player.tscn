@@ -522,5 +522,4 @@ shape = SubResource("RectangleShape2D_kyqiw")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=860846232]
 offset = Vector2(1, 1)
-zoom = Vector2(2, 2)
 position_smoothing_enabled = true

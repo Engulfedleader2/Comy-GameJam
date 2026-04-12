@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://ber5osj7v5ipd"]
 
 [ext_resource type="PackedScene" uid="uid://crxdt53071npt" path="res://Scenes/Player.tscn" id="1_5cjrv"]
-[ext_resource type="PackedScene" uid="uid://didnkipsule34" path="res://Assets/Sprites/WorldSprites/Terrain/TileProps/trees with separated shadows/Scenes/BlossomTree.tscn" id="1_5nsto"]
+[ext_resource type="PackedScene" uid="uid://didnkipsule34" path="res://Scenes/BlossomTree.tscn" id="1_5nsto"]
 [ext_resource type="Texture2D" uid="uid://cfr4ui2va0jvw" path="res://Assets/Sprites/WorldSprites/Terrain/Tileset-Terrain.png" id="1_gjpho"]
 [ext_resource type="Script" uid="uid://qbdt1v8nb30t" path="res://Scripts/World.cs" id="1_y7y61"]
 [ext_resource type="Texture2D" uid="uid://bbplpoii2pyl6" path="res://Assets/Sprites/WorldSprites/Terrain/Tileset-Terrain2.png" id="2_45d1s"]
@@ -28984,5 +28984,5 @@ position = Vector2(2222, 1691)
 [node name="Player" parent="." unique_id=998885337 instance=ExtResource("1_5cjrv")]
 position = Vector2(1025, 550)
 
-[node name="SpawnPoint" type="Marker2D" parent="." unique_id=1741530494]
+[node name="Spawn_World_Start" type="Marker2D" parent="." unique_id=1741530494]
 position = Vector2(2000, 2000)
