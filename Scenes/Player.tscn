@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://crxdt53071npt"]
 
 [ext_resource type="Script" uid="uid://cnsc3vh7py5ks" path="res://Scripts/Player.cs" id="1_rpqav"]
-[ext_resource type="Texture2D" uid="uid://dy48b5pv7kek6" path="res://Assets/Sprites/PlayerSprites/Sprite Base-Sheet.png" id="2_kyqiw"]
+[ext_resource type="Texture2D" uid="uid://dy48b5pv7kek6" path="res://Assets/Sprites/WorldSprites/Terrain/Assets/Sprites/PlayerSprites/Sprite Base-Sheet.png" id="2_kyqiw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gntrk"]
 atlas = ExtResource("2_kyqiw")
@@ -308,7 +308,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_left",
-"speed": 10.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -375,7 +375,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"jump_left",
-"speed": 10.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -401,7 +401,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"jump_right",
-"speed": 10.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -427,7 +427,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run_left",
-"speed": 10.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -453,7 +453,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run_right",
-"speed": 10.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -479,7 +479,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_left",
-"speed": 10.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -505,7 +505,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_right",
-"speed": 10.0
+"speed": 7.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
@@ -515,7 +515,11 @@ script = ExtResource("1_rpqav")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1109182356]
 sprite_frames = SubResource("SpriteFrames_rpqav")
-animation = &"idle_left"
+animation = &"walk_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=616857834]
 shape = SubResource("RectangleShape2D_kyqiw")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=860846232]
+offset = Vector2(1, 1)
+position_smoothing_enabled = true
