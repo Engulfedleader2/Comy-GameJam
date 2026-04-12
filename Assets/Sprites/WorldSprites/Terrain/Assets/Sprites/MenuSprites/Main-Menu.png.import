@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmeuniufp1kxt"
-path="res://.godot/imported/Atlas-Props.png-61ed1ddcb5e548299b53d8422c6b950c.ctex"
+uid="uid://c45i85oo8xn58"
+path="res://.godot/imported/Main-Menu.png-aa099436e90c79bec411773762f44383.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/WorldSprites/Terrain/Atlas-Props.png"
-dest_files=["res://.godot/imported/Atlas-Props.png-61ed1ddcb5e548299b53d8422c6b950c.ctex"]
+source_file="res://Assets/Sprites/MenuSprites/Main-Menu.png"
+dest_files=["res://.godot/imported/Main-Menu.png-aa099436e90c79bec411773762f44383.ctex"]
 
 [params]
 

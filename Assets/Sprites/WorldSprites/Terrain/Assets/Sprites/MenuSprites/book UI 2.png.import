@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbplpoii2pyl6"
-path="res://.godot/imported/Tileset-Terrain2.png-11d6829a90d5137fd332198b457cd199.ctex"
+uid="uid://4fm3dgvqguj"
+path="res://.godot/imported/book UI 2.png-0fff31f5ebe839de97be6fac361c3ade.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/WorldSprites/Terrain/Tileset-Terrain2.png"
-dest_files=["res://.godot/imported/Tileset-Terrain2.png-11d6829a90d5137fd332198b457cd199.ctex"]
+source_file="res://Assets/Sprites/MenuSprites/book UI 2.png"
+dest_files=["res://.godot/imported/book UI 2.png-0fff31f5ebe839de97be6fac361c3ade.ctex"]
 
 [params]
 
