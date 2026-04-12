@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://0mxd4llt3p78"
-path="res://.godot/imported/blossom_tree_sheet.png-494dea73a958e5a5d6bf8b9405f532d7.ctex"
+path="res://.godot/imported/blossom_tree_sheet.png-9d6d4219c189164b5267eea09d9d2340.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/WorldSprites/Props/BlossomTree/blossom_tree_sheet.png"
-dest_files=["res://.godot/imported/blossom_tree_sheet.png-494dea73a958e5a5d6bf8b9405f532d7.ctex"]
+source_file="res://Assets/Sprites/WorldSprites/Terrain/Assets/Sprites/WorldSprites/Props/BlossomTree/blossom_tree_sheet.png"
+dest_files=["res://.godot/imported/blossom_tree_sheet.png-9d6d4219c189164b5267eea09d9d2340.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dy48b5pv7kek6"
-path="res://.godot/imported/Sprite Base-Sheet.png-f2fbea5951c0473d698ab205c2f62be1.ctex"
+path="res://.godot/imported/Sprite Base-Sheet.png-06fd268bcbb7d32beed8f718bad72098.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/PlayerSprites/Sprite Base-Sheet.png"
-dest_files=["res://.godot/imported/Sprite Base-Sheet.png-f2fbea5951c0473d698ab205c2f62be1.ctex"]
+source_file="res://Assets/Sprites/WorldSprites/Terrain/Assets/Sprites/PlayerSprites/Sprite Base-Sheet.png"
+dest_files=["res://.godot/imported/Sprite Base-Sheet.png-06fd268bcbb7d32beed8f718bad72098.ctex"]
 
 [params]
 
