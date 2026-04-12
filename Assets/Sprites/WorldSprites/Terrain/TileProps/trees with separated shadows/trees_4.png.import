@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgo6bowb5en3l"
-path="res://.godot/imported/trees_4.png-d3cf19e8ea55e9762dc2773ecba89c39.ctex"
+path="res://.godot/imported/trees_4.png-e2a5aca8b3366990b9bd7df2cb5985f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/WorldSprites/Terrain/TileProps/trees_4.png"
-dest_files=["res://.godot/imported/trees_4.png-d3cf19e8ea55e9762dc2773ecba89c39.ctex"]
+source_file="res://Assets/Sprites/WorldSprites/Terrain/TileProps/trees with separated shadows/trees_4.png"
+dest_files=["res://.godot/imported/trees_4.png-e2a5aca8b3366990b9bd7df2cb5985f2.ctex"]
 
 [params]
 
