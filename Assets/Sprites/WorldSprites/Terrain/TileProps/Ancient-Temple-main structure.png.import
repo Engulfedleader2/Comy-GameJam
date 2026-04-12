@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnsuv28inbxaw"
-path="res://.godot/imported/Shrine_Building.png-05dbf9bbe571600b6dd02728cdff0953.ctex"
+uid="uid://bhkes8ei8ceuk"
+path="res://.godot/imported/Ancient-Temple-main structure.png-80e255b49350bfe3367d2e1b45823025.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/WorldSprites/Props/Structures/Shrine_Building.png"
-dest_files=["res://.godot/imported/Shrine_Building.png-05dbf9bbe571600b6dd02728cdff0953.ctex"]
+source_file="res://Assets/Sprites/WorldSprites/Terrain/TileProps/Ancient-Temple-main structure.png"
+dest_files=["res://.godot/imported/Ancient-Temple-main structure.png-80e255b49350bfe3367d2e1b45823025.ctex"]
 
 [params]
 
