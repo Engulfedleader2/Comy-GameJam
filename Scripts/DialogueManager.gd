@@ -9,6 +9,8 @@ extends Node
 ##},
 ##Use the above format to avoid Errors from case sensitivity
 
+signal continue_dialogue
+
 var isactive = false
 #list of where each npc is in progress of a given dialogue
 var conversation_current_progress_list := []
@@ -93,12 +95,12 @@ var conversations = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	$Control.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	$".".position = $"../Player/Camera2D".position
 
 
 
@@ -108,6 +110,7 @@ func _on_np_cs_textaccess(Charactername: String, Conversation_List: Array, Conve
 	var Character_index
 	if Charactername not in activenpcs:
 		activenpcs.append(Charactername)
+		print(activenpcs)
 		Dialogue_Starting_Point = conversations[Default_Conversation][0]
 		currentconversation.append(Default_Conversation)
 		conversation_current_progress_list.append(Dialogue_Starting_Point)
@@ -122,6 +125,8 @@ func startconversation(Character_Index:int, Milestone_Progress:int, Current_Prog
 	var Dialoguekey = currentconversation[Character_Index]
 	var is_at_current_point = false
 	var is_waiting_for_milestone = false
+	isactive = true
+	$Control.show()
 	#Couldn't make a descriptive name, Line data is each dictionary for a line in a dialogue array
 	for line_data in conversations[Dialoguekey]:
 		var line_data_index = conversations[Dialoguekey].find(line_data)
@@ -129,6 +134,9 @@ func startconversation(Character_Index:int, Milestone_Progress:int, Current_Prog
 		if line_data_index > most_recent_milestone_index and is_waiting_for_milestone:
 			pass
 		else:
+			if line_data_index != 0:
+				await continue_dialogue
+			
 			if line_data_index >= most_recent_milestone_index:
 				is_at_current_point = true
 				print(line_data_index, "D1")
@@ -201,6 +209,7 @@ func getspeaker(Speaker: String,):
 	pass
 func endconversation(Character_Index: int, Current_Line):
 	conversation_current_progress_list[Character_Index] = Current_Line
+	$Control.hide()
 
 
 func getnextline()->Dictionary:
@@ -223,3 +232,12 @@ func getcharactercount(Conversation:String):
 		return 0
 	else:
 		return line["Text".length()]
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("Accept") and isactive:
+		emit_signal("continue_dialogue")
+		
+
+
+func _on_np_cs_endconversation() -> void:
+	pass # Replace with function body.

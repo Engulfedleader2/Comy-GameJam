@@ -1,6 +1,43 @@
 [gd_scene format=3 uid="uid://car3taykifkmu"]
 
 [ext_resource type="Script" uid="uid://chvkjhevjxcv4" path="res://Scripts/DialogueManager.gd" id="1_x1g0k"]
+[ext_resource type="Theme" uid="uid://bbx1ljtr8yeeb" path="res://Assets/Other/Basic Popup Background Theme.tres" id="2_51mcq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_321q6"]
+bg_color = Color(0.6, 0.6, 0.6, 0.18431373)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="Dialoguetest" type="Node2D" unique_id=1428042601]
 script = ExtResource("1_x1g0k")
+
+[node name="Control" type="Control" parent="." unique_id=416445884]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -800.0
+offset_top = -450.0
+offset_right = 800.0
+offset_bottom = 450.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control" unique_id=1261860110]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 323.0
+offset_top = 656.0
+offset_right = -323.0
+offset_bottom = -25.0
+
+[node name="Panel" type="Panel" parent="Control" unique_id=1258231159]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 651.0
+offset_right = 1282.0
+offset_bottom = 878.0
+theme = ExtResource("2_51mcq")
+theme_override_styles/panel = SubResource("StyleBoxFlat_321q6")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=627823537]
