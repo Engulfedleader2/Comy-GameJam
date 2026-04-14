@@ -4,6 +4,7 @@
 [ext_resource type="StyleBox" uid="uid://ixp3q2lkgsug" path="res://Assets/Other/Popup Panel Background.tres" id="1_tr38u"]
 
 [resource]
+default_font = ExtResource("1_mopn2")
 Button/fonts/font = ExtResource("1_mopn2")
 Label/fonts/font = ExtResource("1_mopn2")
 Panel/styles/panel = ExtResource("1_tr38u")

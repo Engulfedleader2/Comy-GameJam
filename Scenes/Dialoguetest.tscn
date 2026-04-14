@@ -13,31 +13,36 @@ corner_radius_bottom_left = 10
 [node name="Dialoguetest" type="Node2D" unique_id=1428042601]
 script = ExtResource("1_x1g0k")
 
-[node name="Control" type="Control" parent="." unique_id=416445884]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -800.0
-offset_top = -450.0
-offset_right = 800.0
-offset_bottom = 450.0
+[node name="Control" type="CanvasLayer" parent="." unique_id=1412003837]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control" unique_id=1261860110]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 323.0
-offset_top = 656.0
-offset_right = -323.0
-offset_bottom = -25.0
+anchors_preset = -1
+anchor_left = 0.202
+anchor_top = 0.72900003
+anchor_right = 0.79800004
+anchor_bottom = 0.97200006
+offset_left = -0.2000122
+offset_top = -0.10003662
+offset_right = 0.19995117
+offset_bottom = 0.19995117
+mouse_filter = 2
+theme = ExtResource("2_51mcq")
+theme_override_font_sizes/normal_font_size = 27
+theme_override_font_sizes/bold_font_size = 27
+theme_override_font_sizes/bold_italics_font_size = 27
+theme_override_font_sizes/italics_font_size = 27
+theme_override_font_sizes/mono_font_size = 27
 
 [node name="Panel" type="Panel" parent="Control" unique_id=1258231159]
-layout_mode = 0
-offset_left = 318.0
-offset_top = 651.0
-offset_right = 1282.0
-offset_bottom = 878.0
+anchors_preset = -1
+anchor_left = 0.19900002
+anchor_top = 0.72300005
+anchor_right = 0.80100006
+anchor_bottom = 0.9760001
+offset_left = -0.4000244
+offset_top = 0.29992676
+offset_right = 0.39990234
+offset_bottom = -0.40008545
+mouse_filter = 2
 theme = ExtResource("2_51mcq")
 theme_override_styles/panel = SubResource("StyleBoxFlat_321q6")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=627823537]

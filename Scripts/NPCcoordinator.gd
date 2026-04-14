@@ -32,4 +32,5 @@ func _on_area_2d_dialogue_request(Childname: String, Conversation_List: Array, C
 
 
 func _on_area_2d_end_conversation() -> void:
-	emit_signal("end_conversation")
+	print('abx')
+	emit_signal("endconversation")

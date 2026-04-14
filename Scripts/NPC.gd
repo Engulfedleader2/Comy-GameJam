@@ -11,7 +11,6 @@ var Fulltext: String
 var inrange:= false
 
 signal Dialogue_request
-signal end_conversation
 # Called when the node enters the scene tree for the first time.
 
 
@@ -39,7 +38,8 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	$Control.hide()
 	inrange = false
-	emit_signal("end_conversation")
+	$".."._on_area_2d_end_conversation()
+
 
 
 

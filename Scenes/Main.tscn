@@ -21,7 +21,7 @@ Spriteresource = ExtResource("5_jw32o")
 MaximumTextHeight = 100.0
 DefaultConversation = "Intro"
 Conversations = ["Intro"]
-Requirements_Completion = Array[bool]([true, false, true])
+Requirements_Completion = Array[bool]([true, false, false])
 
 [node name="Dialoguetest" parent="." unique_id=1428042601 instance=ExtResource("4_rgh2o")]
 

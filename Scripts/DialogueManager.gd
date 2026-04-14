@@ -10,6 +10,7 @@ extends Node
 ##Use the above format to avoid Errors from case sensitivity
 
 signal continue_dialogue
+signal range_end
 
 var isactive = false
 #list of where each npc is in progress of a given dialogue
@@ -125,25 +126,45 @@ func startconversation(Character_Index:int, Milestone_Progress:int, Current_Prog
 	var Dialoguekey = currentconversation[Character_Index]
 	var is_at_current_point = false
 	var is_waiting_for_milestone = false
+	var total_lines = -1
 	isactive = true
 	$Control.show()
 	#Couldn't make a descriptive name, Line data is each dictionary for a line in a dialogue array
 	for line_data in conversations[Dialoguekey]:
+		total_lines +=1
+	for line_data in conversations[Dialoguekey]:
 		var line_data_index = conversations[Dialoguekey].find(line_data)
 		var most_recent_milestone_index = conversations[Dialoguekey].find(conversation_current_progress_list[Character_Index])
-		if line_data_index > most_recent_milestone_index and is_waiting_for_milestone:
+		var return_value = line_data
+		
+		if !isactive:
+				endconversation(Character_Index,line_data)
+				return_value = getpreviousline(line_data_index, Dialoguekey)
+				return
+		if line_data_index < most_recent_milestone_index:
+			if line_data["Text_incomplete"] != null and Milestone_Progress > 0:
+				Milestone_Progress -=1 
+			pass
+		elif line_data_index > most_recent_milestone_index and is_waiting_for_milestone:
 			pass
 		else:
-			if line_data_index != 0:
-				await continue_dialogue
 			
+			if line_data_index != most_recent_milestone_index:
+				await continue_dialogue
+				if !isactive:
+					endconversation(Character_Index,line_data)
+					return_value = getpreviousline(line_data_index, Dialoguekey)
+					return
 			if line_data_index >= most_recent_milestone_index:
 				is_at_current_point = true
 				print(line_data_index, "D1")
 			if line_data["Text_incomplete"] == null:
 				if is_at_current_point:
-					print(line_data["Text"])
+					$Control/RichTextLabel.text = line_data["Text"]
 					print(line_data_index, "D2")
+					if conversations[Dialoguekey].find(line_data) == total_lines:
+						await continue_dialogue
+						endconversation(Character_Index,line_data)
 				else:
 					print(line_data_index, "D3")
 			
@@ -163,6 +184,7 @@ func startconversation(Character_Index:int, Milestone_Progress:int, Current_Prog
 						print(line_data_index, "D6")
 						print(most_recent_milestone_index,"D7")
 						endconversation(Character_Index,line_data)
+						return
 				
 				if Milestone_Progress > 0:
 					print("Debug2")
@@ -170,7 +192,7 @@ func startconversation(Character_Index:int, Milestone_Progress:int, Current_Prog
 					
 					if is_at_current_point:
 						print("Debug3")
-						print(line_data["Text"])
+						$Control/RichTextLabel.text = line_data["Text"]
 						print(line_data_index, "D8")
 						is_waiting_for_milestone = false
 					
@@ -179,15 +201,17 @@ func startconversation(Character_Index:int, Milestone_Progress:int, Current_Prog
 						if line_data_index >= most_recent_milestone_index:
 							is_waiting_for_milestone = true
 							endconversation(Character_Index,line_data)
+							return
 				
 				else:
 					print(line_data_index, "D10")
 					if is_at_current_point:
-						print(line_data["Text_incomplete"])
+						$Control/RichTextLabel.text = line_data["Text_incomplete"]
 					if line_data_index >= most_recent_milestone_index:
+						await continue_dialogue
 						endconversation(Character_Index,line_data)
 						is_waiting_for_milestone = true
-						
+						return
 	
 func Dialogue_Progress(Completion_List: Array):
 	#Once we finish the tasks system this will be updated so you can move a conversation only when a task is complete
@@ -219,9 +243,9 @@ func getcurrentline():
 	pass
 		
 	
-func getpreviousline() -> Dictionary:
-	currentindex-=1
-	return {}
+func getpreviousline(Current_line_index, Dialoguekey) -> Dictionary:
+	var previous_line = conversations[Dialoguekey][Current_line_index-1]
+	return previous_line
 func getlinecount():
 	currentconversation.size()
 	
@@ -240,4 +264,5 @@ func _input(event: InputEvent) -> void:
 
 
 func _on_np_cs_endconversation() -> void:
-	pass # Replace with function body.
+	isactive = false
+	emit_signal("continue_dialogue")
