@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://dmuyq3eb1qjpt"]
-
-[ext_resource type="Script" uid="uid://crvwaebdtm3v2" path="res://Scripts/NPCcoordinator.gd" id="1_nagxr"]
-
-[node name="NPCs" type="Node2D" unique_id=593384269]
-script = ExtResource("1_nagxr")
