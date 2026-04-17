@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://v582sd6deksl"]
+
+[node name="DialogueUi" type="CanvasLayer" unique_id=2140273448]
+
+[node name="Root" type="Control" parent="." unique_id=1602986886]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DialoguePanel" type="Panel" parent="Root" unique_id=1969042655]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.75
+anchor_right = 0.95
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Portrait" type="TextureRect" parent="Root/DialoguePanel" unique_id=267166958]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 110.0
+offset_bottom = 110.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SpeakerName" type="Label" parent="Root/DialoguePanel" unique_id=1108815980]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 10.0
+offset_right = 500.0
+offset_bottom = 35.0
+text = "Speaker"
+
+[node name="DialogueText" type="RichTextLabel" parent="Root/DialoguePanel" unique_id=1266364712]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 40.0
+offset_right = 900.0
+offset_bottom = 120.0
+bbcode_enabled = true
+text = "Dialogue appears here..."
