@@ -173,6 +173,115 @@ var conversations = {
 		"Text_incomplete": null
 		}
 	],
+	"Nikos; Short convo - 2nd loop":[
+		{
+			"Speaker":"Keya",
+			"Text":"Nikos, it's been awhile.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Nikos",
+			"Text":"*Laughs* For me, definitely. But we both know that it was yesterday for you!",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"I was trying to make you feel better about it.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Nikos",
+			"Text":"It's never bothered me, Keya.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"We grew up together, back-",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Nikos",
+			"Text":"Back when you were human. Yea, I remember. We got into a lot of trouble.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"The most trouble. We both knew this would be my role when I grew up.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Nikos",
+			"Text":"You needed to replace your mom, I get it. Don't worry about me.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Nikos",
+			"Text":"You've got work to do. We can talk once that's all taken care of.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"Thanks, Nikos. You're always calming to me.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Nikos",
+			"Text":"I try!",
+			"Text_incomplete": null
+		}
+	],
+	"Shihab; Short convo - 2nd loop":[
+		{
+			"Speaker":"Shihab",
+			"Text":"Guardian Keya! I wanted to thank you again for helping with the floods.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"You are saying that too much, but you're welcome.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"How did the repairs go?",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Shihab",
+			"Text":"The Rock Blossoms were extremely helpful until they dissipated at the end of spring.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"That's good! They put up one heck of a fight so I hoped they would be useful.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Shihab",
+			"Text":"A fight they're putting up again this year.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Shihab",
+			"Text":"Unfortunately, it's in our fields. They're trampling our crops.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"Rose filled me in. I'll take care of it.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Shihab",
+			"Text":"Like you always do?",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"Like I always do.",
+			"Text_incomplete": null
+		}
+	],
 }
 
 func _ready() -> void:
