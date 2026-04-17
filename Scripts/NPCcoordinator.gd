@@ -23,7 +23,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	pass
 
 
-func _on_area_2d_dialogue_request(Childname: String, Conversation_List: Array, Conversation_Milestones: Array, Default_Conversation: String) -> void:
+func NPC_dialogue_request(Childname: String, Conversation_List: Array, Conversation_Milestones: Array, Default_Conversation: String) -> void:
 	print("Debug2")
 	emit_signal("Textaccess",Childname, Conversation_List, Conversation_Milestones, Default_Conversation)
 

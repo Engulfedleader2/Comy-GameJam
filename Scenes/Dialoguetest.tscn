@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://car3taykifkmu"]
 
 [ext_resource type="Script" uid="uid://chvkjhevjxcv4" path="res://Scripts/DialogueManager.gd" id="1_x1g0k"]
-[ext_resource type="Theme" uid="uid://bbx1ljtr8yeeb" path="res://Assets/Other/Basic Popup Background Theme.tres" id="2_51mcq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_321q6"]
 bg_color = Color(0.6, 0.6, 0.6, 0.18431373)
@@ -26,7 +25,6 @@ offset_top = -0.10003662
 offset_right = 0.19995117
 offset_bottom = 0.19995117
 mouse_filter = 2
-theme = ExtResource("2_51mcq")
 theme_override_font_sizes/normal_font_size = 27
 theme_override_font_sizes/bold_font_size = 27
 theme_override_font_sizes/bold_italics_font_size = 27
@@ -44,5 +42,4 @@ offset_top = 0.29992676
 offset_right = 0.39990234
 offset_bottom = -0.40008545
 mouse_filter = 2
-theme = ExtResource("2_51mcq")
 theme_override_styles/panel = SubResource("StyleBoxFlat_321q6")

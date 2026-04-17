@@ -49,6 +49,6 @@ func Spritesetup():
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Interact") and inrange:
 		print("debug1")
-		emit_signal("Dialogue_request", $".".name, Conversations, Requirements_Completion, DefaultConversation)
+		get_parent().NPC_dialogue_request($".".name, Conversations, Requirements_Completion, DefaultConversation)
 		$Control.hide()
 		inrange = false
