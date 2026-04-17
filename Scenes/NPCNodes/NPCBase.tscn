@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://038ea0cxnt0g"]
 
-[ext_resource type="Script" uid="uid://chyl67ii3ww3u" path="res://Scripts/NPC.gd" id="1_i6oln"]
+[ext_resource type="Script" uid="uid://chyl67ii3ww3u" path="res://Scripts/NPCScripts/NPC.gd" id="1_i6oln"]
+[ext_resource type="Script" uid="uid://bi3p7hyuvqt5q" path="res://Scripts/NPCScripts/NPCAnimator.gd" id="1_pvn1h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_body"]
 radius = 8.0
@@ -10,6 +11,7 @@ height = 28.0
 radius = 28.0
 
 [node name="NpcBase" type="Node2D" unique_id=205594358]
+script = ExtResource("1_pvn1h")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1265258626]
 

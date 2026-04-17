@@ -68,8 +68,15 @@ func _unhandled_input(_event: InputEvent) -> void:
 			print("debug1")
 			var npc_name := get_parent().name
 			var conversation_key := DefaultConversation
+
+			if has_node("/root/QuestManager"):
+				var quest_conversation_key = QuestManager.GetConversationForNpc(npc_name)
+				if quest_conversation_key != null and str(quest_conversation_key).strip_edges() != "":
+					conversation_key = str(quest_conversation_key)
+
 			if conversation_key == "":
 				conversation_key = "Intro"
+
 			DialogueManager.start_dialogue(npc_name, Conversations, Requirements_Completion, conversation_key)
 			if has_node("Control"):
 				$Control.hide()

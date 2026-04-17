@@ -16,6 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://f02uyclnx208" path="res://Assets/Sprites/WorldSprites/Terrain/tilesets.png" id="10_xiqgv"]
 [ext_resource type="Texture2D" uid="uid://besvn2ld1hrif" path="res://Assets/Sprites/WorldSprites/Props/Structures/Shrine.png" id="11_xiqgv"]
 [ext_resource type="Texture2D" uid="uid://cpehdsnblfg7c" path="res://Assets/Sprites/WorldSprites/Props/Houses/house_02.png" id="12_waglr"]
+[ext_resource type="PackedScene" uid="uid://bskdiduwidltk" path="res://Scenes/NPCNodes/RoseNPC.tscn" id="17_r0dna"]
+[ext_resource type="PackedScene" uid="uid://djgttewwmviiu" path="res://Scenes/NPCNodes/NikoNPC.tscn" id="17_rwt1y"]
+[ext_resource type="PackedScene" uid="uid://i5nwnl4xr04o" path="res://Scenes/NPCNodes/EsmereldaNPC.tscn" id="18_mvfa8"]
+[ext_resource type="PackedScene" uid="uid://dj4bvx6jipy3h" path="res://Scenes/NPCNodes/Shihab.tscn" id="19_mvfa8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d3ars"]
 texture = ExtResource("5_ti1bm")
@@ -30566,3 +30570,45 @@ position = Vector2(948, 519)
 
 [node name="Spawn_World_Start" type="Marker2D" parent="." unique_id=1741530494]
 position = Vector2(1050, 835)
+
+[node name="NPCs" type="Node2D" parent="." unique_id=1119416730]
+position = Vector2(1044, 1010)
+
+[node name="RoseNpc" parent="NPCs" unique_id=1734844977 instance=ExtResource("17_r0dna")]
+position = Vector2(1281, -348)
+
+[node name="NikoNpc" parent="NPCs" unique_id=1116986706 instance=ExtResource("17_rwt1y")]
+position = Vector2(-365, -262)
+
+[node name="EsmereldaNPC" parent="NPCs" unique_id=1705687128 instance=ExtResource("18_mvfa8")]
+position = Vector2(273, -267)
+
+[node name="ShihabNPC" parent="NPCs" unique_id=494575715 instance=ExtResource("19_mvfa8")]
+position = Vector2(-1, -88)
+
+[node name="NPCSpawnPoints" type="Node2D" parent="." unique_id=1761662358]
+position = Vector2(1083, 975)
+
+[node name="Shihab_Loop1" type="Marker2D" parent="NPCSpawnPoints" unique_id=1145932802]
+position = Vector2(-72, -34)
+
+[node name="Shihab_Loop2" type="Marker2D" parent="NPCSpawnPoints" unique_id=915986912]
+position = Vector2(5, -32)
+
+[node name="Rose_Loop1" type="Marker2D" parent="NPCSpawnPoints" unique_id=200805754]
+position = Vector2(1275, -319)
+
+[node name="Rose_Loop2" type="Marker2D" parent="NPCSpawnPoints" unique_id=584088949]
+position = Vector2(1275, -319)
+
+[node name="Nikos_Loop1" type="Marker2D" parent="NPCSpawnPoints" unique_id=1395086184]
+position = Vector2(-440, -217)
+
+[node name="Nikos_Loop2" type="Marker2D" parent="NPCSpawnPoints" unique_id=848575043]
+position = Vector2(-367, -211)
+
+[node name="Esmerelda_Loop1" type="Marker2D" parent="NPCSpawnPoints" unique_id=1196661484]
+position = Vector2(281, -220)
+
+[node name="Esmerelda_Loop2" type="Marker2D" parent="NPCSpawnPoints" unique_id=984218648]
+position = Vector2(203, -214)

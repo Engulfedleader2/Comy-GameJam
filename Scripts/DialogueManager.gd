@@ -39,6 +39,138 @@ var active_requirements: Array[bool] = []
 # Conversation names are case sensitive.
 # They must match the NPC DefaultConversation value.
 var conversations = {
+	"Game Opening -1st loop":[
+		{
+			"Speaker":"Keya",
+			"Text":"*Yawn* Is it spring already?",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"Spirits, I'm sore everywhere. What happened while I was asleep?",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Shihab",
+			"Text":"Guardian Keya, perhaps I can answer that.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"!!!",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Shihab",
+			"Text":"I'm sorry, I- I didn't mean to scare you. I thought you would be-",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"You didn't scare me, Shihab. You only startled me.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"By the way, you dyed your hair finally? It looks good.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Shihab",
+			"Text":"You remember that?",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"I'm only awake in the spring. Things are a lot closer together for me than they are for you. How is everyone?",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Shihab",
+			"Text":"I... wish I could say that things have been good, Guardian Keya. The Blossoms are already-",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"-causing trouble? Tell me something new.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Shihab",
+			"Text":"Especially so this year.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"What do you mean?",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Shihab",
+			"Text":"Something has agitated the Water Blossoms and they're... we've already had 3 minor floods.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"Oh no, is everyone alright?",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Shihab",
+			"Text":"Yes, we evacuated quickly, but the floods are getting more severe.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"I'll figure out what's going on with the water Blossoms, don't worry. Is there anything else I can do?",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Shihab",
+			"Text":"I hate to be overbearing, but if you could gather some Rock Blossoms for us to help repair infrastructure and prepare floodwalls, we would be grateful.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"Got it.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Shihab",
+			"Text":"Before you go Guardian Keya, you forgot-",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"I didn't forget, I was... testing you if you would forget, you passed. Where's your manifested Blossom?",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Shihab",
+			"Text":"Right here, they're all yours.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"A Water Blossom? That tracks with you.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"Thank you, Shihab. I'm on it, I'll be right back after calming some Water Blossoms and taming some Rock Blossoms.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Shihab",
+			"Text":"No, thank you.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"*Thinks to herself* I might need to speak with some of the villagers of Bloom to get more information.",
+			"Text_incomplete": null
+		}
+	],
 	"Intro":[
 		{
 		"Speaker":"Esmerelda",
@@ -149,6 +281,38 @@ var conversations = {
 		"Speaker":"Keya",
 		"Text":"*Thinking to herself* Spirits... I can't help myself with her.",
 		"Text_incomplete": null,
+		}
+	],
+	"RoseNpc; Short convo - 1st loop":[
+		{
+			"Speaker":"Rose",
+			"Text":"Heya, girlie! It's been forever! Try not to leave before we can hang out this time, yea?",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"Things seem pretty hectic this year, I may not be able to-",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Rose",
+			"Text":"Aw cmon! At least say you're going to try to make time for me.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"...I'll try to make time, Rose.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Rose",
+			"Text":"AHHH! Keya, I can't wait! Total makeovers, and I won't take no for an answer.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"*Thinking to herself* What did I get myself into?",
+			"Text_incomplete": null
 		}
 	],
 	"Forest Meeting":[
@@ -344,16 +508,25 @@ func start_dialogue(character_name: String, _conversation_list: Array, conversat
 		push_warning("DialogueManager: missing conversation '%s'" % default_conversation)
 		return
 
-	if not npc_progress.has(character_name):
+	var should_reset_progress := true
+
+	if npc_progress.has(character_name):
+		var saved_state: Dictionary = npc_progress[character_name]
+		var saved_conversation := str(saved_state.get("conversation", ""))
+
+		if saved_conversation == default_conversation:
+			should_reset_progress = false
+
+	if should_reset_progress:
 		npc_progress[character_name] = {
 			"conversation": default_conversation,
 			"line_index": 0,
 		}
 
-	var saved_state: Dictionary = npc_progress[character_name]
+	var active_state: Dictionary = npc_progress[character_name]
 	active_npc_name = character_name
-	active_conversation_key = saved_state.get("conversation", default_conversation)
-	active_line_index = int(saved_state.get("line_index", 0))
+	active_conversation_key = str(active_state.get("conversation", default_conversation))
+	active_line_index = int(active_state.get("line_index", 0))
 	active_requirements = conversation_milestones.duplicate()
 	isactive = true
 	_show_dialogue_ui()
@@ -389,15 +562,22 @@ func advance_dialogue() -> void:
 	_show_current_line()
 
 func end_dialogue() -> void:
+	var finished_npc_name := active_npc_name
+	var finished_conversation_key := active_conversation_key
+
 	if active_npc_name != "":
 		npc_progress[active_npc_name] = {
 			"conversation": active_conversation_key,
 			"line_index": active_line_index,
 		}
 
+	if finished_conversation_key == "Game Opening -1st loop" and has_node("/root/QuestManager"):
+		QuestManager.SetStage("quest_interactions")
+		QuestManager.UpdateActiveQuestObjective("Speak with the villagers of Bloom to learn more.")
+
 	isactive = false
 	_hide_dialogue_ui()
-	emit_signal("dialogue_ended", active_npc_name)
+	emit_signal("dialogue_ended", finished_npc_name)
 	active_npc_name = ""
 	active_conversation_key = ""
 	active_line_index = 0
