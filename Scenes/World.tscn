@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://be6l2l3e8csua" path="res://Assets/Sprites/WorldSprites/Props/Houses/house_01.png" id="2_p70al"]
 [ext_resource type="Texture2D" uid="uid://ct7d47b8uxqm3" path="res://Assets/Sprites/WorldSprites/Terrain/Atlas-Props-sheet1.png" id="3_rwt1y"]
 [ext_resource type="Texture2D" uid="uid://cmeuniufp1kxt" path="res://Assets/Sprites/WorldSprites/Terrain/Atlas-Props.png" id="4_7yo87"]
-[ext_resource type="Texture2D" uid="uid://cpehdsnblfg7c" path="res://Assets/Sprites/WorldSprites/Props/Houses/house_02.png" id="4_kn06e"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/WorldSprites/Terrain/Assets/Sprites/WorldSprites/Props/Houses/house_02.png" id="4_kn06e"]
 [ext_resource type="Texture2D" uid="uid://clis7y3tiwal8" path="res://Assets/Sprites/WorldSprites/Terrain/Atlas-Props-sheet2.png" id="4_mvfa8"]
 [ext_resource type="Texture2D" uid="uid://bjfdl31dr6pbx" path="res://Assets/Sprites/WorldSprites/Props/Houses/house_03.png" id="5_7yo87"]
 [ext_resource type="Texture2D" uid="uid://ceblon7qyp14y" path="res://Assets/Sprites/WorldSprites/Terrain/Atlas-Props-sheet3.png" id="5_r0dna"]
@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dy6m3j7m37ck8" path="res://Assets/Sprites/WorldSprites/Terrain/props.png" id="7_b5aes"]
 [ext_resource type="TileSet" uid="uid://bkoqtgnfg1wig" path="res://ground set.tres" id="8_8l3nt"]
 [ext_resource type="Texture2D" uid="uid://bh8vqhm3ebegi" path="res://Assets/Sprites/WorldSprites/Terrain/wall-5 - 2 tiles tall dirt.png" id="9_kwl8l"]
-[ext_resource type="Texture2D" uid="uid://besvn2ld1hrif" path="res://Assets/Sprites/WorldSprites/Props/Structures/Shrine.png" id="9_ti1bm"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/WorldSprites/Terrain/Assets/Sprites/WorldSprites/Props/Structures/Shrine.png" id="9_ti1bm"]
 [ext_resource type="Texture2D" uid="uid://f02uyclnx208" path="res://Assets/Sprites/WorldSprites/Terrain/tilesets.png" id="10_xiqgv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d3ars"]
