@@ -28,11 +28,18 @@ public partial class Player : CharacterBody2D
 		UpdateFacing(direction);
 		HandleJumpInput();
 		UpdateAnimation(direction, isSprinting);
+		UpdateRenderOrder();
 	}
 
 	private Vector2 GetMovementInput()
 	{
 		return Input.GetVector("move_left", "move_right", "move_up", "move_down");
+	}
+
+	private void UpdateRenderOrder()
+	{
+		ZAsRelative = false;
+		ZIndex = Mathf.RoundToInt(GlobalPosition.Y);
 	}
 
 	private void HandleMovement(Vector2 direction, bool isSprinting)

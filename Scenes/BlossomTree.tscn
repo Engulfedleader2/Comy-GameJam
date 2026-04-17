@@ -272,6 +272,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0wrvs"]
+radius = 42.0
 
 [node name="BlossomTree" type="Node2D" unique_id=867831589]
 position = Vector2(1024, 512)
@@ -300,7 +301,8 @@ sprite_frames = SubResource("SpriteFrames_ojly7")
 animation = &"idle"
 frame_progress = 0.12705858
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1990233109]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1990233109]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=620033368]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=620033368]
+position = Vector2(10, 48)
 shape = SubResource("CircleShape2D_0wrvs")
