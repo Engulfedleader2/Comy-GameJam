@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://e0gv7f1h1iji"]
+
+[ext_resource type="PackedScene" uid="uid://crxdt53071npt" path="res://Scenes/Player.tscn" id="1_kln2b"]
+[ext_resource type="PackedScene" uid="uid://bpeqfg8w5lh2s" path="res://Scenes/camera_2d.tscn" id="2_pbw6q"]
+[ext_resource type="PackedScene" uid="uid://dmuyq3eb1qjpt" path="res://Scenes/NPC_Manager.tscn" id="3_kln2b"]
+[ext_resource type="PackedScene" uid="uid://car3taykifkmu" path="res://Scenes/Dialoguetest.tscn" id="4_rgh2o"]
+
+[node name="Main" type="Node2D" unique_id=902797140]
+
+[node name="Player" parent="." unique_id=998885337 instance=ExtResource("1_kln2b")]
+
+[node name="Camera2D" parent="Player" unique_id=2030290041 instance=ExtResource("2_pbw6q")]
+
+[node name="NPCs" parent="." unique_id=593384269 instance=ExtResource("3_kln2b")]
+position = Vector2(296, 1)
+
+[node name="Dialoguetest" parent="." unique_id=1428042601 instance=ExtResource("4_rgh2o")]
+
+[connection signal="Textaccess" from="NPCs" to="Dialoguetest" method="_on_np_cs_textaccess"]
