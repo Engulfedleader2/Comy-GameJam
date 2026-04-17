@@ -271,8 +271,8 @@ animations = [{
 "speed": 20.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0wrvs"]
-radius = 42.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wrvs"]
+size = Vector2(150, 83)
 
 [node name="BlossomTree" type="Node2D" unique_id=867831589]
 position = Vector2(1024, 512)
@@ -304,5 +304,5 @@ frame_progress = 0.12705858
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1990233109]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=620033368]
-position = Vector2(10, 48)
-shape = SubResource("CircleShape2D_0wrvs")
+position = Vector2(10, 6.5)
+shape = SubResource("RectangleShape2D_0wrvs")
