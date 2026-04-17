@@ -3,25 +3,31 @@ using Godot;
 public partial class Player : CharacterBody2D
 {
 	[Export]
-	public float Speed = 200f;
+	public float WalkSpeed = 200f;
+
+	[Export]
+	public float RunSpeed = 320f;
 
 	private AnimatedSprite2D _animatedSprite;
 	private bool _isJumping = false;
 	private string _currentAnimation = "";
+	private string _facingDirection = "right";
 
 	public override void _Ready()
 	{
 		_animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		_animatedSprite.AnimationFinished += OnAnimationFinished;
 	}
-	
+
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 direction = GetMovementInput();
+		bool isSprinting = Input.IsActionPressed("sprint");
 
-		HandleMovement(direction);
+		HandleMovement(direction, isSprinting);
+		UpdateFacing(direction);
 		HandleJumpInput();
-		UpdateAnimation(direction);
+		UpdateAnimation(direction, isSprinting);
 	}
 
 	private Vector2 GetMovementInput()
@@ -29,9 +35,10 @@ public partial class Player : CharacterBody2D
 		return Input.GetVector("move_left", "move_right", "move_up", "move_down");
 	}
 
-	private void HandleMovement(Vector2 direction)
+	private void HandleMovement(Vector2 direction, bool isSprinting)
 	{
-		Velocity = direction * Speed;
+		float currentSpeed = isSprinting ? RunSpeed : WalkSpeed;
+		Velocity = direction * currentSpeed;
 		MoveAndSlide();
 	}
 
@@ -46,14 +53,23 @@ public partial class Player : CharacterBody2D
 	private void StartJump()
 	{
 		_isJumping = true;
-		PlayAnimation("jump");
+		PlayAnimation($"jump_{_facingDirection}");
 	}
 
-	private void UpdateAnimation(Vector2 direction)
+	private void UpdateFacing(Vector2 direction)
 	{
-		UpdateFacing(direction);
+		if (direction.X < 0)
+		{
+			_facingDirection = "left";
+		}
+		else if (direction.X > 0)
+		{
+			_facingDirection = "right";
+		}
+	}
 
-		// While jumping, don't let walk/idle override the jump animation.
+	private void UpdateAnimation(Vector2 direction, bool isSprinting)
+	{
 		if (_isJumping)
 		{
 			return;
@@ -61,29 +77,22 @@ public partial class Player : CharacterBody2D
 
 		if (direction == Vector2.Zero)
 		{
-			_animatedSprite.Stop();
-			_currentAnimation = "";
+			PlayAnimation($"idle_{_facingDirection}");
 			return;
 		}
 
-		PlayAnimation("walk");
-	}
+		if (isSprinting)
+		{
+			PlayAnimation($"run_{_facingDirection}");
+			return;
+		}
 
-	private void UpdateFacing(Vector2 direction)
-	{
-		if (direction.X < 0)
-		{
-			_animatedSprite.FlipH = true;
-		}
-		else if (direction.X > 0)
-		{
-			_animatedSprite.FlipH = false;
-		}
+		PlayAnimation($"walk_{_facingDirection}");
 	}
 
 	private void PlayAnimation(string animationName)
 	{
-		if (_currentAnimation == animationName)
+		if (_currentAnimation == animationName && _animatedSprite.IsPlaying())
 		{
 			return;
 		}
@@ -94,9 +103,12 @@ public partial class Player : CharacterBody2D
 
 	private void OnAnimationFinished()
 	{
-		if (_animatedSprite.Animation == "jump")
+		if (_animatedSprite.Animation == "jump_left" || _animatedSprite.Animation == "jump_right")
 		{
 			_isJumping = false;
+			Vector2 direction = GetMovementInput();
+			bool isSprinting = Input.IsActionPressed("sprint");
+			UpdateAnimation(direction, isSprinting);
 		}
 	}
 }
