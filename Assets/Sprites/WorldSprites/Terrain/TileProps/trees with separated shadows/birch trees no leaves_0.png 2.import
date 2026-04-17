@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0mxd4llt3p78"
-path="res://.godot/imported/blossom_tree_sheet.png-9d6d4219c189164b5267eea09d9d2340.ctex"
+uid="uid://c1002bw0ty5fq"
+path="res://.godot/imported/birch trees no leaves_0.png-83c9e92f8bb6a29b26582f580fac4927.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/WorldSprites/Terrain/Assets/Sprites/WorldSprites/Props/BlossomTree/blossom_tree_sheet.png"
-dest_files=["res://.godot/imported/blossom_tree_sheet.png-9d6d4219c189164b5267eea09d9d2340.ctex"]
+source_file="res://Assets/Sprites/WorldSprites/Terrain/TileProps/trees with separated shadows/birch trees no leaves_0.png"
+dest_files=["res://.godot/imported/birch trees no leaves_0.png-83c9e92f8bb6a29b26582f580fac4927.ctex"]
 
 [params]
 
