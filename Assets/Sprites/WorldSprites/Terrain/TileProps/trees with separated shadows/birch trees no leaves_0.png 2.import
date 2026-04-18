@@ -2,16 +2,27 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:Assets/Sprites/WorldSprites/Terrain/TileProps/trees with separated shadows/birch trees no leaves_0.png 2.import
 uid="uid://c1002bw0ty5fq"
 path="res://.godot/imported/birch trees no leaves_0.png-83c9e92f8bb6a29b26582f580fac4927.ctex"
+========
+uid="uid://32fhasxwol6q"
+path="res://.godot/imported/ObjectIcons_Bus_nor.svg-8d66eac694aca183c4694c587ce8f514.ctex"
+>>>>>>>> Feature/wWiseSetup:addons/Wwise/editor/theme/dark/images/ObjectIcons_Bus_nor.svg.import
 metadata={
+"has_editor_variant": true,
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:Assets/Sprites/WorldSprites/Terrain/TileProps/trees with separated shadows/birch trees no leaves_0.png 2.import
 source_file="res://Assets/Sprites/WorldSprites/Terrain/TileProps/trees with separated shadows/birch trees no leaves_0.png"
 dest_files=["res://.godot/imported/birch trees no leaves_0.png-83c9e92f8bb6a29b26582f580fac4927.ctex"]
+========
+source_file="res://addons/Wwise/editor/theme/dark/images/ObjectIcons_Bus_nor.svg"
+dest_files=["res://.godot/imported/ObjectIcons_Bus_nor.svg-8d66eac694aca183c4694c587ce8f514.ctex"]
+>>>>>>>> Feature/wWiseSetup:addons/Wwise/editor/theme/dark/images/ObjectIcons_Bus_nor.svg.import
 
 [params]
 
@@ -38,3 +49,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=true
+editor/convert_colors_with_editor_theme=false

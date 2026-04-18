@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:Assets/Sprites/NPCSprites/NPCPotraits/Keya/MC.png.import
 uid="uid://c281fu4qw81ng"
 path="res://.godot/imported/MC.png-39be022d4fa831b1446bc127b4235139.ctex"
+========
+uid="uid://c1002bw0ty5fq"
+path="res://.godot/imported/birch trees no leaves_0.png-83c9e92f8bb6a29b26582f580fac4927.ctex"
+>>>>>>>> Feature/wWiseSetup:Assets/Sprites/WorldSprites/Terrain/TileProps/trees with separated shadows/birch trees no leaves_0.png 2.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:Assets/Sprites/NPCSprites/NPCPotraits/Keya/MC.png.import
 source_file="res://Assets/Sprites/NPCSprites/NPCPotraits/Keya/MC.png"
 dest_files=["res://.godot/imported/MC.png-39be022d4fa831b1446bc127b4235139.ctex"]
+========
+source_file="res://Assets/Sprites/WorldSprites/Terrain/TileProps/trees with separated shadows/birch trees no leaves_0.png"
+dest_files=["res://.godot/imported/birch trees no leaves_0.png-83c9e92f8bb6a29b26582f580fac4927.ctex"]
+>>>>>>>> Feature/wWiseSetup:Assets/Sprites/WorldSprites/Terrain/TileProps/trees with separated shadows/birch trees no leaves_0.png 2.import
 
 [params]
 
