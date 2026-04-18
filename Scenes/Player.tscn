@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://crxdt53071npt"]
 
 [ext_resource type="Script" uid="uid://cnsc3vh7py5ks" path="res://Scripts/Player.cs" id="1_rpqav"]
-[ext_resource type="Texture2D" uid="uid://dy48b5pv7kek6" path="res://Assets/Sprites/WorldSprites/Terrain/Assets/Sprites/PlayerSprites/Sprite Base-Sheet.png" id="2_kyqiw"]
+[ext_resource type="Texture2D" uid="uid://dy48b5pv7kek6" path="res://Assets/Sprites/PlayerSprites/Sprite Base-Sheet.png" id="2_kyqiw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gntrk"]
 atlas = ExtResource("2_kyqiw")
@@ -509,6 +509,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
+size = Vector2(15, 37)
 
 [node name="Player" type="CharacterBody2D" unique_id=998885337]
 script = ExtResource("1_rpqav")
@@ -518,8 +519,10 @@ sprite_frames = SubResource("SpriteFrames_rpqav")
 animation = &"walk_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=616857834]
+position = Vector2(0.5, 5.5)
 shape = SubResource("RectangleShape2D_kyqiw")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=860846232]
 offset = Vector2(1, 1)
+zoom = Vector2(2.54, 2.54)
 position_smoothing_enabled = true

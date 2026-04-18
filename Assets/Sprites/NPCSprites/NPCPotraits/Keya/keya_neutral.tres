@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://bkee1s23qqmas"]
+
+[ext_resource type="Texture2D" uid="uid://c281fu4qw81ng" path="res://Assets/Sprites/NPCSprites/NPCPotraits/Keya/MC.png" id="1_onuu0"]
+
+[resource]
+atlas = ExtResource("1_onuu0")
+region = Rect2(0, 0, 128, 128)

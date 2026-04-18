@@ -1,0 +1,9 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://bdq27wi1g2etb"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ugg56"]
+load_path = "res://.godot/imported/Esmerelda.png-b22f36eafd3a6a81db7c9760fb60726d.ctex"
+
+[resource]
+resource_name = "Neutral"
+atlas = SubResource("CompressedTexture2D_ugg56")
+region = Rect2(0, 0, 128, 128)
