@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:Assets/Sprites/NPCSprites/NPCPotraits/Esmeralda/Esmerelda.png.import
-uid="uid://j3416a80sxoa"
-path="res://.godot/imported/Esmerelda.png-14d25bb6383246de19a096c4cab5f4f6.ctex"
-========
 uid="uid://bvltdosfhfsrt"
 path="res://.godot/imported/wwise_audio_speaker.svg-c8bbeea5359204d3be2da0640c91add2.ctex"
->>>>>>>> Feature/wWiseSetup:addons/Wwise/editor/images/wwise_audio_speaker.svg.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:Assets/Sprites/NPCSprites/NPCPotraits/Esmeralda/Esmerelda.png.import
-source_file="res://Assets/Sprites/NPCSprites/NPCPotraits/Esmeralda/Esmerelda.png"
-dest_files=["res://.godot/imported/Esmerelda.png-14d25bb6383246de19a096c4cab5f4f6.ctex"]
-========
 source_file="res://addons/Wwise/editor/images/wwise_audio_speaker.svg"
 dest_files=["res://.godot/imported/wwise_audio_speaker.svg-c8bbeea5359204d3be2da0640c91add2.ctex"]
->>>>>>>> Feature/wWiseSetup:addons/Wwise/editor/images/wwise_audio_speaker.svg.import
 
 [params]
 

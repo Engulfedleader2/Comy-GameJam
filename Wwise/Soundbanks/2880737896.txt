@@ -1,0 +1,194 @@
+Event	ID	Name			Wwise Object Path	Notes
+	347070710	Play_Muck_up			\Default Work Unit\PCEvents\PCCombat\Play_Muck_up	
+	649585933	Play_Water_Shield			\Default Work Unit\PCEvents\PCCombat\Play_Water_Shield	
+	842623176	Play_Heat_Up			\Default Work Unit\PCEvents\PCCombat\Play_Heat_Up	
+	1038167056	Play_Tackle			\Default Work Unit\NPCEvents\NPCCombat\Play_Tackle	
+	1138858967	Play_TownMusic			\Default Work Unit\MusicEvents\Play_TownMusic	
+	1167008723	Play_Stone_Spray			\Default Work Unit\NPCEvents\NPCCombat\Play_Stone_Spray	
+	1393278952	Play_Fortress			\Default Work Unit\PCEvents\PCCombat\Play_Fortress	
+	1652994547	Play_NPCJump			\Default Work Unit\NPCEvents\Play_NPCJump	
+	1658419434	Play_Spore_smog			\Default Work Unit\NPCEvents\NPCCombat\Play_Spore_smog	
+	1726108645	Play_PCJump			\Default Work Unit\PCEvents\Play_PCJump	
+	1885250190	Play_Dirt_in_the_Eyes			\Default Work Unit\NPCEvents\NPCCombat\Play_Dirt_in_the_Eyes	
+	1904302362	Play_Fire_Shield			\Default Work Unit\PCEvents\PCCombat\Play_Fire_Shield	
+	2570041344	Play_MenuMusic			\Default Work Unit\MusicEvents\Play_MenuMusic	
+	2753202630	Stop_MenuMusic			\Default Work Unit\MusicEvents\Stop_MenuMusic	
+	2768387359	Play_Plant_Shield			\Default Work Unit\PCEvents\PCCombat\Play_Plant_Shield	
+	2779963710	Play_HydroGun			\Default Work Unit\NPCEvents\NPCCombat\Play_HydroGun	
+	2819090973	Play_Tame			\Default Work Unit\PCEvents\PCCombat\Play_Tame	
+	2832580902	Play_Water_Stream			\Default Work Unit\PCEvents\PCCombat\Play_Water_Stream	
+	2854833365	Play_Root_Drain			\Default Work Unit\PCEvents\PCCombat\Play_Root_Drain	
+	3067063784	Play_NPCSteps			\Default Work Unit\NPCEvents\Play_NPCSteps	
+	3233888351	Play_Calm			\Default Work Unit\PCEvents\PCCombat\Play_Calm	
+	3315039590	Play_Smell_The_Roses			\Default Work Unit\PCEvents\PCCombat\Play_Smell_The_Roses	
+	3405692285	Play_Burning_Passion			\Default Work Unit\PCEvents\PCCombat\Play_Burning_Passion	
+	3455141938	Play_PCSteps			\Default Work Unit\PCEvents\Play_PCSteps	
+	3504900630	Play_Healing_Drip			\Default Work Unit\PCEvents\PCCombat\Play_Healing_Drip	
+	3926520445	Play_BattleMusic			\Default Work Unit\MusicEvents\Play_BattleMusic	
+	4127706388	Play_Drain			\Default Work Unit\NPCEvents\NPCCombat\Play_Drain	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	57372634	FootJumpPC			\Default Work Unit\PCSyncs\FootJumpPC	
+	436374629	FootStepsPC			\Default Work Unit\PCSyncs\FootStepsPC	
+	660707862	FootJumpNPC			\Default Work Unit\NPCSyncs\FootJumpNPC	
+	1682058159	FootStepsNPC			\Default Work Unit\NPCSyncs\FootStepsNPC	
+
+Switch	ID	Name	Switch Group			Notes
+	1128852020	GravelJump	FootJumpPC			
+	1608852672	StoneJump	FootJumpPC			
+	1835284706	DirtJump	FootJumpPC			
+	2564151170	WoodJump	FootJumpPC			
+	2628072365	GrassJump	FootJumpPC			
+	1216965916	Stone	FootStepsPC			
+	2058049674	Wood	FootStepsPC			
+	2185786256	Gravel	FootStepsPC			
+	2195636714	Dirt	FootStepsPC			
+	4248645337	Grass	FootStepsPC			
+	1128852020	GravelJump	FootJumpNPC			
+	1608852672	StoneJump	FootJumpNPC			
+	1835284706	DirtJump	FootJumpNPC			
+	2564151170	WoodJump	FootJumpNPC			
+	2628072365	GrassJump	FootJumpNPC			
+	1216965916	Stone	FootStepsNPC			
+	2058049674	Wood	FootStepsNPC			
+	2185786256	Gravel	FootStepsNPC			
+	2195636714	Dirt	FootStepsNPC			
+	4248645337	Grass	FootStepsNPC			
+
+State Group	ID	Name			Wwise Object Path	Notes
+	1048369770	WorldState			\Default Work Unit\WorldState	
+	4015577990	MainMenuState			\Default Work Unit\MainMenuState	
+
+State	ID	Name	State Group			Notes
+	748895195	None	WorldState			
+	3998479257	MusicOn	WorldState			
+	748895195	None	MainMenuState			
+	3207097637	MusicOff	MainMenuState			
+	3998479257	MusicOn	MainMenuState			
+
+Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
+	61592046	Silence	Wwise Silence		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\StoneJump\StoneSilence\Silence	
+	185760600	Silence	Wwise Silence		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\WoodJump\WoodSilence\Silence	
+	394945722	Silence	Wwise Silence		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\WoodJump\WoodSilence\Silence	
+	563833279	Silence	Wwise Silence		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\GravelJump\GravelSilence\Silence	
+	675886235	Silence	Wwise Silence		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\DirtJump\DirtSilence\Silence	
+	700615043	Silence	Wwise Silence		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\StoneJump\StoneSilence\Silence	
+	770578908	Silence	Wwise Silence		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\GravelJump\GravelSilence\Silence	
+	774943258	Silence	Wwise Silence		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\GrassJump\GrassSilence\Silence	
+	905966172	Silence	Wwise Silence		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\GrassJump\GrassSilence\Silence	
+	1027790861	Silence	Wwise Silence		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\DirtJump\DirtSilence\Silence	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	1326857	Tackle	.cache\EA\{EAAF4C0E-AAD2-4D79-5A08-14F8CA15F8B0}.wem		\Containers\NPCSFX\ActionsSFX\NPCCombat\Tackle		91528
+	5259310	Heat Up	.cache\ED\{ED1ECB76-3994-44A2-6253-B1C8F3EAF9B2}.wem		\Containers\PlayerCharacterSFX\ActionsSFX\PCCombat\Heat Up		269144
+	6314218	Water Shield	.cache\FE\{FE345454-9B2A-5889-6129-C98BB8D8C56E}.wem		\Containers\PlayerCharacterSFX\ActionsSFX\PCCombat\Water Shield		288148
+	20423416	TomWinandySFX - FS_grass_jump_01	.cache\1C\{1CF9AE75-1B65-9D13-E770-9A736E39B6A8}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\GrassJump\GrassJumpR\TomWinandySFX - FS_grass_jump_01		47984
+	30417322	TomWinandySFX - FS_concrete_walk_05	.cache\39\{39BAFB2D-9E8E-F227-57E5-03E6F7CB456F}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCSteps\Stone\TomWinandySFX - FS_concrete_walk_05		67124
+	36243745	TomWinandySFX - FS_wood_walk_06	.cache\9A\{9AD6366E-8EAA-0331-8D10-E7157AFD70E7}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCSteps\Wood\TomWinandySFX - FS_wood_walk_06		55232
+	57698291	TomWinandySFX - FS_concrete_jump_02	.cache\B8\{B843C618-3A67-58CD-E233-8DCCA7A134CE}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\StoneJump\StoneJumpR\TomWinandySFX - FS_concrete_jump_02		42816
+	60669872	Water Stream	.cache\66\{661CFB30-B437-FCAF-A68E-D05EBC26B941}.wem		\Containers\PlayerCharacterSFX\ActionsSFX\PCCombat\Water Stream		251100
+	99312267	TomWinandySFX - FS_gravel_land_01	.cache\E1\{E19F4AF8-1652-F44E-3426-9364145B8C5D}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\GravelJump\GravelLandR\TomWinandySFX - FS_gravel_land_01		93552
+	105042543	TomWinandySFX - FS_concrete_walk_06	.cache\B8\{B88F7955-F177-6605-6E39-27DF86A72DF4}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCSteps\Stone\TomWinandySFX - FS_concrete_walk_06		67124
+	109804629	Fortress	.cache\11\{11477491-AE83-6BE2-71B1-B236A6B50CBB}.wem		\Containers\PlayerCharacterSFX\ActionsSFX\PCCombat\Fortress		150260
+	110504531	TomWinandySFX - FS_concrete_land_04	.cache\47\{470BDF6F-A287-2AE2-73B6-5AFC6FA5371E}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\StoneJump\StoneLandR\TomWinandySFX - FS_concrete_land_04		66936
+	126127481	Dirt in the Eyes	.cache\27\{27525E2A-5C5A-30A0-3288-28A4D933E835}.wem		\Containers\NPCSFX\ActionsSFX\NPCCombat\Dirt in the Eyes		330144
+	127732283	TomWinandySFX - FS_gravel_land_05	.cache\6A\{6AA3E283-5FAF-EB94-76D2-7E73BFE79B1C}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\GravelJump\GravelLandR\TomWinandySFX - FS_gravel_land_05		92996
+	138795466	TomWinandySFX - FS_dirt_walk_06	.cache\5F\{5F955C36-8D99-96A9-202C-C71EAEE8870F}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCSteps\Dirt\TomWinandySFX - FS_dirt_walk_06		106148
+	176244843	TomWinandySFX - FS_gravel_walk_04	.cache\5F\{5F826013-0B1F-BE52-7552-813F9432415F}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCSteps\Gravel\TomWinandySFX - FS_gravel_walk_04		71668
+	190896376	TomWinandySFX - FS_concrete_walk_01	.cache\D4\{D4341D5D-E2B6-C62A-AFC9-8C9090495FC3}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCSteps\Stone\TomWinandySFX - FS_concrete_walk_01		67124
+	205615104	TomWinandySFX - FS_concrete_jump_01	.cache\AC\{AC0C4BD9-F61C-9337-7961-8C981C543E82}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\StoneJump\StoneJumpR\TomWinandySFX - FS_concrete_jump_01		35844
+	212146149	TomWinandySFX - FS_wood_jump_05	.cache\44\{44077EA1-60BF-4618-AD40-22098920D1F8}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\WoodJump\WoodJumpR\TomWinandySFX - FS_wood_jump_05		72680
+	215991779	Healing Drip	.cache\4C\{4CCE970F-EC8A-B2FE-E064-97665ABF4E03}.wem		\Containers\PlayerCharacterSFX\ActionsSFX\PCCombat\Healing Drip		208764
+	216550910	TomWinandySFX - FS_dirt_jump_05	.cache\EC\{ECA2968F-3DB4-9C1A-3279-5BCE5CCD1D2A}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\DirtJump\DirtJumpR\TomWinandySFX - FS_dirt_jump_05		44808
+	226039717	TomWinandySFX - FS_grass_land_01	.cache\EB\{EB53E9BE-E204-6A52-1B1F-25AAB765C2E7}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\GrassJump\GrassLandR\TomWinandySFX - FS_grass_land_01		80700
+	241880637	TomWinandySFX - FS_concrete_land_03	.cache\15\{15C533E8-96E6-1F4F-FB4D-85ED1257F526}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\StoneJump\StoneLandR\TomWinandySFX - FS_concrete_land_03		74924
+	243169067	TomWinandySFX - FS_wood_walk_01	.cache\A5\{A5784A26-4233-221B-0113-E6147A4F5DFB}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCSteps\Wood\TomWinandySFX - FS_wood_walk_01		55192
+	255834056	TomWinandySFX - FS_gravel_walk_06	.cache\21\{21D673DC-FE13-15DB-4528-7A6303E6FA73}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCSteps\Gravel\TomWinandySFX - FS_gravel_walk_06		71668
+	278479586	TomWinandySFX - FS_grass_walk_03	.cache\CE\{CE098771-B2AA-DF2F-A601-983E1E4C0918}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCSteps\Grass\TomWinandySFX - FS_grass_walk_03		51544
+	288543707	TomWinandySFX - FS_wood_jump_06	.cache\49\{495BFCEF-8F0D-43A2-8339-7F415B04A4F2}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\WoodJump\WoodJumpR\TomWinandySFX - FS_wood_jump_06		60164
+	314273401	TomWinandySFX - FS_dirt_land_02	.cache\C3\{C3B79515-8FA0-6E71-14D2-9FB40DCEB889}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\DirtJump\DirtLandR\TomWinandySFX - FS_dirt_land_02		97668
+	359033529	Floral Game Battle 1	.cache\F2\{F2E79BD4-CA86-9D05-3603-87856ED422D2}.wem		\Containers\Music\New Music Switch Container\BattleMusic\Floral Game Battle 1		19584144
+	359435774	TomWinandySFX - FS_gravel_walk_05	.cache\49\{4943F84F-661A-AA69-B67F-C5C6D92D6EB2}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCSteps\Gravel\TomWinandySFX - FS_gravel_walk_05		71668
+	365281942	TomWinandySFX - FS_gravel_jump_01	.cache\DE\{DE53A7E1-AEFE-A797-066D-B29791A10D02}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\GravelJump\GravelJumpR\TomWinandySFX - FS_gravel_jump_01		50764
+	382804375	TomWinandySFX - FS_grass_walk_04	.cache\53\{53AD2DD5-CB9F-4870-4D6A-BA177BC8357B}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCSteps\Grass\TomWinandySFX - FS_grass_walk_04		66656
+	385252278	TomWinandySFX - FS_grass_jump_06	.cache\34\{3432006D-FB8D-F00D-62B1-43C9BFB48A4A}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\GrassJump\GrassJumpR\TomWinandySFX - FS_grass_jump_06		58532
+	397358559	Drain	.cache\B6\{B64DEF1A-DA67-C0A8-8AEF-97D5C337F4E6}.wem		\Containers\NPCSFX\ActionsSFX\NPCCombat\Drain		207724
+	400140130	TomWinandySFX - FS_concrete_land_01	.cache\AB\{AB0F5238-F43F-7401-8D62-26C8ECEB1B06}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\StoneJump\StoneLandR\TomWinandySFX - FS_concrete_land_01		58456
+	411331807	TomWinandySFX - FS_grass_land_06	.cache\8F\{8F8274DB-5A4A-B0F9-32BF-0604BF6EBF6C}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\GrassJump\GrassLandR\TomWinandySFX - FS_grass_land_06		71436
+	441080584	TomWinandySFX - FS_concrete_land_06	.cache\C7\{C7D9E41A-7116-79AF-BF3E-9BA2F45B041E}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\StoneJump\StoneLandR\TomWinandySFX - FS_concrete_land_06		73144
+	443362657	Plant Shield	.cache\E2\{E21226A0-9312-0034-DD65-834ACC8CC92F}.wem		\Containers\PlayerCharacterSFX\ActionsSFX\PCCombat\Plant Shield		286472
+	446757424	TomWinandySFX - FS_gravel_land_03	.cache\7F\{7FF7A830-FF54-2910-422E-2CA240B80DE0}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\GravelJump\GravelLandR\TomWinandySFX - FS_gravel_land_03		76388
+	447742532	TomWinandySFX - FS_grass_jump_04	.cache\6D\{6D528528-9552-0CB1-CFB5-B7E4C070F933}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\GrassJump\GrassJumpR\TomWinandySFX - FS_grass_jump_04		52224
+	465210340	TomWinandySFX - FS_gravel_land_04	.cache\FD\{FD68F47B-0CA1-9CEC-1877-E425A437647F}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\GravelJump\GravelLandR\TomWinandySFX - FS_gravel_land_04		82476
+	466561506	TomWinandySFX - FS_gravel_jump_02	.cache\D7\{D708147A-75D6-D868-CD53-D33214957BD5}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\GravelJump\GravelJumpR\TomWinandySFX - FS_gravel_jump_02		61100
+	467797237	TomWinandySFX - FS_grass_jump_03	.cache\A3\{A381BCA6-77F1-0A40-6948-CD22246E7048}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\GrassJump\GrassJumpR\TomWinandySFX - FS_grass_jump_03		48020
+	474034532	TomWinandySFX - FS_concrete_jump_06	.cache\A1\{A1167B28-1487-B557-F849-2F68A02888C4}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\StoneJump\StoneJumpR\TomWinandySFX - FS_concrete_jump_06		69112
+	476772496	Floral Game Menu 1	.cache\58\{588F7F59-B8FC-8272-F4BF-40F77801C631}.wem		\Containers\Music\New Music Switch Container\MenuMusic\Floral Game Menu 1		19265128
+	497650019	TomWinandySFX - FS_dirt_jump_03	.cache\15\{15A55AAA-F8DA-7704-5458-073D6A88A988}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\DirtJump\DirtJumpR\TomWinandySFX - FS_dirt_jump_03		48148
+	498731162	Spore smog	.cache\DD\{DD192F53-EF0B-1495-F135-962595CF0967}.wem		\Containers\NPCSFX\ActionsSFX\NPCCombat\Spore smog		247860
+	499298559	TomWinandySFX - FS_grass_walk_02	.cache\AC\{ACD72D6A-6599-D437-E239-22D02A1CED90}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCSteps\Grass\TomWinandySFX - FS_grass_walk_02		68144
+	500522725	TomWinandySFX - FS_concrete_walk_02	.cache\D3\{D3D9D94E-B54F-F645-52E2-B6845E0F88AC}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCSteps\Stone\TomWinandySFX - FS_concrete_walk_02		67124
+	508484401	TomWinandySFX - FS_wood_walk_03	.cache\B0\{B0F9FF22-B690-65F5-FB99-24F78B9DEC31}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCSteps\Wood\TomWinandySFX - FS_wood_walk_03		55080
+	523251950	Fire Shield	.cache\31\{317E8CFF-E8B9-0D1F-E355-D9560EE6D89F}.wem		\Containers\PlayerCharacterSFX\ActionsSFX\PCCombat\Fire Shield		181896
+	525664038	Calm	.cache\4D\{4DD5D30A-CAB4-A1E6-A576-541B1F9D165A}.wem		\Containers\PlayerCharacterSFX\ActionsSFX\PCCombat\Calm		485088
+	544795738	TomWinandySFX - FS_wood_walk_02	.cache\4A\{4A388B35-E894-C67C-A2A0-8B09056246A8}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCSteps\Wood\TomWinandySFX - FS_wood_walk_02		55280
+	553084065	TomWinandySFX - FS_gravel_jump_04	.cache\C0\{C05114D1-5A62-3B33-8916-9F65DD06051B}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\GravelJump\GravelJumpR\TomWinandySFX - FS_gravel_jump_04		43284
+	563909408	TomWinandySFX - FS_grass_land_03	.cache\F7\{F74F9EE4-E6D1-8BAF-0EF9-D5B6A66F7F34}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\GrassJump\GrassLandR\TomWinandySFX - FS_grass_land_03		70164
+	574183648	TomWinandySFX - FS_concrete_jump_03	.cache\F4\{F4F8BB9F-AFAA-997B-A73B-EBFACA235B2C}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\StoneJump\StoneJumpR\TomWinandySFX - FS_concrete_jump_03		35780
+	574759659	TomWinandySFX - FS_dirt_walk_04	.cache\F6\{F62D3157-ADC0-1465-F828-AF2720214215}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCSteps\Dirt\TomWinandySFX - FS_dirt_walk_04		104700
+	588703019	Root Drain	.cache\39\{39F72AFC-79E9-434A-B738-AEC91CF42D14}.wem		\Containers\PlayerCharacterSFX\ActionsSFX\PCCombat\Root Drain		367196
+	590987639	TomWinandySFX - FS_dirt_land_04	.cache\5E\{5E78319E-154E-7C96-D53C-9A58569DFC8B}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\DirtJump\DirtLandR\TomWinandySFX - FS_dirt_land_04		81144
+	594609774	Smell The Roses	.cache\51\{513480C6-88A6-C480-61C4-4092531A168F}.wem		\Containers\PlayerCharacterSFX\ActionsSFX\PCCombat\Smell The Roses		311936
+	594795880	TomWinandySFX - FS_gravel_jump_05	.cache\DC\{DCE7DB30-3E62-B07B-B7DD-BA666169F7A8}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\GravelJump\GravelJumpR\TomWinandySFX - FS_gravel_jump_05		54852
+	607289765	TomWinandySFX - FS_grass_jump_02	.cache\1D\{1DA14373-E013-8CB5-5CA4-8CA87C638D00}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\GrassJump\GrassJumpR\TomWinandySFX - FS_grass_jump_02		50452
+	612448260	TomWinandySFX - FS_concrete_jump_05	.cache\E2\{E24F4C53-7966-5E89-0C54-E1F76293A525}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\StoneJump\StoneJumpR\TomWinandySFX - FS_concrete_jump_05		66528
+	620371088	TomWinandySFX - FS_dirt_land_06	.cache\12\{12DDC7EC-C449-83DF-1B90-4EEE0E56F743}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\DirtJump\DirtLandR\TomWinandySFX - FS_dirt_land_06		104240
+	629575422	TomWinandySFX - FS_wood_landing_05	.cache\C4\{C4A68C66-7C1D-F2EC-D4E0-C5EC6190A3BD}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\WoodJump\WoodLandR\TomWinandySFX - FS_wood_landing_05		83172
+	658507978	TomWinandySFX - FS_dirt_walk_01	.cache\6F\{6FB60637-2594-0145-DABF-83C237E80935}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCSteps\Dirt\TomWinandySFX - FS_dirt_walk_01		92260
+	669606235	TomWinandySFX - FS_dirt_walk_05	.cache\B6\{B6FE42D2-1124-A4A2-E2A3-4B69E7350067}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCSteps\Dirt\TomWinandySFX - FS_dirt_walk_05		84264
+	679223672	TomWinandySFX - FS_dirt_land_05	.cache\8B\{8B434D9A-77CE-022A-2DC1-6F363747644E}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\DirtJump\DirtLandR\TomWinandySFX - FS_dirt_land_05		91068
+	686829321	TomWinandySFX - FS_dirt_walk_03	.cache\57\{5770DCC2-9E87-9E35-531A-7C17CCA4C3F0}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCSteps\Dirt\TomWinandySFX - FS_dirt_walk_03		98260
+	686977416	TomWinandySFX - FS_gravel_walk_02	.cache\4A\{4A9EEDF0-C93C-7768-AA26-DE42DB621BED}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCSteps\Gravel\TomWinandySFX - FS_gravel_walk_02		74804
+	687425492	TomWinandySFX - FS_dirt_jump_04	.cache\CA\{CA06F660-9C50-D992-CEF3-51AA40D13C0E}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\DirtJump\DirtJumpR\TomWinandySFX - FS_dirt_jump_04		47684
+	699128816	Muck up	.cache\EF\{EFC6D1BD-E509-2718-ED5C-2CEFA534C8B6}.wem		\Containers\PlayerCharacterSFX\ActionsSFX\PCCombat\Muck up		180548
+	699135945	TomWinandySFX - FS_concrete_land_05	.cache\8B\{8BC8125A-3FF6-DE2C-FDB6-3AD013848896}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\StoneJump\StoneLandR\TomWinandySFX - FS_concrete_land_05		71652
+	704314384	TomWinandySFX - FS_gravel_land_02	.cache\73\{730F0097-AB31-E767-3D55-0A1803A60F1E}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\GravelJump\GravelLandR\TomWinandySFX - FS_gravel_land_02		79876
+	707760502	TomWinandySFX - FS_concrete_walk_04	.cache\95\{954A1729-4235-7F84-D037-866053050131}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCSteps\Stone\TomWinandySFX - FS_concrete_walk_04		67124
+	715506245	TomWinandySFX - FS_concrete_land_02	.cache\20\{209A2C6A-47CD-988A-E2DA-38430FCC9B09}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\StoneJump\StoneLandR\TomWinandySFX - FS_concrete_land_02		82888
+	716646123	TomWinandySFX - FS_concrete_walk_03	.cache\EF\{EF3D8890-9D7F-A637-5830-B8F48B49C7CE}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCSteps\Stone\TomWinandySFX - FS_concrete_walk_03		67124
+	722108245	TomWinandySFX - FS_wood_landing_02	.cache\0D\{0D0DF782-59F5-ACA7-B36F-D1C6C6470015}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\WoodJump\WoodLandR\TomWinandySFX - FS_wood_landing_02		88120
+	732731483	Burning Passion	.cache\8E\{8E47B024-7279-CC64-5D33-165579A3D830}.wem		\Containers\PlayerCharacterSFX\ActionsSFX\PCCombat\Burning Passion		301776
+	766711786	TomWinandySFX - FS_wood_landing_06	.cache\C8\{C8F73887-EE13-C54B-60C4-01397E563C53}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\WoodJump\WoodLandR\TomWinandySFX - FS_wood_landing_06		96764
+	774759814	TomWinandySFX - FS_wood_landing_04	.cache\73\{7326BAA5-3B8D-70B1-1FF3-D33506E5A04C}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\WoodJump\WoodLandR\TomWinandySFX - FS_wood_landing_04		78400
+	783004936	TomWinandySFX - FS_wood_landing_01	.cache\E8\{E8DF7877-40FF-82FF-C099-B68DD9F6EBE9}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\WoodJump\WoodLandR\TomWinandySFX - FS_wood_landing_01		93632
+	794024935	TomWinandySFX - FS_gravel_walk_03	.cache\1F\{1FD3372A-0C76-66A0-FF21-B970AEF2B9DB}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCSteps\Gravel\TomWinandySFX - FS_gravel_walk_03		71984
+	799742027	TomWinandySFX - FS_grass_walk_05	.cache\96\{96ADDF7B-9FE3-C6E4-CAF3-D48D05D12A49}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCSteps\Grass\TomWinandySFX - FS_grass_walk_05		62832
+	804336006	TomWinandySFX - FS_grass_land_05	.cache\82\{8280F9D9-1DDB-1FBC-4B61-61A867CB3FCE}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\GrassJump\GrassLandR\TomWinandySFX - FS_grass_land_05		93996
+	804581588	TomWinandySFX - FS_wood_jump_04	.cache\AC\{AC99DC97-442A-548A-9C2B-22B6166CEC27}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\WoodJump\WoodJumpR\TomWinandySFX - FS_wood_jump_04		63844
+	826687405	TomWinandySFX - FS_grass_walk_06	.cache\2A\{2AB18E0B-3475-5263-9526-32BE8DF157DC}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCSteps\Grass\TomWinandySFX - FS_grass_walk_06		62476
+	829750055	TomWinandySFX - FS_wood_walk_04	.cache\5E\{5EC8C3F7-0CDA-D917-DAB3-2F0A0236EE83}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCSteps\Wood\TomWinandySFX - FS_wood_walk_04		54988
+	834210636	TomWinandySFX - FS_dirt_jump_01	.cache\C6\{C6A82933-805E-7E02-DAFF-C7459D9001A8}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\DirtJump\DirtJumpR\TomWinandySFX - FS_dirt_jump_01		41740
+	836915028	Stone Spray	.cache\28\{289F5AE6-433B-067B-DC79-7D9DD94BC28B}.wem		\Containers\NPCSFX\ActionsSFX\NPCCombat\Stone Spray		181400
+	838177011	TomWinandySFX - FS_dirt_jump_02	.cache\5B\{5B799E20-E95F-C8BE-F3AB-F2E30922D32C}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\DirtJump\DirtJumpR\TomWinandySFX - FS_dirt_jump_02		48612
+	848211705	TomWinandySFX - FS_wood_landing_03	.cache\2A\{2A2102D3-ED10-66C9-B32C-29085A54897B}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\WoodJump\WoodLandR\TomWinandySFX - FS_wood_landing_03		100132
+	848475008	TomWinandySFX - FS_gravel_jump_06	.cache\FA\{FA8850AC-B45A-ED91-C0B3-CF7861536495}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\GravelJump\GravelJumpR\TomWinandySFX - FS_gravel_jump_06		43456
+	863671737	TomWinandySFX - FS_wood_walk_05	.cache\8B\{8B9283F6-3B13-32A4-E509-DB574F7CBDA0}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCSteps\Wood\TomWinandySFX - FS_wood_walk_05		55008
+	881111027	TomWinandySFX - FS_dirt_jump_06	.cache\98\{986D6844-D751-9431-E264-78389FDAA003}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\DirtJump\DirtJumpR\TomWinandySFX - FS_dirt_jump_06		47236
+	910969138	TomWinandySFX - FS_grass_land_02	.cache\A5\{A5C322C5-0736-0B93-6CBD-2C67F14A17B5}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\GrassJump\GrassLandR\TomWinandySFX - FS_grass_land_02		68784
+	923140032	TomWinandySFX - FS_wood_jump_02	.cache\0F\{0F10F4DF-3AD3-598E-0B25-8A9A5446B70C}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\WoodJump\WoodJumpR\TomWinandySFX - FS_wood_jump_02		73420
+	925233554	TomWinandySFX - FS_gravel_land_06	.cache\F3\{F3ED8203-0A68-9DE2-D5C1-D11ACF142A2B}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\GravelJump\GravelLandR\TomWinandySFX - FS_gravel_land_06		81320
+	945467278	TomWinandySFX - FS_concrete_jump_04	.cache\36\{36435CAB-E47E-F816-8506-D2DFA414C814}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\StoneJump\StoneJumpR\TomWinandySFX - FS_concrete_jump_04		57984
+	951673062	TomWinandySFX - FS_wood_jump_01	.cache\AB\{ABCAA1E1-3C23-7DAC-E148-D22BF52265F7}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\WoodJump\WoodJumpR\TomWinandySFX - FS_wood_jump_01		73384
+	968072605	TomWinandySFX - FS_dirt_walk_02	.cache\09\{09A46EC2-DC3D-983D-140B-6028DA4F213F}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCSteps\Dirt\TomWinandySFX - FS_dirt_walk_02		103588
+	979295797	TomWinandySFX - FS_grass_walk_01	.cache\65\{65AFBEB6-1229-73B4-5FC2-93D8F3736489}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCSteps\Grass\TomWinandySFX - FS_grass_walk_01		53112
+	990518175	TomWinandySFX - FS_wood_jump_03	.cache\15\{15BCF643-F245-496D-E8AB-CC9D651F983C}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\WoodJump\WoodJumpR\TomWinandySFX - FS_wood_jump_03		63784
+	997033455	Floral game VillageOrConvo	.cache\BC\{BC573DD8-DC8A-ED1F-C09C-6E20C205CB64}.wem		\Containers\Music\New Music Switch Container\TownMusic\Floral game VillageOrConvo		15905588
+	1008789345	TomWinandySFX - FS_gravel_jump_03	.cache\57\{572D84F6-C46A-4ABF-2407-4C60D93972A6}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\GravelJump\GravelJumpR\TomWinandySFX - FS_gravel_jump_03		51912
+	1009288190	TomWinandySFX - FS_grass_land_04	.cache\62\{620DD886-4E67-3C1B-5979-9AFCF88F0A22}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\GrassJump\GrassLandR\TomWinandySFX - FS_grass_land_04		74576
+	1010334233	TomWinandySFX - FS_gravel_walk_01	.cache\A5\{A53432D6-AE5A-BB48-DE32-F178D8CCBB9A}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCSteps\Gravel\TomWinandySFX - FS_gravel_walk_01		67620
+	1016947973	TomWinandySFX - FS_dirt_land_03	.cache\5E\{5EBA7309-E171-C798-F1A7-9627348D2897}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\DirtJump\DirtLandR\TomWinandySFX - FS_dirt_land_03		92128
+	1022799202	HydroGun	.cache\71\{71CDEE7E-2138-23ED-B194-996B3F6DDCA9}.wem		\Containers\NPCSFX\ActionsSFX\NPCCombat\HydroGun		169284
+	1047601870	TomWinandySFX - FS_grass_jump_05	.cache\00\{00CD155D-C9C5-35C5-48BD-C66FFDED1D89}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\GrassJump\GrassJumpR\TomWinandySFX - FS_grass_jump_05		52220
+	1048354566	Tame	.cache\16\{16CBFFA9-3BFF-9CB5-EA7F-920683D98868}.wem		\Containers\PlayerCharacterSFX\ActionsSFX\PCCombat\Tame		333572
+	1060069184	TomWinandySFX - FS_dirt_land_01	.cache\F2\{F25FB30B-E8DC-2C01-CF27-A9F99BDCA337}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\DirtJump\DirtLandR\TomWinandySFX - FS_dirt_land_01		100076
+
