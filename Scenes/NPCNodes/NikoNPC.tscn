@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://djgttewwmviiu"]
+
+[ext_resource type="PackedScene" uid="uid://038ea0cxnt0g" path="res://Scenes/NPCNodes/NPCBase.tscn" id="1_cu08h"]
+[ext_resource type="Texture2D" uid="uid://cj4tpu4cn2ja1" path="res://Assets/Sprites/NPCSprites/NPCs.png" id="2_dcr34"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cu08h"]
+atlas = ExtResource("2_dcr34")
+region = Rect2(0, 512, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcr34"]
+atlas = ExtResource("2_dcr34")
+region = Rect2(64, 512, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qt38q"]
+atlas = ExtResource("2_dcr34")
+region = Rect2(128, 512, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iw0wa"]
+atlas = ExtResource("2_dcr34")
+region = Rect2(192, 512, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws13j"]
+atlas = ExtResource("2_dcr34")
+region = Rect2(0, 576, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_teebn"]
+atlas = ExtResource("2_dcr34")
+region = Rect2(64, 576, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3rm4"]
+atlas = ExtResource("2_dcr34")
+region = Rect2(128, 576, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ybwy"]
+atlas = ExtResource("2_dcr34")
+region = Rect2(192, 576, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0rlek"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cu08h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcr34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qt38q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iw0wa")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ws13j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_teebn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3rm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ybwy")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="NikoNPC" unique_id=1734844977 instance=ExtResource("1_cu08h")]
+
+[node name="AnimatedSprite2D" parent="CharacterBody2D" parent_id_path=PackedInt32Array(1265258626) index="1" unique_id=1569964833]
+sprite_frames = SubResource("SpriteFrames_0rlek")
+animation = &"walk"
+
+[node name="Area2D" parent="." index="1" unique_id=1691586197]
+NpcId = "Niko"
