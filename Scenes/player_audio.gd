@@ -1,6 +1,5 @@
 extends Node2D
 @onready var sprite_2d: AnimatedSprite2D = $"../AnimatedSprite2D"
-@onready var ray_cast = $RayCast2D
 @onready var ground_layers = [
 	get_node("../../Ground/MapPath"),
 	get_node("../../Ground/MapGround")

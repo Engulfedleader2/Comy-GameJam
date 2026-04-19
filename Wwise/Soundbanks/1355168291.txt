@@ -9,6 +9,7 @@ State	ID	Name	State Group			Notes
 	3998479257	MusicOn	WorldState			
 	748895195	None	CombatState			
 	748895195	None	MainMenuState			
+	3207097637	MusicOff	MainMenuState			
 	3998479257	MusicOn	MainMenuState			
 	748895195	None	TalkingState			
 

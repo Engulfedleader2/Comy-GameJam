@@ -428,6 +428,7 @@ offset_bottom = 826.0
 text = "Back
 "
 
-[connection signal="pressed" from="UI/MainButtons/StartButton" to="MainMenuAudioManager" method="_on_start_button_pressed"]
+[connection signal="mouse_entered" from="UI/MainButtons/StartButton" to="MainMenuAudioManager" method="_on_start_button_mouse_entered"]
 [connection signal="mouse_entered" from="UI/MainButtons/OptionsButton" to="MainMenuAudioManager" method="_on_options_button_mouse_entered"]
 [connection signal="pressed" from="UI/MainButtons/OptionsButton" to="MainMenuAudioManager" method="_on_options_button_pressed"]
+[connection signal="mouse_entered" from="UI/MainButtons/QuitButton" to="MainMenuAudioManager" method="_on_quit_button_mouse_entered"]

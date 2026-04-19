@@ -20,11 +20,16 @@ func _ready() -> void:
 
 
 
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-
 	
 # Button Connections
-func _on_start_button_pressed() -> void:
-	Wwise.set_state_id(AK.STATES.MAINMENUSTATE.GROUP, AK.STATES.MAINMENUSTATE.STATE.NONE)
+
+func _on_options_button_mouse_entered() -> void:
+	Wwise.post_event_id(AK.EVENTS.PLAY_BUTTON3, self)
+
+
+func _on_quit_button_mouse_entered() -> void:
+	Wwise.post_event_id(AK.EVENTS.PLAY_BUTTON3, self)
+
+
+func _on_start_button_mouse_entered() -> void:
+	Wwise.post_event_id(AK.EVENTS.PLAY_BUTTON3, self)

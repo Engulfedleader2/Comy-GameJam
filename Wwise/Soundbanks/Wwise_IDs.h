@@ -15,6 +15,9 @@ namespace AK
     {
         static const AkUniqueID PLAY_BATTLEMUSIC = 3926520445U;
         static const AkUniqueID PLAY_BURNING_PASSION = 3405692285U;
+        static const AkUniqueID PLAY_BUTTON1 = 2461875431U;
+        static const AkUniqueID PLAY_BUTTON2 = 2461875428U;
+        static const AkUniqueID PLAY_BUTTON3 = 2461875429U;
         static const AkUniqueID PLAY_CALM = 3233888351U;
         static const AkUniqueID PLAY_DIRT_IN_THE_EYES = 1885250190U;
         static const AkUniqueID PLAY_DRAIN = 4127706388U;
@@ -39,6 +42,8 @@ namespace AK
         static const AkUniqueID PLAY_TOWNMUSIC = 1138858967U;
         static const AkUniqueID PLAY_WATER_SHIELD = 649585933U;
         static const AkUniqueID PLAY_WATER_STREAM = 2832580902U;
+        static const AkUniqueID PLAY_WIDE_1 = 1628577067U;
+        static const AkUniqueID PLAY_WIDE_2 = 1628577064U;
         static const AkUniqueID STOP_MENUMUSIC = 2753202630U;
     } // namespace EVENTS
 

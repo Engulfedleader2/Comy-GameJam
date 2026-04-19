@@ -5,6 +5,7 @@ class EVENTS:
 	const PLAY_BATTLEMUSIC : int = 3926520445
 	const PLAY_MENUMUSIC : int = 2570041344
 	const PLAY_TOWNMUSIC : int = 1138858967
+	const STOP_MENUMUSIC : int = 2753202630
 	const PLAY_DIRT_IN_THE_EYES : int = 1885250190
 	const PLAY_DRAIN : int = 4127706388
 	const PLAY_HYDROGUN : int = 2779963710
@@ -28,6 +29,11 @@ class EVENTS:
 	const PLAY_WATER_STREAM : int = 2832580902
 	const PLAY_PCJUMP : int = 1726108645
 	const PLAY_PCSTEPS : int = 3455141938
+	const PLAY_BUTTON1 : int = 2461875431
+	const PLAY_BUTTON2 : int = 2461875428
+	const PLAY_BUTTON3 : int = 2461875429
+	const PLAY_WIDE_1 : int = 1628577067
+	const PLAY_WIDE_2 : int = 1628577064
 
 class STATES:
 
@@ -41,6 +47,7 @@ class STATES:
 		const GROUP : int = 4015577990
 	
 		class STATE:
+			const MUSICOFF : int = 3207097637
 			const MUSICON : int = 3998479257
 			const NONE : int = 748895195
 

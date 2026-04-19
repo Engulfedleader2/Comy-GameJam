@@ -12,7 +12,9 @@ func _ready() -> void:
 	Wwise.post_event_id(AK.EVENTS.PLAY_TOWNMUSIC, self)
 	
 	# Music play state
+	Wwise.set_state_id(AK.STATES.MAINMENUSTATE.GROUP, AK.STATES.MAINMENUSTATE.STATE.MUSICON)
+	
+	# Music play state
 	Wwise.set_state_id(AK.STATES.WORLDSTATE.GROUP, AK.STATES.WORLDSTATE.STATE.MUSICON)
 
 	
-# Footstep Manager
