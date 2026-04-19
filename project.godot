@@ -21,7 +21,6 @@ SceneManager="*uid://cu1ta7ggt7yk1"
 WwiseRuntimeManager="*uid://dk87fvps8ucsl"
 DialogueManager="*uid://dxx7ifdafwmjj"
 QuestManager="*uid://b5f4gsh01aa4c"
-WwiseRuntimeManager="*uid://dk87fvps8ucsl"
 
 [display]
 
