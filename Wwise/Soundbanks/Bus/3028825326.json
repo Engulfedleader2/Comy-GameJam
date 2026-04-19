@@ -1,0 +1,29 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Linux",
+  "BasePlatform": "Linux",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3028825326",
+    "Type": "Bus",
+    "GUID": "{280A294F-7C50-4030-883E-D9B3489E6B4B}",
+    "Language": "SFX",
+    "Hash": "{0ECD890D-3C06-809F-4B06-7D57C65A03FE}",
+    "ObjectPath": "GenVerb",
+    "ShortName": "GenVerb",
+    "Path": "Bus/3028825326.bnk",
+    "AuxBusses": [
+     {
+      "Id": "3028825326",
+      "Name": "GenVerb",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Verbs\\GenVerb",
+      "GUID": "{280A294F-7C50-4030-883E-D9B3489E6B4B}"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{F8FA1BF6-A01B-5538-A2AA-1D82FCFD16EC}"
+ }
+}
