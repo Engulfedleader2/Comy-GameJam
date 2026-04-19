@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bg6v45dqyinbg"]
 
+[ext_resource type="FontFile" uid="uid://bvid7rpj0y2si" path="res://Assets/Other/Pixelate-Regular.ttf" id="1_c8jds"]
+
 [node name="QuestDisplayUI" type="CanvasLayer" unique_id=1091156421]
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1941005351]
@@ -20,9 +22,13 @@ layout_mode = 2
 
 [node name="QuestTitleLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2065857294]
 layout_mode = 2
-text = "Current Objective"
+theme_override_fonts/font = ExtResource("1_c8jds")
+theme_override_font_sizes/font_size = 23
+text = "Current Objective:"
 
 [node name="QuestObjectiveLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=390421518]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_c8jds")
+theme_override_font_sizes/font_size = 23
 text = "Open the shrine."
 autowrap_mode = 3
