@@ -3,11 +3,59 @@ using System;
 
 public partial class World : Node2D
 {
+	private CanvasLayer? _questDisplayUi;
+	private Label? _questTitleLabel;
+	private Label? _questObjectiveLabel;
 	public override void _Ready()
 	{
 		PlacePlayerAtSpawn();
 		SpawnNpcsForCurrentLoop();
 		TriggerOpeningDialogueIfNeeded();
+		SetupQuestDisplayUi();
+	}
+
+	private void SetupQuestDisplayUi()
+	{
+		_questDisplayUi = GetNodeOrNull<CanvasLayer>("QuestDisplayUI");
+		if (_questDisplayUi == null)
+		{
+			GD.PrintErr("QuestDisplayUI node was not found in World.");
+			return;
+		}
+
+		_questTitleLabel = _questDisplayUi.GetNodeOrNull<Label>("PanelContainer/MarginContainer/VBoxContainer/QuestTitleLabel");
+		_questObjectiveLabel = _questDisplayUi.GetNodeOrNull<Label>("PanelContainer/MarginContainer/VBoxContainer/QuestObjectiveLabel");
+
+		if (_questTitleLabel != null)
+		{
+			_questTitleLabel.Text = "Current Objective";
+		}
+
+		if (_questObjectiveLabel == null)
+		{
+			GD.PrintErr("QuestObjectiveLabel was not found under QuestDisplayUI.");
+			return;
+		}
+
+		var questManager = GetNodeOrNull<QuestManager>("/root/QuestManager");
+		if (questManager == null)
+		{
+			GD.PrintErr("QuestManager autoload not found when setting up QuestDisplayUI.");
+			return;
+		}
+
+		questManager.ObjectiveUpdated += OnQuestObjectiveUpdated;
+		_questObjectiveLabel.Text = questManager.GetCurrentObjective();
+	}
+
+	private void OnQuestObjectiveUpdated(string objectiveText)
+	{
+		if (_questObjectiveLabel == null)
+		{
+			return;
+		}
+
+		_questObjectiveLabel.Text = objectiveText;
 	}
 
 	private void PlacePlayerAtSpawn()
@@ -53,24 +101,16 @@ public partial class World : Node2D
 		}
 
 		int currentLoop = questManager.CurrentLoop;
-		string currentStage = questManager.CurrentStage;
-		GD.Print($"Spawning NPCs for loop {currentLoop} at stage '{currentStage}'");
+		GD.Print($"Spawning NPCs for loop {currentLoop} at step '{questManager.GetCurrentStep()?.Id ?? "none"}'");
 
-		if (currentLoop == 1 && currentStage == "game_opening")
-		{
-			SetNpcVisible("ShihabNPC", true);
-			SetNpcVisible("NikoNpc", false);
-			SetNpcVisible("EsmereldaNPC", false);
-			MoveNpcToLoopSpawn("ShihabNPC", $"NPCSpawnPoints/Shihab_Loop{currentLoop}");
-			return;
-		}
-
+		SetNpcVisible("RoseNPC", true);
 		SetNpcVisible("ShihabNPC", true);
-		SetNpcVisible("NikoNpc", true);
+		SetNpcVisible("NikoNPC", true);
 		SetNpcVisible("EsmereldaNPC", true);
 
+		MoveNpcToLoopSpawn("RoseNPC", $"NPCSpawnPoints/Rose_Loop{currentLoop}");
 		MoveNpcToLoopSpawn("ShihabNPC", $"NPCSpawnPoints/Shihab_Loop{currentLoop}");
-		MoveNpcToLoopSpawn("NikoNpc", $"NPCSpawnPoints/Nikos_Loop{currentLoop}");
+		MoveNpcToLoopSpawn("NikoNPC", $"NPCSpawnPoints/Nikos_Loop{currentLoop}");
 		MoveNpcToLoopSpawn("EsmereldaNPC", $"NPCSpawnPoints/Esmerelda_Loop{currentLoop}");
 	}
 
@@ -83,7 +123,7 @@ public partial class World : Node2D
 			return;
 		}
 
-		if (questManager.CurrentLoop != 1 || questManager.CurrentStage != "game_opening")
+		if (questManager.CurrentLoop != 1 || !questManager.IsCurrentStep("open_shrine"))
 		{
 			return;
 		}

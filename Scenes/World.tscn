@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://be6l2l3e8csua" path="res://Assets/Sprites/WorldSprites/Props/Houses/house_01.png" id="2_p70al"]
 [ext_resource type="Texture2D" uid="uid://ct7d47b8uxqm3" path="res://Assets/Sprites/WorldSprites/Terrain/Atlas-Props-sheet1.png" id="3_rwt1y"]
 [ext_resource type="Texture2D" uid="uid://cmeuniufp1kxt" path="res://Assets/Sprites/WorldSprites/Terrain/Atlas-Props.png" id="4_7yo87"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/WorldSprites/Props/Houses/house_02.png" id="4_kn06e"]
 [ext_resource type="Texture2D" uid="uid://clis7y3tiwal8" path="res://Assets/Sprites/WorldSprites/Terrain/Atlas-Props-sheet2.png" id="4_mvfa8"]
 [ext_resource type="Texture2D" uid="uid://bjfdl31dr6pbx" path="res://Assets/Sprites/WorldSprites/Props/Houses/house_03.png" id="5_7yo87"]
 [ext_resource type="Texture2D" uid="uid://ceblon7qyp14y" path="res://Assets/Sprites/WorldSprites/Terrain/Atlas-Props-sheet3.png" id="5_r0dna"]
@@ -14,14 +13,15 @@
 [ext_resource type="Texture2D" uid="uid://dy6m3j7m37ck8" path="res://Assets/Sprites/WorldSprites/Terrain/props.png" id="7_b5aes"]
 [ext_resource type="TileSet" uid="uid://bkoqtgnfg1wig" path="res://ground set.tres" id="8_8l3nt"]
 [ext_resource type="Texture2D" uid="uid://bh8vqhm3ebegi" path="res://Assets/Sprites/WorldSprites/Terrain/wall-5 - 2 tiles tall dirt.png" id="9_kwl8l"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/WorldSprites/Props/Structures/Shrine.png" id="9_ti1bm"]
 [ext_resource type="Texture2D" uid="uid://f02uyclnx208" path="res://Assets/Sprites/WorldSprites/Terrain/tilesets.png" id="10_xiqgv"]
 [ext_resource type="Texture2D" uid="uid://besvn2ld1hrif" path="res://Assets/Sprites/WorldSprites/Props/Structures/Shrine.png" id="11_xiqgv"]
 [ext_resource type="Texture2D" uid="uid://cpehdsnblfg7c" path="res://Assets/Sprites/WorldSprites/Props/Houses/house_02.png" id="12_waglr"]
 [ext_resource type="PackedScene" uid="uid://bskdiduwidltk" path="res://Scenes/NPCNodes/RoseNPC.tscn" id="17_r0dna"]
 [ext_resource type="PackedScene" uid="uid://djgttewwmviiu" path="res://Scenes/NPCNodes/NikoNPC.tscn" id="17_rwt1y"]
 [ext_resource type="PackedScene" uid="uid://i5nwnl4xr04o" path="res://Scenes/NPCNodes/EsmereldaNPC.tscn" id="18_mvfa8"]
-[ext_resource type="PackedScene" uid="uid://dj4bvx6jipy3h" path="res://Scenes/NPCNodes/Shihab.tscn" id="19_mvfa8"]
+[ext_resource type="PackedScene" uid="uid://dj4bvx6jipy3h" path="res://Scenes/NPCNodes/ShihabNPC.tscn" id="19_mvfa8"]
+[ext_resource type="Script" uid="uid://bbagimfssdljd" path="res://Scripts/QuestAreaTrigger.cs" id="21_b5aes"]
+[ext_resource type="PackedScene" uid="uid://bg6v45dqyinbg" path="res://Scenes/QuestDisplayUI.tscn" id="22_w0bku"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d3ars"]
 texture = ExtResource("5_ti1bm")
@@ -30512,8 +30512,22 @@ sources/5 = SubResource("TileSetAtlasSource_0bcf6")
 sources/6 = SubResource("TileSetAtlasSource_xiqgv")
 sources/7 = SubResource("TileSetAtlasSource_waglr")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0dna"]
+size = Vector2(140.75, 124.75)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b5aes"]
+radius = 168.0119
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w0bku"]
+radius = 124.197426
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ao37"]
+radius = 103.04368
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d3ars"]
+radius = 1.6477858
+
 [node name="World" type="Node2D" unique_id=807799758]
-position = Vector2(5, 12)
 script = ExtResource("1_y7y61")
 
 [node name="Ground" type="Node2D" parent="." unique_id=735841432]
@@ -30576,17 +30590,26 @@ position = Vector2(1050, 835)
 [node name="NPCs" type="Node2D" parent="." unique_id=1119416730]
 position = Vector2(1044, 1010)
 
-[node name="RoseNpc" parent="NPCs" unique_id=1734844977 instance=ExtResource("17_r0dna")]
+[node name="RoseNPC" parent="NPCs" unique_id=1734844977 instance=ExtResource("17_r0dna")]
 position = Vector2(1281, -348)
 
-[node name="NikoNpc" parent="NPCs" unique_id=1116986706 instance=ExtResource("17_rwt1y")]
-position = Vector2(-365, -262)
+[node name="NikoNPC" parent="NPCs" unique_id=1116986706 instance=ExtResource("17_rwt1y")]
+position = Vector2(1666, -736)
 
 [node name="EsmereldaNPC" parent="NPCs" unique_id=1705687128 instance=ExtResource("18_mvfa8")]
-position = Vector2(273, -267)
+position = Vector2(1941, -326)
 
 [node name="ShihabNPC" parent="NPCs" unique_id=494575715 instance=ExtResource("19_mvfa8")]
 position = Vector2(-1, -88)
+
+[node name="RoadToLakeTrigger" type="Area2D" parent="NPCs" unique_id=1007652806]
+position = Vector2(1523, 20)
+script = ExtResource("21_b5aes")
+AreaId = "road_to_lake"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/RoadToLakeTrigger" unique_id=992950877]
+position = Vector2(9, 13)
+shape = SubResource("RectangleShape2D_r0dna")
 
 [node name="NPCSpawnPoints" type="Node2D" parent="." unique_id=1761662358]
 position = Vector2(1083, 975)
@@ -30604,13 +30627,65 @@ position = Vector2(1275, -319)
 position = Vector2(1275, -319)
 
 [node name="Nikos_Loop1" type="Marker2D" parent="NPCSpawnPoints" unique_id=1395086184]
-position = Vector2(-440, -217)
+position = Vector2(1597, -678)
 
 [node name="Nikos_Loop2" type="Marker2D" parent="NPCSpawnPoints" unique_id=848575043]
-position = Vector2(-367, -211)
+position = Vector2(1670, -672)
 
 [node name="Esmerelda_Loop1" type="Marker2D" parent="NPCSpawnPoints" unique_id=1196661484]
-position = Vector2(281, -220)
+position = Vector2(1959, -272)
 
 [node name="Esmerelda_Loop2" type="Marker2D" parent="NPCSpawnPoints" unique_id=984218648]
-position = Vector2(203, -214)
+position = Vector2(1881, -266)
+
+[node name="LakeAreaTrigger" type="Area2D" parent="." unique_id=449124392]
+position = Vector2(778, 1228)
+script = ExtResource("21_b5aes")
+AreaId = "lake_area"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LakeAreaTrigger" unique_id=599273570]
+position = Vector2(1, 2)
+shape = SubResource("CircleShape2D_b5aes")
+
+[node name="TameWaterTrigger" type="Area2D" parent="." unique_id=958491722]
+position = Vector2(444, 986)
+script = ExtResource("21_b5aes")
+CalmBlossomType = "water"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TameWaterTrigger" unique_id=939177762]
+position = Vector2(-3, 4)
+shape = SubResource("CircleShape2D_b5aes")
+
+[node name="BossBlossomTrigger" type="Area2D" parent="." unique_id=1273065022]
+position = Vector2(1166, 1267)
+script = ExtResource("21_b5aes")
+CalmBlossomType = "water"
+BossId = "water_boss"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossBlossomTrigger" unique_id=743351824]
+light_mask = 3
+visibility_layer = 7
+position = Vector2(-3, 6)
+shape = SubResource("CircleShape2D_w0bku")
+
+[node name="TameRockTrigger" type="Area2D" parent="." unique_id=1202027977]
+position = Vector2(516, 279)
+script = ExtResource("21_b5aes")
+TameBlossomType = "rock"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TameRockTrigger" unique_id=2146741727]
+position = Vector2(80, -14)
+shape = SubResource("CircleShape2D_0ao37")
+
+[node name="QuestDisplayUI" parent="." unique_id=1091156421 instance=ExtResource("22_w0bku")]
+
+[node name="ReturnToShrineTrigger" type="Area2D" parent="." unique_id=1743526162]
+position = Vector2(1040, 809)
+script = ExtResource("21_b5aes")
+ObjectInteractionId = "starting_shrine"
+RequiredStepId = "return_to_shrine"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ReturnToShrineTrigger" unique_id=775793736]
+position = Vector2(-1, 2)
+scale = Vector2(25, 25)
+shape = SubResource("CircleShape2D_d3ars")

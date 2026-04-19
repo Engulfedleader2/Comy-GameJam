@@ -283,7 +283,7 @@ var conversations = {
 		"Text_incomplete": null,
 		}
 	],
-	"RoseNpc; Short convo - 1st loop":[
+	"Rose; Short convo - 1st loop":[
 		{
 			"Speaker":"Rose",
 			"Text":"Heya, girlie! It's been forever! Try not to leave before we can hang out this time, yea?",
@@ -312,6 +312,124 @@ var conversations = {
 		{
 			"Speaker":"Keya",
 			"Text":"*Thinking to herself* What did I get myself into?",
+			"Text_incomplete": null
+		}
+	],
+	"Niko; Short convo - 1st loop":[
+		{
+			"Speaker":"Keya",
+			"Text":"Niko, it is good to see you again.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Niko",
+			"Text":"And you too, Keya. Bloom always feels a little brighter once spring brings you back.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"Shihab told me the Water Blossoms have been causing floods already.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Niko",
+			"Text":"They have. Everyone is worried, but everyone is also relieved you are here.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"I am going to look into it. I wanted to hear how things have been first.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Niko",
+			"Text":"Then hear this: no matter how chaotic things get, you do not have to carry Bloom alone.",
+			"Text_incomplete": null
+		}
+	],
+	"Esmerelda; Short convo - 1st loop":[
+		{
+			"Speaker":"Esmerelda",
+			"Text":"I wanted to talk to you this year about something important.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"I... alright, what do you have for me, Esme?",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Esmerelda",
+			"Text":"I can wait on the rest. Right now, just be careful out there with the Water Blossoms.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"You already know that is where I am headed next, huh?",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Esmerelda",
+			"Text":"I know you. And I know this year feels different.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"Then I will come back once I know more. Promise.",
+			"Text_incomplete": null
+		}
+	],
+	"Shihab; Return from lake - 1st loop":[
+		{
+			"Speaker":"Shihab",
+			"Text":"You made it back. Were you able to calm the Water Blossoms and gather the Rock Blossoms we needed?",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"I handled what I could out there, but something still feels off.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Shihab",
+			"Text":"Then we should not let our guard down yet. If something stronger is driving them, Bloom may still be in danger.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"Then I am not done yet. Tell me what you know, and I'll go deal with it.",
+			"Text_incomplete": null
+		}
+	],
+	"Esmerelda; Boss blossom intro - 1st loop":[
+		{
+			"Speaker":"Esmerelda",
+			"Text":"I was afraid you would say that something still felt wrong.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"You had a feeling too?",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Esmerelda",
+			"Text":"More than a feeling. The Water Blossoms are not just restless. Something larger is stirring them.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"So there really is a stronger one behind all of this.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Esmerelda",
+			"Text":"If there is, you will find it near the lake. Please be careful, Keya.",
+			"Text_incomplete": null
+		},
+		{
+			"Speaker":"Keya",
+			"Text":"I will. And when I come back, We will be safe, and I will return to my peace",
 			"Text_incomplete": null
 		}
 	],
@@ -513,8 +631,10 @@ func start_dialogue(character_name: String, _conversation_list: Array, conversat
 	if npc_progress.has(character_name):
 		var saved_state: Dictionary = npc_progress[character_name]
 		var saved_conversation := str(saved_state.get("conversation", ""))
+		var saved_line_index := int(saved_state.get("line_index", 0))
+		var saved_lines: Array = conversations.get(saved_conversation, [])
 
-		if saved_conversation == default_conversation:
+		if saved_conversation == default_conversation and saved_line_index >= 0 and saved_line_index < saved_lines.size():
 			should_reset_progress = false
 
 	if should_reset_progress:
@@ -568,12 +688,30 @@ func end_dialogue() -> void:
 	if active_npc_name != "":
 		npc_progress[active_npc_name] = {
 			"conversation": active_conversation_key,
-			"line_index": active_line_index,
+			"line_index": 0,
 		}
 
 	if finished_conversation_key == "Game Opening -1st loop" and has_node("/root/QuestManager"):
-		QuestManager.SetStage("quest_interactions")
-		QuestManager.UpdateActiveQuestObjective("Speak with the villagers of Bloom to learn more.")
+		var quest_manager = get_node("/root/QuestManager")
+		quest_manager.JumpToStep("talk_to_majors")
+
+	if has_node("/root/QuestManager"):
+		var quest_manager = get_node("/root/QuestManager")
+
+		if quest_manager.IsCurrentStep("talk_to_majors"):
+			match finished_npc_name:
+				"Rose":
+					quest_manager.ReportNpcTalked("Rose")
+				"Niko":
+					quest_manager.ReportNpcTalked("Niko")
+				"Esmerelda":
+					quest_manager.ReportNpcTalked("Esmerelda")
+
+		match finished_conversation_key:
+			"Shihab; Return from lake - 1st loop":
+				quest_manager.ReportNpcTalked("Shihab")
+			"Esmerelda; Boss blossom intro - 1st loop":
+				quest_manager.ReportNpcTalked("Esmerelda")
 
 	isactive = false
 	_hide_dialogue_ui()
