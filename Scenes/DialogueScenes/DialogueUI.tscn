@@ -1,14 +1,5 @@
 [gd_scene format=3 uid="uid://v582sd6deksl"]
 
-[ext_resource type="FontFile" uid="uid://bvid7rpj0y2si" path="res://Assets/Other/Pixelate-Regular.ttf" id="1_8fsqs"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fsqs"]
-bg_color = Color(0.105882354, 0.105882354, 0.105882354, 0.6039216)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
 [node name="DialogueUi" type="CanvasLayer" unique_id=2140273448]
 
 [node name="Root" type="Control" parent="." unique_id=1602986886]
@@ -28,7 +19,6 @@ anchor_right = 0.95
 anchor_bottom = 0.95
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_8fsqs")
 
 [node name="Portrait" type="TextureRect" parent="Root/DialoguePanel" unique_id=267166958]
 layout_mode = 0
@@ -45,7 +35,6 @@ offset_left = 125.0
 offset_top = 10.0
 offset_right = 500.0
 offset_bottom = 35.0
-theme_override_fonts/font = ExtResource("1_8fsqs")
 text = "Speaker"
 
 [node name="DialogueText" type="RichTextLabel" parent="Root/DialoguePanel" unique_id=1266364712]
@@ -54,6 +43,5 @@ offset_left = 125.0
 offset_top = 40.0
 offset_right = 900.0
 offset_bottom = 120.0
-theme_override_fonts/normal_font = ExtResource("1_8fsqs")
 bbcode_enabled = true
 text = "Dialogue appears here..."

@@ -77,6 +77,3 @@ animations = [{
 [node name="AnimatedSprite2D" parent="CharacterBody2D" parent_id_path=PackedInt32Array(1265258626) index="1" unique_id=1569964833]
 sprite_frames = SubResource("SpriteFrames_0rlek")
 animation = &"walk"
-
-[node name="Area2D" parent="." index="1" unique_id=1691586197]
-NpcId = "Shihab"

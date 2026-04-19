@@ -2,7 +2,6 @@ extends Area2D
 
 #change fulltext to export if needing to revert
 var Fulltext: String
-@export var NpcId: String
 @export var Spriteresource: SpriteFrames
 @export var MaximumTextHeight: float
 @export var DefaultConversation: String
@@ -67,9 +66,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 		print("Interact pressed. inrange:", inrange, " dialogue active:", DialogueManager.isactive)
 		if inrange and not DialogueManager.isactive:
 			print("debug1")
-			var npc_name := NpcId.strip_edges()
-			if npc_name == "":
-				npc_name = get_parent().name
+			var npc_name := get_parent().name
 			var conversation_key := DefaultConversation
 
 			if has_node("/root/QuestManager"):

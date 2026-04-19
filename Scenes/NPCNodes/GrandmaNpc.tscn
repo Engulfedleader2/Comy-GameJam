@@ -72,7 +72,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="GrandmaNPC" unique_id=1734844977 instance=ExtResource("1_muixk")]
+[node name="GrandmaNpc" unique_id=1734844977 instance=ExtResource("1_muixk")]
 
 [node name="AnimatedSprite2D" parent="CharacterBody2D" parent_id_path=PackedInt32Array(1265258626) index="1" unique_id=1569964833]
 sprite_frames = SubResource("SpriteFrames_0rlek")
