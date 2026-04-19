@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://ccjtvei3n4bae"]
+
+[sub_resource type="Animation" id="Animation_credits_scroll"]
+resource_name = "credits_scroll"
+length = 24.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../CenterContainer/MarginContainer/VBoxContainer/ScrollContainer:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 24),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 900]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_credits"]
+_data = {
+&"credits_scroll": SubResource("Animation_credits_scroll")
+}
+
+[node name="TheEnd" type="CanvasLayer" unique_id=1359642400]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1995174891]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0666667, 0.0745098, 0.109804, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=621567088]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer" unique_id=316964826]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MarginContainer" unique_id=1328640072]
+custom_minimum_size = Vector2(560, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/MarginContainer/VBoxContainer" unique_id=1486780345]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "The End"
+horizontal_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="CenterContainer/MarginContainer/VBoxContainer" unique_id=1593993749]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Thank you for playing Loop 1 of Shrine of Blossoms"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/MarginContainer/VBoxContainer" unique_id=692054945]
+custom_minimum_size = Vector2(560, 260)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1069788778]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="CreditsLabel" type="Label" parent="CenterContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=21432965]
+custom_minimum_size = Vector2(520, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Comfy Jam Prototype
+
+Project Management
+Clay
+
+Programming & Systems
+Engulfedleader2
+
+Scripting Support
+Legion Scripter
+
+Game Art
+Dearest
+
+UI Art
+Grim
+
+Sound Design
+Clay & Derlyn
+
+Dialogue Writing
+Charlotte
+
+Special Thanks
+My dog, for barking at me through development
+
+Game Tiles
+{insert name once I find it}
+
+Inspired by classic RPG taming games.
+
+A full battle system was planned,
+but it did not make it into this prototype in time.
+
+If you were hoping for more loops...
+uhhh, no.
+But if people really want that,
+then maybe.
+
+Additional Notes
+Yeah.... I think this is long enough. BYE BYE"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="BackToMenuButton" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer" unique_id=1217305716]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back to Menu"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1011001001]
+libraries/ = SubResource("AnimationLibrary_credits")
+autoplay = &"credits_scroll"
