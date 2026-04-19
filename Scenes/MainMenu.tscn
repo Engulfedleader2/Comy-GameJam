@@ -58,9 +58,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tt5f1")
 
-[node name="MainMenuAudioManager" type="Node2D" parent="." unique_id=492306227]
-script = ExtResource("4_ghw46")
-
 [node name="BookLayer" type="Node2D" parent="." unique_id=670814687]
 position = Vector2(960, 540)
 scale = Vector2(2, 2)
@@ -427,6 +424,9 @@ offset_right = 446.0
 offset_bottom = 826.0
 text = "Back
 "
+
+[node name="MainMenuAudioManager" type="Node2D" parent="." unique_id=492306227]
+script = ExtResource("4_ghw46")
 
 [connection signal="mouse_entered" from="UI/MainButtons/StartButton" to="MainMenuAudioManager" method="_on_start_button_mouse_entered"]
 [connection signal="mouse_entered" from="UI/MainButtons/OptionsButton" to="MainMenuAudioManager" method="_on_options_button_mouse_entered"]

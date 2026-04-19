@@ -121,54 +121,48 @@ name = "Default Work Unit"
 id = 125608783
 
 [sub_resource type="WwiseTreeObject" id="WwiseTreeObject_yyrou"]
-path = "\\Busses\\Default Work Unit\\Main Audio Bus\\AMBBus"
-type = 2
-name = "AMBBus"
-guid = "{970110D6-0F3E-4261-839E-855DBDBF6B75}"
-id = 2894416467
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_geu6g"]
-path = "\\Busses\\Default Work Unit\\Main Audio Bus\\MusicBus"
-type = 2
-name = "MusicBus"
-guid = "{16009F0F-E155-4D84-A5B0-E4AEB3DFDEE5}"
-id = 2886307548
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_5n8hf"]
-path = "\\Busses\\Default Work Unit\\Main Audio Bus\\NPCBus"
-type = 2
-name = "NPCBus"
-guid = "{FE6325F2-54D2-4054-97A3-23AC422AB253}"
-id = 4242951552
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_tnib1"]
-path = "\\Busses\\Default Work Unit\\Main Audio Bus\\PCBus"
-type = 2
-name = "PCBus"
-guid = "{E4A465DD-A362-49A9-94E4-787E8F429F2F}"
-id = 2746135796
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_o7sea"]
 path = "\\Busses\\Default Work Unit\\Main Audio Bus\\Verbs\\GenVerb"
 type = 1
 name = "GenVerb"
 guid = "{280A294F-7C50-4030-883E-D9B3489E6B4B}"
 id = 3028825326
 
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_lrto0"]
-path = "\\Busses\\Default Work Unit\\Main Audio Bus\\Verbs"
-children = [SubResource("WwiseTreeObject_o7sea")]
-type = 2
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_geu6g"]
+children = [SubResource("WwiseTreeObject_yyrou")]
 name = "Verbs"
-guid = "{E8B4EAAD-236B-49B6-BAC0-B42324E83B05}"
 id = 3555546861
 
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_i5cxa"]
-path = "\\Busses\\Default Work Unit\\Main Audio Bus"
-children = [SubResource("WwiseTreeObject_yyrou"), SubResource("WwiseTreeObject_geu6g"), SubResource("WwiseTreeObject_5n8hf"), SubResource("WwiseTreeObject_tnib1"), SubResource("WwiseTreeObject_lrto0")]
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_5n8hf"]
+path = "\\Busses\\Default Work Unit\\Main Audio Bus\\AMBBus"
 type = 2
+name = "AMBBus"
+guid = "{970110D6-0F3E-4261-839E-855DBDBF6B75}"
+id = 2894416467
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_tnib1"]
+path = "\\Busses\\Default Work Unit\\Main Audio Bus\\MusicBus"
+type = 2
+name = "MusicBus"
+guid = "{16009F0F-E155-4D84-A5B0-E4AEB3DFDEE5}"
+id = 2886307548
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_o7sea"]
+path = "\\Busses\\Default Work Unit\\Main Audio Bus\\NPCBus"
+type = 2
+name = "NPCBus"
+guid = "{FE6325F2-54D2-4054-97A3-23AC422AB253}"
+id = 4242951552
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_lrto0"]
+path = "\\Busses\\Default Work Unit\\Main Audio Bus\\PCBus"
+type = 2
+name = "PCBus"
+guid = "{E4A465DD-A362-49A9-94E4-787E8F429F2F}"
+id = 2746135796
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_i5cxa"]
+children = [SubResource("WwiseTreeObject_geu6g"), SubResource("WwiseTreeObject_5n8hf"), SubResource("WwiseTreeObject_tnib1"), SubResource("WwiseTreeObject_o7sea"), SubResource("WwiseTreeObject_lrto0")]
 name = "Main Audio Bus"
-guid = "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
 id = 2246998526
 
 [sub_resource type="WwiseTreeObject" id="WwiseTreeObject_ptp8y"]

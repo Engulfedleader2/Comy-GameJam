@@ -111,7 +111,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	255834056	TomWinandySFX - FS_gravel_walk_06	.cache\21\{21D673DC-FE13-15DB-4528-7A6303E6FA73}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCSteps\Gravel\TomWinandySFX - FS_gravel_walk_06		71668
 	278479586	TomWinandySFX - FS_grass_walk_03	.cache\CE\{CE098771-B2AA-DF2F-A601-983E1E4C0918}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCSteps\Grass\TomWinandySFX - FS_grass_walk_03		51544
 	288543707	TomWinandySFX - FS_wood_jump_06	.cache\49\{495BFCEF-8F0D-43A2-8339-7F415B04A4F2}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\WoodJump\WoodJumpR\TomWinandySFX - FS_wood_jump_06		60164
-	301360123	Button3	.cache\C9\{C9811801-3318-445B-95A7-4535B5CF8831}.wem		\Containers\UI\Buttons\Button3		55220
+	301360123	Button3	.cache\F9\{F9EAADCE-F2B9-9028-2921-A6A2F2F88077}.wem		\Containers\UI\Buttons\Button3		55220
 	314273401	TomWinandySFX - FS_dirt_land_02	.cache\C3\{C3B79515-8FA0-6E71-14D2-9FB40DCEB889}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\DirtJump\DirtLandR\TomWinandySFX - FS_dirt_land_02		97668
 	359033529	Floral Game Battle 1	.cache\F2\{F2E79BD4-CA86-9D05-3603-87856ED422D2}.wem		\Containers\Music\New Music Switch Container\BattleMusic\Floral Game Battle 1		19584144
 	359435774	TomWinandySFX - FS_gravel_walk_05	.cache\49\{4943F84F-661A-AA69-B67F-C5C6D92D6EB2}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCSteps\Gravel\TomWinandySFX - FS_gravel_walk_05		71668
@@ -171,7 +171,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	774759814	TomWinandySFX - FS_wood_landing_04	.cache\73\{7326BAA5-3B8D-70B1-1FF3-D33506E5A04C}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\WoodJump\WoodLandR\TomWinandySFX - FS_wood_landing_04		78400
 	783004936	TomWinandySFX - FS_wood_landing_01	.cache\E8\{E8DF7877-40FF-82FF-C099-B68DD9F6EBE9}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCJump\WoodJump\WoodLandR\TomWinandySFX - FS_wood_landing_01		93632
 	794024935	TomWinandySFX - FS_gravel_walk_03	.cache\1F\{1FD3372A-0C76-66A0-FF21-B970AEF2B9DB}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCSteps\Gravel\TomWinandySFX - FS_gravel_walk_03		71984
-	796359837	Button1	.cache\FB\{FBDB4E01-138A-2E80-D3D8-10B100FF583F}.wem		\Containers\UI\Buttons\Button1		55556
+	796359837	Button1	.cache\57\{57BD7DC6-64A7-54A3-8580-B25C3ED2D9CD}.wem		\Containers\UI\Buttons\Button1		55556
 	799742027	TomWinandySFX - FS_grass_walk_05	.cache\96\{96ADDF7B-9FE3-C6E4-CAF3-D48D05D12A49}.wem		\Containers\PlayerCharacterSFX\FootstepsAndJumps\PCSteps\Grass\TomWinandySFX - FS_grass_walk_05		62832
 	804336006	TomWinandySFX - FS_grass_land_05	.cache\82\{8280F9D9-1DDB-1FBC-4B61-61A867CB3FCE}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\GrassJump\GrassLandR\TomWinandySFX - FS_grass_land_05		93996
 	804581588	TomWinandySFX - FS_wood_jump_04	.cache\AC\{AC99DC97-442A-548A-9C2B-22B6166CEC27}.wem		\Containers\NPCSFX\FootstepsAndJumps\NPCJump\WoodJump\WoodJumpR\TomWinandySFX - FS_wood_jump_04		63844
