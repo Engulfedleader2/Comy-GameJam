@@ -21,7 +21,6 @@ SceneManager="*uid://cu1ta7ggt7yk1"
 WwiseRuntimeManager="*uid://dk87fvps8ucsl"
 DialogueManager="*uid://dxx7ifdafwmjj"
 QuestManager="*uid://b5f4gsh01aa4c"
-WwiseRuntimeManager="*uid://dk87fvps8ucsl"
 
 [display]
 
@@ -81,11 +80,3 @@ Interact={
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
-
-[wwise]
-
-common_user_settings/root_output_path="res://Wwise/Soundbanks"
-project_settings/use_soundbank_names=false
-project_settings/windows_platform_info="res://Wwise/resources/Windows.tres"
-project_settings/mac_platform_info="res://Wwise/resources/Mac.tres"
-project_settings/linux_platform_info="res://Wwise/resources/Linux.tres"

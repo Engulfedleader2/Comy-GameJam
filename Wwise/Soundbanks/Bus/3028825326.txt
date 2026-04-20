@@ -1,3 +1,0 @@
-Auxiliary Bus	ID	Name			Wwise Object Path	Notes
-	3028825326	GenVerb			\Default Work Unit\Main Audio Bus\Verbs\GenVerb	
-
