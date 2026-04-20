@@ -30524,6 +30524,28 @@ radius = 168.0119
 [sub_resource type="CircleShape2D" id="CircleShape2D_d3ars"]
 radius = 1.6477858
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_w0bku"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0ao37"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_d3ars"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_l11rc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ao37"]
+size = Vector2(53, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3ars"]
+size = Vector2(17, 148)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w0bku"]
+size = Vector2(486, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l11rc"]
+size = Vector2(85, 34)
+
 [node name="World" type="Node2D" unique_id=807799758]
 script = ExtResource("1_y7y61")
 
@@ -30666,3 +30688,96 @@ position = Vector2(474, 1096)
 [node name="WaterBossBlossomEncounter" parent="." unique_id=1116898858 instance=ExtResource("25_l11rc")]
 z_index = 3
 position = Vector2(1167, 1250)
+[node name="Worldborders" type="Node2D" parent="." unique_id=1476052796]
+
+[node name="Leftborder" type="StaticBody2D" parent="Worldborders" unique_id=886350762]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Worldborders/Leftborder" unique_id=12919752]
+position = Vector2(-11, 1114)
+scale = Vector2(1, 13.359999)
+shape = SubResource("WorldBoundaryShape2D_w0bku")
+
+[node name="Rightborder" type="StaticBody2D" parent="Worldborders" unique_id=972785519]
+position = Vector2(3438, -24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Worldborders/Rightborder" unique_id=2005497887]
+position = Vector2(-51, 895.99994)
+scale = Vector2(1, 22.079998)
+shape = SubResource("WorldBoundaryShape2D_0ao37")
+
+[node name="BottomBorder" type="StaticBody2D" parent="Worldborders" unique_id=1219197495]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Worldborders/BottomBorder" unique_id=1279105860]
+position = Vector2(1661, 2127)
+scale = Vector2(39.600002, 1)
+shape = SubResource("WorldBoundaryShape2D_d3ars")
+
+[node name="TopBorder" type="StaticBody2D" parent="Worldborders" unique_id=521175256]
+position = Vector2(1308, -19)
+scale = Vector2(41.83269, -1.3264513)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Worldborders/TopBorder" unique_id=1979255482]
+position = Vector2(0, -12.062259)
+shape = SubResource("WorldBoundaryShape2D_l11rc")
+
+[node name="OtherBorders" type="Node2D" parent="." unique_id=1235447850]
+
+[node name="LavaPlateau" type="Node2D" parent="OtherBorders" unique_id=558252589]
+
+[node name="LavaPlateauBorder3" type="StaticBody2D" parent="OtherBorders/LavaPlateau" unique_id=1340932917]
+position = Vector2(713, 412)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OtherBorders/LavaPlateau/LavaPlateauBorder3" unique_id=932030117]
+position = Vector2(-48.5, -37.5)
+shape = SubResource("RectangleShape2D_0ao37")
+
+[node name="LavaPlateauBorder5" type="StaticBody2D" parent="OtherBorders/LavaPlateau" unique_id=1831987381]
+position = Vector2(709, 247)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OtherBorders/LavaPlateau/LavaPlateauBorder5" unique_id=163728622]
+polygon = PackedVector2Array(-1, -1, -1, 52, 2, 52, 3, 40, 19, 32, 20, 22, 54, 22, 149, 23, 166, 14, 174, -2, 172, -154, 171, -262, 165, -263, 164, -149, 160, -143, 164, -125, 167, -105, 164, -57, 164, -39, 153, -36, 154, -22, 148, -18, 147, -27, 130, -24, 125, -28, 116, -26, 102, -24, 76, -23, 62, -23, 61, -29, 54, -26, 45, -29, 37, -23, 30, -23, 30, -28, 21, -26, 13, -29, 5, -25, 5, -25, 13, -6)
+
+[node name="LavaPlateauBorder4" type="StaticBody2D" parent="OtherBorders/LavaPlateau" unique_id=1730629709]
+position = Vector2(713, 412)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OtherBorders/LavaPlateau/LavaPlateauBorder4" unique_id=1987693174]
+position = Vector2(-13.5, -92)
+shape = SubResource("RectangleShape2D_d3ars")
+
+[node name="LavaPlateauBorder2" type="StaticBody2D" parent="OtherBorders/LavaPlateau" unique_id=1159722906]
+position = Vector2(32, 38)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OtherBorders/LavaPlateau/LavaPlateauBorder2" unique_id=1148259924]
+polygon = PackedVector2Array(449, 381, 448, 358, 474, 334, 479, 319, 487, 316, 489, 371, 472, 377, 472, 388, 449, 406)
+
+[node name="LavaPlateauBorder1" type="StaticBody2D" parent="OtherBorders/LavaPlateau" unique_id=1618554257]
+position = Vector2(212, 423)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OtherBorders/LavaPlateau/LavaPlateauBorder1" unique_id=607555533]
+position = Vector2(25, -1.5)
+shape = SubResource("RectangleShape2D_w0bku")
+
+[node name="Largelavalake" type="StaticBody2D" parent="OtherBorders/LavaPlateau" unique_id=1688445742]
+position = Vector2(478, 129)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="OtherBorders/LavaPlateau/Largelavalake" unique_id=999143891]
+polygon = PackedVector2Array(-86, -49, 124, -52, 130, -35, 141, -35, 152, -24, 155, -14, 147, -5, 140, 8, 140, 18, 127, 35, 124, 42, 124, 46, 111, 48, 102, 51, 97, 49, 88, 50, 83, 47, 73, 51, 66, 49, 57, 50, 51, 47, 39, 52, 32, 49, 25, 50, 20, 47, 7, 52, 1, 49, -7, 50, -16, 48, -24, 52, -31, 49, -41, 52, -47, 49, -53, 49, -57, 44, -57, 36, -63, 30, -77, 32, -86, 34, -93, 44, -99, 55, -98, 63, -104, 68, -110, 64, -119, 65, -122, 51, -126, 45, -134, 46, -136, 51, -141, 48, -150, 48, -153, 13, -139, 12, -134, 8, -130, 4, -125, 3, -124, -2, -119, -3, -118, -19, -103, -20, -100, -24, -94, -28, -91, -33, -88, -35)
+
+[node name="SmallLavalake" type="StaticBody2D" parent="OtherBorders/LavaPlateau" unique_id=34815464]
+position = Vector2(164, 82)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="OtherBorders/LavaPlateau/SmallLavalake" unique_id=1405601439]
+polygon = PackedVector2Array(-14, 48, 20, 48, 24, 46, 23, 42, 23, 36, 26, 31, 30, 27, 30, 23, 34, 19, 39, 18, 40, 16, 48, 16, 55, 15, 55, -21, 45, -24, 39, -34, 31, -36, 26, -38, 26, -46, 24, -49, 24, -52, 18, -53, 11, -55, -11, -54, -13, -48, -14, -46, -14, -38, -18, -38, -18, -32, -19, -31, -24, -31, -24, -29, -25, -29, -25, -28, -25, -26, -26, -26, -26, -25, -30, -25, -30, -21, -33, -21, -33, -20, -37, -20, -37, -22, -42, -22, -44, -19, -47, -19, -47, -16, -48, -14, -47, -6, -47, -4, -48, -4, -48, 3, -47, 4, -46, 6, -46, 9, -48, 9, -48, 12, -46, 13, -46, 15, -42, 15, -42, 14, -39, 14, -39, 15, -38, 15, -38, 19, -37, 19, -37, 16, -30, 16, -30, 17, -29, 17, -29, 18, -29, 20, -26, 20, -26, 21, -25, 21, -25, 24, -25, 25, -24, 25, -24, 26, -23, 26, -23, 29, -20, 29, -20, 30, -19, 30, -19, 33, -17, 33, -17, 34, -16, 34, -16, 35, -15, 35, -15, 45, -14, 45)
+
+[node name="BorderLavaLake" type="StaticBody2D" parent="OtherBorders/LavaPlateau" unique_id=1927898421]
+position = Vector2(16, 157)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="OtherBorders/LavaPlateau/BorderLavaLake" unique_id=1498805287]
+polygon = PackedVector2Array(-3, 26, -4, 106, -5, 194, -20, 198, -23, 211, -25, 192, -25, -54, -23, -172, 72, -172, 71, -159, 120, -158, 119, -153, 115, -152, 112, -155, 105, -154, 104, -156, 100, -155, 91, -155, 82, -144, 76, -143, 76, -125, 69, -124, 67, -122, 65, -124, 59, -122, 59, -120, 55, -120, 51, -115, 50, -111, 47, -108, 46, -105, 44, -102, 43, -102, 43, -97, 44, -97, 44, -92, 41, -92, 41, -90, 38, -90, 37, -92, 35, -92, 25, -90, 18, -90, 14, -91, 11, -88, 7, -88, 7, -87, 3, -83, 2, -83, 2, -79, 1, -78, 0, -78, 0, -77, -1, -77, -1, -76, -2, -76, -2, -73, -3, -73, -3, -72, -4, -72, -4, -70, -5, -70, -5, -65, -4, -65, -4, -63, -4, -42, -5, -15, -5, 17)
+
+[node name="BridgeCollider" type="StaticBody2D" parent="OtherBorders" unique_id=1896244789]
+position = Vector2(2748, 1547)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OtherBorders/BridgeCollider" unique_id=1404610981]
+position = Vector2(-2.5, -7)
+shape = SubResource("RectangleShape2D_l11rc")
