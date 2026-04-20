@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cnsc3vh7py5ks" path="res://Scripts/Player.cs" id="1_rpqav"]
 [ext_resource type="Texture2D" uid="uid://dy48b5pv7kek6" path="res://Assets/Sprites/PlayerSprites/Sprite Base-Sheet.png" id="2_kyqiw"]
+[ext_resource type="Script" uid="uid://dum6k2go4a8y5" path="res://Scenes/player_audio.gd" id="3_gntrk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gntrk"]
 atlas = ExtResource("2_kyqiw")
@@ -516,7 +517,7 @@ script = ExtResource("1_rpqav")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1109182356]
 sprite_frames = SubResource("SpriteFrames_rpqav")
-animation = &"walk_right"
+animation = &"idle_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=616857834]
 position = Vector2(0.5, 5.5)
@@ -526,3 +527,9 @@ shape = SubResource("RectangleShape2D_kyqiw")
 offset = Vector2(1, 1)
 zoom = Vector2(2.54, 2.54)
 position_smoothing_enabled = true
+
+[node name="PlayerAudio" type="Node2D" parent="." unique_id=175626276]
+script = ExtResource("3_gntrk")
+
+[connection signal="frame_changed" from="AnimatedSprite2D" to="PlayerAudio" method="_on_animated_sprite_2d_frame_changed"]
+[connection signal="sprite_frames_changed" from="AnimatedSprite2D" to="PlayerAudio" method="_on_animated_sprite_2d_sprite_frames_changed"]
