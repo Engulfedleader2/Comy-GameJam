@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://j6un3sfmypgv"]
 
 [ext_resource type="Texture2D" uid="uid://de0l53432fjfe" path="res://Assets/Sprites/BlossomSprites/Rock2.png" id="1_2syok"]
+[ext_resource type="Script" uid="uid://du1j012tvnsqv" path="res://Scripts/BlossomEncounterTrigger.cs" id="2_c4lif"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c4lif"]
 atlas = ExtResource("1_2syok")
@@ -116,20 +117,31 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2cjsq"]
+radius = 42.0
 
-[node name="WaterBlossomEncounter" type="Node2D" unique_id=1286018269]
+[node name="RockBlossomEncounter" type="Node2D" unique_id=1286018269]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=837740506]
 sprite_frames = SubResource("SpriteFrames_jwbjy")
 animation = &"idle"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1705460177]
+script = ExtResource("2_c4lif")
+RequiredStepId = "tame_rock_blossoms"
+TameBlossomType = "rock"
+HideUntilRequiredStepActive = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1627750641]
 shape = SubResource("CircleShape2D_2cjsq")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=283443422]
+position = Vector2(0, -56)
 
-[node name="Label" type="Label" parent="." unique_id=893696736]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="InteractionLabel" type="Label" parent="." unique_id=893696736]
+visible = false
+offset_left = -48.0
+offset_top = -82.0
+offset_right = 48.0
+offset_bottom = -56.0
+text = "Press E"
+horizontal_alignment = 1

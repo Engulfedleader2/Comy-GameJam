@@ -1,62 +1,62 @@
-[gd_scene format=3 uid="uid://be308ooa1pp"]
+[gd_scene format=3 uid="uid://bb3hgklty67ia"]
 
-[ext_resource type="Texture2D" uid="uid://cho3b06fhnsq0" path="res://Assets/Sprites/BlossomSprites/Bloop_2.png" id="1_i3nwb"]
-[ext_resource type="Script" uid="uid://du1j012tvnsqv" path="res://Scripts/BlossomEncounterTrigger.cs" id="2_ytn51"]
+[ext_resource type="Texture2D" uid="uid://cho3b06fhnsq0" path="res://Assets/Sprites/BlossomSprites/Bloop_2.png" id="1_awf2l"]
+[ext_resource type="Script" uid="uid://du1j012tvnsqv" path="res://Scripts/BlossomEncounterTrigger.cs" id="2_mwdoo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ytn51"]
-atlas = ExtResource("1_i3nwb")
+atlas = ExtResource("1_awf2l")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wymra"]
-atlas = ExtResource("1_i3nwb")
+atlas = ExtResource("1_awf2l")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_022cv"]
-atlas = ExtResource("1_i3nwb")
+atlas = ExtResource("1_awf2l")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o6i4x"]
-atlas = ExtResource("1_i3nwb")
+atlas = ExtResource("1_awf2l")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5kplm"]
-atlas = ExtResource("1_i3nwb")
+atlas = ExtResource("1_awf2l")
 region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sym5p"]
-atlas = ExtResource("1_i3nwb")
+atlas = ExtResource("1_awf2l")
 region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xp02v"]
-atlas = ExtResource("1_i3nwb")
+atlas = ExtResource("1_awf2l")
 region = Rect2(384, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g0275"]
-atlas = ExtResource("1_i3nwb")
+atlas = ExtResource("1_awf2l")
 region = Rect2(448, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y2eof"]
-atlas = ExtResource("1_i3nwb")
+atlas = ExtResource("1_awf2l")
 region = Rect2(512, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_36lb1"]
-atlas = ExtResource("1_i3nwb")
+atlas = ExtResource("1_awf2l")
 region = Rect2(576, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sejda"]
-atlas = ExtResource("1_i3nwb")
+atlas = ExtResource("1_awf2l")
 region = Rect2(640, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qmo6q"]
-atlas = ExtResource("1_i3nwb")
+atlas = ExtResource("1_awf2l")
 region = Rect2(704, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bhko1"]
-atlas = ExtResource("1_i3nwb")
+atlas = ExtResource("1_awf2l")
 region = Rect2(768, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ee6qy"]
-atlas = ExtResource("1_i3nwb")
+atlas = ExtResource("1_awf2l")
 region = Rect2(832, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jx73x"]
@@ -110,31 +110,35 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_juttp"]
-radius = 42.0
+radius = 52.086468
 
-[node name="WaterBlossomEncounter" type="Node2D" unique_id=1286018269]
+[node name="WaterBossBlossomEncounter" type="Node2D" unique_id=1286018269]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=837740506]
+modulate = Color(1, 0.62, 0.28, 1)
+scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_jx73x")
 animation = &"idle"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1705460177]
-script = ExtResource("2_ytn51")
-RequiredStepId = "calm_water_blossoms"
-CalmBlossomType = "water"
+script = ExtResource("2_mwdoo")
+RequiredStepId = "calm_boss"
+BossId = "water_boss"
+CompletionMessage = "BOSS IS TAMED"
 HideUntilRequiredStepActive = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1627750641]
 shape = SubResource("CircleShape2D_juttp")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=283443422]
-position = Vector2(0, -56)
+position = Vector2(0, -170)
 
 [node name="InteractionLabel" type="Label" parent="." unique_id=893696736]
 visible = false
-offset_left = -48.0
-offset_top = -82.0
-offset_right = 48.0
-offset_bottom = -56.0
+offset_left = -90.0
+offset_top = -200.0
+offset_right = 90.0
+offset_bottom = -160.0
+theme_override_font_sizes/font_size = 24
 text = "Press E"
 horizontal_alignment = 1
