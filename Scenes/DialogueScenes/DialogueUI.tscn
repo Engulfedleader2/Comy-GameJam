@@ -58,10 +58,10 @@ text = "Speaker"
 
 [node name="DialogueText" type="RichTextLabel" parent="Root/DialoguePanel" unique_id=1266364712]
 layout_mode = 0
-offset_left = 178.0
-offset_top = 76.0
-offset_right = 930.0
-offset_bottom = 178.0
+offset_left = 170.0
+offset_top = 70.0
+offset_right = 1040.0
+offset_bottom = 220.0
 theme_override_fonts/normal_font = ExtResource("1_8fsqs")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
