@@ -9,33 +9,14 @@ public partial class MainMenu : Control
 	private Control _mainButtons;
 	private Control _optionsButtons;
 	private Button _backButton;
-
-	private Button _hoveredButton;
-	private float _hoverFlashTimer = 0f;
-	private bool _showHoverState = true;
-
-	private const float HoverFlashInterval = 0.2f;
+	private Label _loadingLabel;
 
 	public override void _Ready()
 	{
 		GetNodeReferences();
 		ConnectSignals();
 		SetupStartingState();
-	}
-
-	public override void _Process(double delta)
-	{
-		if (_hoveredButton == null)
-			return;
-
-		_hoverFlashTimer += (float)delta;
-
-		if (_hoverFlashTimer >= HoverFlashInterval)
-		{
-			_hoverFlashTimer = 0f;
-			_showHoverState = !_showHoverState;
-			SetButtonVisualState(_hoveredButton, _showHoverState);
-		}
+		CreateLoadingLabel();
 	}
 
 	private void GetNodeReferences()
@@ -56,7 +37,15 @@ public partial class MainMenu : Control
 		SetupMenuButton(_quitButton, "Quit");
 
 		if (_backButton != null)
+		{
+			_backButton.MouseFilter = MouseFilterEnum.Stop;
+			DisableMouseInputForChildren(_backButton);
+			_backButton.MouseEntered += () => OnButtonMouseEntered(_backButton);
+			_backButton.MouseExited += () => OnButtonMouseExited(_backButton);
+			_backButton.FocusEntered += () => OnButtonMouseEntered(_backButton);
+			_backButton.FocusExited += () => OnButtonMouseExited(_backButton);
 			_backButton.Pressed += OnBackPressed;
+		}
 	}
 
 	private void SetupStartingState()
@@ -73,12 +62,18 @@ public partial class MainMenu : Control
 		SetButtonVisualState(_startButton, false);
 		SetButtonVisualState(_optionsButton, false);
 		SetButtonVisualState(_quitButton, false);
+		SetButtonVisualState(_backButton, false);
 	}
 
 	private void SetupMenuButton(Button button, string buttonName)
 	{
 		if (button == null)
 			return;
+
+		button.MouseFilter = MouseFilterEnum.Stop;
+		button.ActionMode = BaseButton.ActionModeEnum.Press;
+		button.FocusMode = FocusModeEnum.All;
+		DisableMouseInputForChildren(button);
 
 		button.MouseEntered += () => OnButtonMouseEntered(button);
 		button.MouseExited += () => OnButtonMouseExited(button);
@@ -91,19 +86,11 @@ public partial class MainMenu : Control
 
 	private void OnButtonMouseEntered(Button button)
 	{
-		_hoveredButton = button;
-		_hoverFlashTimer = 0f;
-		_showHoverState = true;
 		SetButtonVisualState(button, true);
 	}
 
 	private void OnButtonMouseExited(Button button)
 	{
-		if (_hoveredButton == button)
-			_hoveredButton = null;
-
-		_hoverFlashTimer = 0f;
-		_showHoverState = true;
 		SetButtonVisualState(button, false);
 	}
 
@@ -122,6 +109,17 @@ public partial class MainMenu : Control
 			hoverRow.Visible = showHoverRow;
 	}
 
+	private void DisableMouseInputForChildren(Node node)
+	{
+		foreach (Node child in node.GetChildren())
+		{
+			if (child is Control control)
+				control.MouseFilter = MouseFilterEnum.Ignore;
+
+			DisableMouseInputForChildren(child);
+		}
+	}
+
 	private void OnMenuButtonPressed(string buttonName)
 	{
 		GD.Print($"{buttonName} button was clicked");
@@ -134,12 +132,46 @@ public partial class MainMenu : Control
 			case "Options":
 				ShowOptionsMenu();
 				break;
+			case "Quit":
+				GetTree().Quit();
+				break;
 		}
 	}
 	
-	private void StartGame()
+	private async void StartGame()
 	{
-		GD.Print("Starting Game");
+		if (_startButton != null)
+		{
+			_startButton.Disabled = true;
+			_startButton.MouseFilter = MouseFilterEnum.Ignore;
+		}
+
+		if (_mainButtons != null)
+		{
+			_mainButtons.Visible = false;
+		}
+
+		if (_optionsButtons != null)
+		{
+			_optionsButtons.Visible = false;
+		}
+
+		if (_backButton != null)
+		{
+			_backButton.Visible = false;
+		}
+
+		if (_loadingLabel != null)
+		{
+			_loadingLabel.Visible = true;
+			_loadingLabel.MoveToFront();
+		}
+
+		GD.Print("Start button accepted. Loading game scene...");
+
+		await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+		await ToSignal(GetTree().CreateTimer(0.35), SceneTreeTimer.SignalName.Timeout);
+
 		GetTree().ChangeSceneToFile("res://Scenes/World.tscn");
 	}
 
@@ -167,5 +199,31 @@ public partial class MainMenu : Control
 
 		if (_backButton != null)
 			_backButton.Visible = false;
+	}
+
+	private void CreateLoadingLabel()
+	{
+		_loadingLabel = new Label
+		{
+			Name = "LoadingLabel",
+			Text = "Entering the world...",
+			Visible = false,
+			HorizontalAlignment = HorizontalAlignment.Center,
+			VerticalAlignment = VerticalAlignment.Center,
+			MouseFilter = MouseFilterEnum.Ignore,
+			ZIndex = 100
+		};
+
+		_loadingLabel.SetAnchorsPreset(LayoutPreset.FullRect);
+		_loadingLabel.OffsetLeft = 0;
+		_loadingLabel.OffsetTop = 0;
+		_loadingLabel.OffsetRight = 0;
+		_loadingLabel.OffsetBottom = 0;
+		_loadingLabel.AddThemeFontSizeOverride("font_size", 48);
+		_loadingLabel.AddThemeColorOverride("font_color", new Color(0.95f, 0.9f, 0.78f, 1f));
+		_loadingLabel.AddThemeColorOverride("font_outline_color", Colors.Black);
+		_loadingLabel.AddThemeConstantOverride("outline_size", 4);
+
+		AddChild(_loadingLabel);
 	}
 }

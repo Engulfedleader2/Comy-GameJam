@@ -663,25 +663,25 @@ func advance_dialogue() -> void:
 
 	var dialogue_lines: Array = conversations.get(active_conversation_key, [])
 	if dialogue_lines.is_empty():
-		end_dialogue()
+		end_dialogue(false)
 		return
 
 	var current_line: Dictionary = dialogue_lines[active_line_index]
 	var can_advance: bool = _can_complete_line(current_line, Dialogue_Progress(active_requirements))
 
 	if not can_advance:
-		end_dialogue()
+		end_dialogue(false)
 		return
 
 	active_line_index += 1
 	if active_line_index >= dialogue_lines.size():
-		end_dialogue()
+		end_dialogue(true)
 		return
 
 	npc_progress[active_npc_name]["line_index"] = active_line_index
 	_show_current_line()
 
-func end_dialogue() -> void:
+func end_dialogue(completed: bool = false) -> void:
 	var finished_npc_name := active_npc_name
 	var finished_conversation_key := active_conversation_key
 
@@ -691,14 +691,14 @@ func end_dialogue() -> void:
 			"line_index": 0,
 		}
 
-	if finished_conversation_key == "Game Opening -1st loop" and has_node("/root/QuestManager"):
+	if completed and finished_conversation_key == "Game Opening -1st loop" and has_node("/root/QuestManager"):
 		var quest_manager = get_node("/root/QuestManager")
 		quest_manager.JumpToStep("talk_to_majors")
 
 	if has_node("/root/QuestManager"):
 		var quest_manager = get_node("/root/QuestManager")
 
-		if quest_manager.IsCurrentStep("talk_to_majors"):
+		if completed and quest_manager.IsCurrentStep("talk_to_majors"):
 			match finished_npc_name:
 				"Rose":
 					quest_manager.ReportNpcTalked("Rose")
@@ -707,11 +707,12 @@ func end_dialogue() -> void:
 				"Esmerelda":
 					quest_manager.ReportNpcTalked("Esmerelda")
 
-		match finished_conversation_key:
-			"Shihab; Return from lake - 1st loop":
-				quest_manager.ReportNpcTalked("Shihab")
-			"Esmerelda; Boss blossom intro - 1st loop":
-				quest_manager.ReportNpcTalked("Esmerelda")
+		if completed:
+			match finished_conversation_key:
+				"Shihab; Return from lake - 1st loop":
+					quest_manager.ReportNpcTalked("Shihab")
+				"Esmerelda; Boss blossom intro - 1st loop":
+					quest_manager.ReportNpcTalked("Esmerelda")
 
 	isactive = false
 	_hide_dialogue_ui()
@@ -724,11 +725,11 @@ func end_dialogue() -> void:
 func _show_current_line() -> void:
 	var dialogue_lines: Array = conversations.get(active_conversation_key, [])
 	if dialogue_lines.is_empty():
-		end_dialogue()
+		end_dialogue(false)
 		return
 
 	if active_line_index < 0 or active_line_index >= dialogue_lines.size():
-		end_dialogue()
+		end_dialogue(false)
 		return
 
 	var line_data: Dictionary = dialogue_lines[active_line_index]
