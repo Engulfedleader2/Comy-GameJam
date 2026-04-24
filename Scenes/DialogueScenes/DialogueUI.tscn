@@ -4,6 +4,11 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fsqs"]
 bg_color = Color(0.105882354, 0.105882354, 0.105882354, 0.6039216)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.8784314, 0.69411767, 0.38039216, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -23,7 +28,7 @@ grow_vertical = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.05
-anchor_top = 0.75
+anchor_top = 0.68
 anchor_right = 0.95
 anchor_bottom = 0.95
 grow_horizontal = 2
@@ -32,29 +37,38 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_8fsqs")
 
 [node name="Portrait" type="TextureRect" parent="Root/DialoguePanel" unique_id=267166958]
 layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 110.0
-offset_bottom = 110.0
+offset_left = 18.0
+offset_top = 18.0
+offset_right = 154.0
+offset_bottom = 154.0
 expand_mode = 1
 stretch_mode = 5
 
 [node name="SpeakerName" type="Label" parent="Root/DialoguePanel" unique_id=1108815980]
 layout_mode = 0
-offset_left = 125.0
-offset_top = 10.0
-offset_right = 500.0
-offset_bottom = 35.0
+offset_left = 178.0
+offset_top = 18.0
+offset_right = 760.0
+offset_bottom = 72.0
 theme_override_fonts/font = ExtResource("1_8fsqs")
-theme_override_font_sizes/font_size = 23
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 52
 text = "Speaker"
 
 [node name="DialogueText" type="RichTextLabel" parent="Root/DialoguePanel" unique_id=1266364712]
 layout_mode = 0
-offset_left = 125.0
-offset_top = 40.0
-offset_right = 900.0
-offset_bottom = 120.0
+offset_left = 178.0
+offset_top = 76.0
+offset_right = 930.0
+offset_bottom = 178.0
 theme_override_fonts/normal_font = ExtResource("1_8fsqs")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 42
+theme_override_font_sizes/bold_font_size = 42
+theme_override_font_sizes/italics_font_size = 42
+theme_override_font_sizes/bold_italics_font_size = 42
+theme_override_font_sizes/mono_font_size = 42
 bbcode_enabled = true
 text = "Dialogue appears here..."

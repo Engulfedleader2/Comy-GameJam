@@ -10,32 +10,11 @@ public partial class MainMenu : Control
 	private Control _optionsButtons;
 	private Button _backButton;
 
-	private Button _hoveredButton;
-	private float _hoverFlashTimer = 0f;
-	private bool _showHoverState = true;
-
-	private const float HoverFlashInterval = 0.2f;
-
 	public override void _Ready()
 	{
 		GetNodeReferences();
 		ConnectSignals();
 		SetupStartingState();
-	}
-
-	public override void _Process(double delta)
-	{
-		if (_hoveredButton == null)
-			return;
-
-		_hoverFlashTimer += (float)delta;
-
-		if (_hoverFlashTimer >= HoverFlashInterval)
-		{
-			_hoverFlashTimer = 0f;
-			_showHoverState = !_showHoverState;
-			SetButtonVisualState(_hoveredButton, _showHoverState);
-		}
 	}
 
 	private void GetNodeReferences()
@@ -56,7 +35,15 @@ public partial class MainMenu : Control
 		SetupMenuButton(_quitButton, "Quit");
 
 		if (_backButton != null)
+		{
+			_backButton.MouseFilter = MouseFilterEnum.Stop;
+			DisableMouseInputForChildren(_backButton);
+			_backButton.MouseEntered += () => OnButtonMouseEntered(_backButton);
+			_backButton.MouseExited += () => OnButtonMouseExited(_backButton);
+			_backButton.FocusEntered += () => OnButtonMouseEntered(_backButton);
+			_backButton.FocusExited += () => OnButtonMouseExited(_backButton);
 			_backButton.Pressed += OnBackPressed;
+		}
 	}
 
 	private void SetupStartingState()
@@ -73,12 +60,16 @@ public partial class MainMenu : Control
 		SetButtonVisualState(_startButton, false);
 		SetButtonVisualState(_optionsButton, false);
 		SetButtonVisualState(_quitButton, false);
+		SetButtonVisualState(_backButton, false);
 	}
 
 	private void SetupMenuButton(Button button, string buttonName)
 	{
 		if (button == null)
 			return;
+
+		button.MouseFilter = MouseFilterEnum.Stop;
+		DisableMouseInputForChildren(button);
 
 		button.MouseEntered += () => OnButtonMouseEntered(button);
 		button.MouseExited += () => OnButtonMouseExited(button);
@@ -91,19 +82,11 @@ public partial class MainMenu : Control
 
 	private void OnButtonMouseEntered(Button button)
 	{
-		_hoveredButton = button;
-		_hoverFlashTimer = 0f;
-		_showHoverState = true;
 		SetButtonVisualState(button, true);
 	}
 
 	private void OnButtonMouseExited(Button button)
 	{
-		if (_hoveredButton == button)
-			_hoveredButton = null;
-
-		_hoverFlashTimer = 0f;
-		_showHoverState = true;
 		SetButtonVisualState(button, false);
 	}
 
@@ -122,6 +105,17 @@ public partial class MainMenu : Control
 			hoverRow.Visible = showHoverRow;
 	}
 
+	private void DisableMouseInputForChildren(Node node)
+	{
+		foreach (Node child in node.GetChildren())
+		{
+			if (child is Control control)
+				control.MouseFilter = MouseFilterEnum.Ignore;
+
+			DisableMouseInputForChildren(child);
+		}
+	}
+
 	private void OnMenuButtonPressed(string buttonName)
 	{
 		GD.Print($"{buttonName} button was clicked");
@@ -133,6 +127,9 @@ public partial class MainMenu : Control
 				break;
 			case "Options":
 				ShowOptionsMenu();
+				break;
+			case "Quit":
+				GetTree().Quit();
 				break;
 		}
 	}
